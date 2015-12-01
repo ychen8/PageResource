@@ -94,8 +94,42 @@ public class MainPage extends UiAutomatorTestCase implements mainPageConstants{
 	public String rechargeAmountText(){
 		return mainpage.getText(RECHARGEAMOUNT);
 	}
-	//
+	//判断代充金额是否存在
+	public Boolean rechargeAmountExist(){
+		return mainpage.isExist(RECHARGEAMOUNT);
+	}
+	//点击我的订单
+	public void myOrderClick(){
+		try {
+			mainpage.getObj(MYORDER).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	//获取我的订单文本
+	public String myOrderText(){
+		return mainpage.getText(MYORDER);
+	}
+	//判断我的订单是否存在
+	public Boolean myOrderExist(){
+		return mainpage.isExist(MYORDER);
+	}
+	//点击工作状态按钮
+	public void stateBtnClick(){
+		try {
+			mainpage.getObj(STATEBTN).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	//获取当前工作状态
+	public String stateBtnText(){
+		return mainpage.getText(STATEBTN);
+	}
+    //判断当天工作工作状态是否存在
 	
-
+	
 	
 }
