@@ -27,12 +27,34 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return text;
 	}
+	
+	//获取文本
+
+	public String getText(String resourceId, int index) {
+		// TODO Auto-generated method stub
+		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).index(index));
+		String text="";
+		try {
+			text = obj.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;
+	}
 
 	//获取object
 
 	public UiObject getObj(String resourceId) {
 		// TODO Auto-generated method stub
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId));
+		return obj;
+	}
+	
+	//获取object
+	public UiObject getObj(String resourceId, int index) {
+		// TODO Auto-generated method stub
+		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).index(index));
 		return obj;
 	}
 
@@ -53,6 +75,10 @@ public class MainMethod extends UiAutomatorTestCase{
 		
 		
 	}
-	
-
+	public Boolean isExist(String ResouceId, int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+		return obj.exists();
+		
+		
+	}
 }
