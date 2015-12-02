@@ -71,6 +71,11 @@ public interface ParameterConfig {
 	static String WRONG_DRIVERID_VALUE="33937";
 	//错误的密码
 	static String WRONG_PASSWORD_VALUE="123455";
+	
+	//驾驶证到期手机号、司机ＩＤ、密码
+	static String EXPIRE_PHONE_VALUE="15500000000";
+	static String EXPIRE_DRIVERID_VALUE="33947";
+	static String EXPIRE_PASSWORD_VALUE="123456";
 		
 	//重设密码页面输入内容	
 	//公司配备手机号
