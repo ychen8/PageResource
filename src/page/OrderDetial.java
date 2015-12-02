@@ -5,9 +5,9 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-import driverInterface.orderDetialConstants;
+import driverInterface.OrderDetialConstants;
 
-public class OrderDetial extends UiAutomatorTestCase implements orderDetialConstants{
+public class OrderDetial extends UiAutomatorTestCase implements OrderDetialConstants{
 	MainMethod orderdetial= new MainMethod();
 
 	//判断标题栏是否存在
