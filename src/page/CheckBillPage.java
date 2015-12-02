@@ -6,7 +6,7 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.*;
 
-public class CheckBill extends UiAutomatorTestCase implements CheckBillConstants,ParameterConfig{
+public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConstants,ParameterConfig{
 
 	MainMethod checkbill= new MainMethod();
 	

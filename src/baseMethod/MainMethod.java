@@ -57,7 +57,14 @@ public class MainMethod extends UiAutomatorTestCase{
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).index(index));
 		return obj;
 	}
-
+	
+	//获取object（寻找【指定父类】下，匹配【指定text】的子类）
+	public UiObject getObj(String resourceId, String text) {
+		// TODO Auto-generated method stub
+		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).childSelector(new UiSelector().text(text)));
+		return obj;
+	}
+	
 	//断言
 
 	public Boolean testMatch(String expectResult, String actualResult) {
@@ -77,6 +84,14 @@ public class MainMethod extends UiAutomatorTestCase{
 	}
 	public Boolean isExist(String ResouceId, int index){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+		return obj.exists();
+		
+		
+	}
+	
+	//是否存在 （寻找【指定父类】下，匹配【指定text】的子类）
+	public Boolean isExist(String ResouceId, String text){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).childSelector(new UiSelector().text(text)));
 		return obj.exists();
 		
 		
