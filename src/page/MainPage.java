@@ -5,9 +5,9 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-import driverInterface.mainPageConstants;
+import driverInterface.MainPageConstants;
 
-public class MainPage extends UiAutomatorTestCase implements mainPageConstants{
+public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
 	MainMethod mainpage= new MainMethod();
 	//点击消息按钮
 	public void msgClick(){
