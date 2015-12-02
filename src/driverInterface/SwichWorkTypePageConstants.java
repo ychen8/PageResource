@@ -1,3 +1,7 @@
+/**
+ * 创建日期2015年12月02日
+ * 作者：郭艳松
+ * */
 package driverInterface;
 
 public interface SwichWorkTypePageConstants {

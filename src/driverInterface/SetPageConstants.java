@@ -1,3 +1,7 @@
+/**
+ * 创建日期2015年12月02日
+ * 作者：郭艳松
+ * */
 package driverInterface;
 
 public interface SetPageConstants {
@@ -17,4 +21,17 @@ public interface SetPageConstants {
 	static String TIME="com.szzc.ucar.driver:id/numberpicker_input";
 	//确定按钮
 	static String OKBTN="com.szzc.ucar.driver:id/ok_btn";
+	
+	//开始时间增大INDEX
+	static int INCERM_START_INDEX=1;
+	//开始时间减小INDEX
+	static int DECERM_START_INDEX=4;
+	//结束时间增大INDEX
+	static int INCERM_STOP_INDEX=5;
+	//结束时间减小INDEX
+	static int DECERM_STOP_INDEX=8;
+	//开始时间INDEX
+    static int TIME_START_INDEX=2;
+	//结束时间INDEX
+    static int TIME_STOP_INDEX=6;
 }
