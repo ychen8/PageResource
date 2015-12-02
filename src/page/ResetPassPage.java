@@ -5,10 +5,10 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
+import driverInterface.ParameterConfig;
 import driverInterface.ResetPassConstants;
-import driverInterface.ResetPassValue;
 
-public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConstants,ResetPassValue {
+public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConstants,ParameterConfig {
 	MainMethod resetPassPage= new MainMethod();
 	
 	//判断返回icon是否存在
@@ -25,11 +25,11 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 		}
 	}
 	//判断标题是否存在
-	public Boolean upgradContentExist(){
+	public Boolean titleExist(){
 		return resetPassPage.isExist(PASSWORDTITLE);
 	}
 	//获取标题内容
-	public String upgradContentText(){
+	public String titleText(){
 		return resetPassPage.getText(PASSWORDTITLE);
 	}
 	
@@ -46,7 +46,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	//输入手机号
 	public void setPhone(){
 		try {
-			resetPassPage.getObj(PPHONE).setText(phone_value);
+			resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,7 +66,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	//输入司机ＩＤ
 	public void setDriverid(){
 		try {
-			resetPassPage.getObj(PDRIVERID).setText(driverid_value);
+			resetPassPage.getObj(PDRIVERID).setText(REPASS_DRIVERID_VALUE);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	//输入验证码
 	public void setCode(){
 		try {
-			resetPassPage.getObj(AUTHCODE).setText(code_value);
+			resetPassPage.getObj(AUTHCODE).setText(REPASS_CODE_VALUE);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -148,5 +148,90 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	//获取验证码有误提示内容
 	public String wrongCodeText(){
 		return resetPassPage.getText(WRONGCODE);
+	}	
+	
+	//判断返回icon是否存在－重设密码第二步页面
+	public Boolean return2Exist(){
+		return resetPassPage.isExist(RETURNICON);
 	}
+	//点击返回－重设密码第二步页面
+	public void return2Click(){
+		try {
+			resetPassPage.getObj(RETURNICON).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	//判断标题是否存在－重设密码第二步页面
+	public Boolean title2Exist(){
+		return resetPassPage.isExist(PASSWORDTITLE);
+	}
+	//获取标题内容－重设密码第二步页面
+	public String title2Text(){
+		return resetPassPage.getText(PASSWORDTITLE);
+	}
+	
+	//清空新密码
+	public void clearNewPass(){
+		try {
+			resetPassPage.getObj(NEW_PASS).clearTextField();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//输入新密码
+	public void setNewPass(){
+		try {
+			resetPassPage.getObj(NEW_PASS).setText(REPASS_NEW_PASS_VALUE);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//清空确认新密码
+	public void clearRenewPass(){
+		try {
+			resetPassPage.getObj(CONFIRM_NEW_PASS).clearTextField();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//输入确认新密码
+	public void setRenewPass(){
+		try {
+			resetPassPage.getObj(CONFIRM_NEW_PASS).setText( REPASS_RENEW_PASS_VALUE);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//判断重设密码的限制提示是否存在－重设密码第二步页面
+	public Boolean passLimitTipExist(){
+		return resetPassPage.isExist(RESET_PASS_TIP);
+	}
+	//获取重设密码的限制提示内容－重设密码第二步页面
+	public String passLimitTipText(){
+		return resetPassPage.getText(RESET_PASS_TIP);
+	}
+	//判断确定按钮是否存在
+	public Boolean btnConfirmExist(){
+		return resetPassPage.isExist(BTN_CONFIRM);
+	}
+	//点击确定按钮
+	public void btnConfirmClick(){
+		try {
+			resetPassPage.getObj(BTN_CONFIRM).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }

@@ -56,4 +56,41 @@ public interface ParameterConfig {
 	//附加费用-其它费用描述
 	static String OTHER_AMOUNT_REMARK = "abcdefg";
 	
+	//登录页面输入内容
+	
+	//正确的手机号
+	static String PHONE_VALUE="15522585168";
+	//正确的司机ＩＤ
+	static String DRIVERID_VALUE="33936";
+	//正确的密码
+	static String PASSWORD_VALUE="123456";
+	
+	//不存在的手机号
+	static String WRONG_PHONE_VALUE="15522585167";
+	//错误的司机ＩＤ
+	static String WRONG_DRIVERID_VALUE="33937";
+	//错误的密码
+	static String WRONG_PASSWORD_VALUE="123455";
+	
+	
+	//驾驶证快过期的司机－手机号
+	static String EXPIRE_PHONE_VALUE="";
+	//驾驶证快过期的司机－司机ＩＤ
+	static String EXPIRE_DRIVERID_VALUE="";
+	//驾驶证快过期的司机－正确的密码
+	static String EXPIRE_PASSWORD_VALUE="";
+	
+	//重设密码页面输入内容
+	
+	//公司配备手机号
+	static String REPASS_PHONE_VALUE="15522585168";
+	//司机ＩＤ
+	static String REPASS_DRIVERID_VALUE="33936";
+	//验证码
+	static String REPASS_CODE_VALUE="";
+	//新密码
+	static String REPASS_NEW_PASS_VALUE="654321";
+	//确认新密码
+	static String REPASS_RENEW_PASS_VALUE="654321";
+	
 }

@@ -6,9 +6,9 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.LoginConstants;
-import driverInterface.LoginValue;
+import driverInterface.ParameterConfig;
 
-public class LoginPage extends UiAutomatorTestCase implements LoginConstants,LoginValue{
+public class LoginPage extends UiAutomatorTestCase implements LoginConstants,ParameterConfig{
 	MainMethod loginPage= new MainMethod();
 	
 	//判断测试版本与环境控件是否存在
@@ -30,10 +30,20 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		}
 	}
 	
-	//输入手机号
-	public void setPhone(){
+	//输入正确的手机号
+	public void setRightPhone(){
 		try {
-			loginPage.getObj(PHONE).setText(phone_value);
+			loginPage.getObj(PHONE).setText(PHONE_VALUE);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//输入不存在的手机号
+	public void setWrongPhone(){
+		try {
+			loginPage.getObj(PHONE).setText(WRONG_PHONE_VALUE);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,10 +60,20 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		}
 	}
 	
-	//输入司机ＩＤ
+	//输入正确的司机ＩＤ
 	public void setDriverid(){
 		try {
-			loginPage.getObj(DRIVERID).setText(driverid_value);
+			loginPage.getObj(DRIVERID).setText(DRIVERID_VALUE);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//输入错误的司机ＩＤ
+	public void setWrongDriverid(){
+		try {
+			loginPage.getObj(DRIVERID).setText(WRONG_DRIVERID_VALUE);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -69,15 +89,25 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		}
 	}
 	
-	//输入密码
+	//输入正确的密码
 	public void setPassword(){
 		try {
-			loginPage.getObj(PASSWORD).setText(password_value);
+			loginPage.getObj(PASSWORD).setText(PASSWORD_VALUE);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	//输入错误的密码
+	public void setWrongPassword(){
+		try {
+			loginPage.getObj(PASSWORD).setText(WRONG_PASSWORD_VALUE);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	//决断登录按钮是否存在
 	public Boolean loginExist(){
