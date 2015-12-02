@@ -9,7 +9,6 @@ import driverInterface.LoginConstants;
 import driverInterface.LoginValue;
 
 public class LoginPage extends UiAutomatorTestCase implements LoginConstants,LoginValue{
-	private static final String PHONE = null;
 	MainMethod loginPage= new MainMethod();
 	
 	//判断测试版本与环境控件是否存在
@@ -86,7 +85,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//点击登录按钮
-	public void testClickLogin(){
+	public void testLoginClick(){
 		try {
 			loginPage.getObj(LOGINBUTTON).click();
 		} catch (UiObjectNotFoundException e) {
@@ -99,7 +98,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		return loginPage.isExist(FORGETPASSWORD);
 	}
 	//点击忘记密码
-	public void testClickForgetPass(){
+	public void testForgetPassClick(){
 		try {
 			loginPage.getObj(FORGETPASSWORD).click();
 		} catch (UiObjectNotFoundException e) {
@@ -163,7 +162,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//点击弹框的确定按钮
-	public void testOkButtonLogin(){
+	public void testOkButtonClick(){
 		try {
 			loginPage.getObj(OKBUTTON).click();
 		} catch (UiObjectNotFoundException e) {
