@@ -8,6 +8,10 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 import driverInterface.LoginConstants;
 import driverInterface.ParameterConfig;
 
+/**
+ *@version 创建日期:2015-12-2
+ *@author 陈玉婵
+ */
 public class LoginPage extends UiAutomatorTestCase implements LoginConstants,ParameterConfig{
 	MainMethod loginPage= new MainMethod();
 	

@@ -8,6 +8,10 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 import driverInterface.ParameterConfig;
 import driverInterface.ResetPassConstants;
 
+/**
+ *@version 创建日期:2015-12-2
+ *@author 陈玉婵
+ */
 public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConstants,ParameterConfig {
 	MainMethod resetPassPage= new MainMethod();
 	
