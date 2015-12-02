@@ -21,7 +21,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//清空手机号
-	public void testClearPhone(){
+	public void clearPhone(){
 		try {
 			loginPage.getObj(PHONE).clearTextField();
 		} catch (UiObjectNotFoundException e) {
@@ -31,7 +31,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//输入手机号
-	public void testSetPhone(){
+	public void setPhone(){
 		try {
 			loginPage.getObj(PHONE).setText(phone_value);
 		} catch (UiObjectNotFoundException e) {
@@ -41,7 +41,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//清空司机ＩＤ
-	public void testClearDriverid(){
+	public void clearDriverid(){
 		try {
 			loginPage.getObj(DRIVERID).clearTextField();
 		} catch (UiObjectNotFoundException e) {
@@ -51,7 +51,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//输入司机ＩＤ
-	public void testSetDriverid(){
+	public void setDriverid(){
 		try {
 			loginPage.getObj(DRIVERID).setText(driverid_value);
 		} catch (UiObjectNotFoundException e) {
@@ -60,7 +60,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		}
 	}
 	//清空密码
-	public void testClearPassword(){
+	public void clearPassword(){
 		try {
 			loginPage.getObj(PASSWORD).clearTextField();
 		} catch (UiObjectNotFoundException e) {
@@ -70,7 +70,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//输入密码
-	public void testSetPassword(){
+	public void setPassword(){
 		try {
 			loginPage.getObj(PASSWORD).setText(password_value);
 		} catch (UiObjectNotFoundException e) {
@@ -80,12 +80,12 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 	}
 	
 	//决断登录按钮是否存在
-	public Boolean testLoginExist(){
+	public Boolean loginExist(){
 		return loginPage.isExist(VERSION_CUR);
 	}
 	
 	//点击登录按钮
-	public void testLoginClick(){
+	public void loginClick(){
 		try {
 			loginPage.getObj(LOGINBUTTON).click();
 		} catch (UiObjectNotFoundException e) {
@@ -94,11 +94,11 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		}	
 	}
 	//判断忘记密码是否存在
-	public Boolean testForgetExist(){
+	public Boolean forgetExist(){
 		return loginPage.isExist(FORGETPASSWORD);
 	}
 	//点击忘记密码
-	public void testForgetPassClick(){
+	public void forgetPassClick(){
 		try {
 			loginPage.getObj(FORGETPASSWORD).click();
 		} catch (UiObjectNotFoundException e) {
@@ -107,27 +107,27 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		}	
 	}	
 	//判断手机号码不存在是否存在
-	public Boolean testNophoneExist(){
+	public Boolean nophoneExist(){
 		return loginPage.isExist(NOPHONE);
 	}
 	//获取弹框信息内容－手机号码不存在
-	public String testNophoneText(){
+	public String nophoneText(){
 		return loginPage.getText(NOPHONE);
 	}
 	//判断司机ＩＤ有误是否存在
-	public Boolean testDriveridExist(){
+	public Boolean driveridExist(){
 		return loginPage.isExist(WRONGDRIVERID);
 	}
 	//获取弹框信息内容－司机ＩＤ有误
-	public String testDriveridText(){
+	public String driveridText(){
 		return loginPage.getText(WRONGDRIVERID);
 	}	
 	//判断密码错误是否存在
-	public Boolean testWrongPassExist(){
+	public Boolean wrongPassExist(){
 		return loginPage.isExist(WRONGPASSWORD);
 	}
 	//获取弹框信息内容－密码错误
-	public String testWrongPassText(){
+	public String wrongPassText(){
 		return loginPage.getText(WRONGPASSWORD);
 	}
 	//判断驾驶证到期是否存在
@@ -135,34 +135,34 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Log
 		return loginPage.isExist(LICENSEEXPIRESED);
 	}
 	//获取弹框信息内容－驾驶证到期
-	public String testLicenExpiredText(){
+	public String licenExpiredText(){
 		return loginPage.getText(LICENSEEXPIRESED);
 	}
 	//判断驾驶证快到期是否存在
-	public Boolean testLicenExpirExist(){
+	public Boolean licenExpirExist(){
 		return loginPage.isExist(LICENSEEXPIRES);
 	}
 	//获取弹框信息内容－驾驶证快到期
-	public String testLicenExpirText(){
+	public String licenExpirText(){
 		return loginPage.getText(LICENSEEXPIRES);
 	}
 	
 	//判断登录司机无效是否存在
-	public Boolean testInvaledDriverExist(){
+	public Boolean invaledDriverExist(){
 		return loginPage.isExist(INVALIDDRIVER);
 	}
 	//获取弹框信息内容－登录司机无效
-	public String testInvaledDriverText(){
+	public String invaledDriverText(){
 		return loginPage.getText(INVALIDDRIVER);
 	}
 	
 	//决断弹框确定按钮是否存在
-	public Boolean testOkButtonExist(){
+	public Boolean okButtonExist(){
 		return loginPage.isExist(OKBUTTON);
 	}
 	
 	//点击弹框的确定按钮
-	public void testOkButtonClick(){
+	public void okButtonClick(){
 		try {
 			loginPage.getObj(OKBUTTON).click();
 		} catch (UiObjectNotFoundException e) {
