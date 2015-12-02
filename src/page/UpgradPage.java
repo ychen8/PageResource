@@ -7,6 +7,10 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.UpgradConstants;
 
+/**
+ *@version 创建日期:2015-12-2
+ *@author 陈玉婵
+ */
 public class UpgradPage extends UiAutomatorTestCase implements UpgradConstants{
 	MainMethod upgradPage= new MainMethod();
 	

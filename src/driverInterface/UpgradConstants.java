@@ -1,5 +1,9 @@
 package driverInterface;
 
+/**
+ *@version 创建日期:2015-12-2
+ *@author 陈玉婵
+ */
 public interface UpgradConstants {
 	
 	//升级提示标题
