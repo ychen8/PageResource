@@ -36,6 +36,14 @@ public interface OrderBalanceConstants {
       //提交并结束按钮
       static String ORDER_COMMIT_BTN="com.szzc.ucar.driver:id/order_commit";
      //////////////////////////////////////////////////////////////////////////////////
+      ///////////////////订单结算-附加费用text//////////////////////////////////
+      static String PARKING = "停车费";
+      static String HIGHWAY = "路桥费";
+      static String CLEAN = "清洁费";
+      static String AIRPORT_SERVICE = "机场服务费";
+      static String OTHER = "其他费用";
+      static String ORDER_KILLO = "行驶里程";
+      static String ORDER_TIME = "行驶时间";
      //////////////////////////////////////////////////////////////////////////////////
       
       
