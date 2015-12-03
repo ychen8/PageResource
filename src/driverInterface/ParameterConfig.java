@@ -2,7 +2,7 @@ package driverInterface;
 
 public interface ParameterConfig {
 	
-	//订单结算-附加费用text
+///////////////////订单结算-附加费用text//////////////////////////////////
 	static String PARKING = "停车费";
 	static String HIGHWAY = "路桥费";
 	static String CLEAN = "清洁费";
@@ -11,8 +11,8 @@ public interface ParameterConfig {
 	static String ORDER_KILLO = "行驶里程";
 	static String ORDER_TIME = "行驶时间";
 	
-	//核实账单-公里数
-	static String KILLO = "1.23";
+
+///////////////////核实账单页元素index//////////////////////////////////
 	//停车费-文本-index
 	static int PARKING_TEXT_ID = 0;
 	//路桥费-文本-index
@@ -25,8 +25,6 @@ public interface ParameterConfig {
 	static int OTHER_TEXT_ID = 12;
 	//其它费用描述-文本index
 	static int OTHER_AMOUNT_REMARK_TEXT_ID = 15;
-	
-	
 	//停车费-输入框-index
 	static int PARKING_INPUT_ID = 1;
 	//路桥费-输入框-index
@@ -39,8 +37,6 @@ public interface ParameterConfig {
 	static int OTHER_INPUT_ID = 13;
 	//其它费用描述文本index
 	static int OTHER_AMOUNT_REMARK_INPUT_ID = 16;
-	
-	
 	//停车费-元-index
 	static int PARKING_YUAN_ID = 2;
 	//路桥费-元-index
@@ -52,7 +48,9 @@ public interface ParameterConfig {
 	//其它费用-元-index
 	static int OTHER_YUAN_ID = 14;
 	
-	
+///////////////////核实账单页输入数据//////////////////////////////////
+	//核实账单-公里数
+	static String KILLO = "1.23";	
 	//附加费用-停车费
 	static String PARKING_AMOUNT = "10";
 	//附加费用-路桥费
@@ -65,6 +63,21 @@ public interface ParameterConfig {
 	static String OTHER_AMOUNT = "10";
 	//附加费用-其它费用描述
 	static String OTHER_AMOUNT_REMARK = "abcdefg";
+	
+///////////////////订单详情页元素index//////////////////////////////////
+	//元-文本（父类为ORDER_MONEY_LAYOUT）
+	static int YUAN = 2;
+	//订单号-文本
+	static int ORDER_NO_ID = 1;
+	//上车时间-文本
+	static int UP_TIME_ID = 4;
+	//下车时间-文本
+	static int DOWN_TIME_ID = 6;
+	//乘车人姓名-文本
+	static int PASSENGER_NAME_ID = 8;
+	//订车人姓名-文本
+	static int RESERVER_NAME_ID = 11;
+	
 	
 	//登录页面输入内容
 	//测试环境
