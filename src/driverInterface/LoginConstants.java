@@ -1,8 +1,8 @@
 package driverInterface;
 
 /**
- *@version 创建日期:2015-12-2
- *@author 陈玉婵
+ *创建日期:2015-12-2
+ *作者： 陈玉婵
  */
 public interface LoginConstants {
 

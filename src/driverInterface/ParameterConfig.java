@@ -1,6 +1,16 @@
 package driverInterface;
 
 public interface ParameterConfig {
+	
+	//订单结算-附加费用text
+	static String PARKING = "停车费";
+	static String HIGHWAY = "路桥费";
+	static String CLEAN = "清洁费";
+	static String AIRPORT_SERVICE = "机场服务费";
+	static String OTHER = "其他费用";
+	static String ORDER_KILLO = "行驶里程";
+	static String ORDER_TIME = "行驶时间";
+	
 	//核实账单-公里数
 	static String KILLO = "1.23";
 	//停车费-文本-index
@@ -71,6 +81,11 @@ public interface ParameterConfig {
 	static String WRONG_DRIVERID_VALUE="33937";
 	//错误的密码
 	static String WRONG_PASSWORD_VALUE="123455";
+	
+	//驾驶证到期手机号、司机ＩＤ、密码
+	static String EXPIRE_PHONE_VALUE="15500000000";
+	static String EXPIRE_DRIVERID_VALUE="33947";
+	static String EXPIRE_PASSWORD_VALUE="123456";
 		
 	//重设密码页面输入内容	
 	//公司配备手机号

@@ -227,4 +227,44 @@ public class OrderDetial extends UiAutomatorTestCase implements OrderDetialConst
 			e.printStackTrace();
 		}
 	}
+	///////////////////////下面是拨打电话弹窗部分/////////////////////////////
+	//判断弹窗是否存在
+	public Boolean winExist(){
+		return orderdetial.isExist(POPUPWIN);
+	}	
+	//判断提示文字是否存在
+	public Boolean confirmTextExist(){
+		return orderdetial.isExist(CONFIRM_TEXT);
+	}
+	//获取提示文字
+	public String confirmTextText(){
+	      String text=orderdetial.getText(CONFIRM_TEXT);
+		return text;
+	}
+	//判断取消按钮是否存在
+	public Boolean closeBtnExist(){
+		return orderdetial.isExist(CLOSE_BTN);
+	}
+	//点击取消按钮
+	public void closeBtnClick(){		
+		try {
+			orderdetial.getObj(CLOSE_BTN).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	//判断确定按钮是否存在
+	public Boolean okBtnExist(){
+		return orderdetial.isExist(OK_BTN);
+	}
+	//点击确定按钮
+	public void okBtnClick(){		
+		try {
+			orderdetial.getObj(OK_BTN).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
