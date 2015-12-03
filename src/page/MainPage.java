@@ -290,7 +290,56 @@ public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
 	public Boolean upLocationExist(){
 		return mainpage.isExist(UPLOCATION);		
 	}
-	
+	/*
+	 * 请先输入交班地址弹出框
+	 * 
+	 * */
+
+	//判断请先录入交班地址是否存在
+	public Boolean warningExist(){
+		return mainpage.isExist(WARNING);
+	}
+	//获取请先录入交班地址文本
+	public String warningText(){
+	      String text=mainpage.getText(WARNING);
+		return text;
+	}
+	//点击确定按钮
+	public void okBtnClick(){
+		try {
+			mainpage.getObj(OKBTN).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	//判断确定按钮是否存在
+	public Boolean okBtnExist(){
+		return mainpage.isExist(OKBTN);
+	}
+	//获取确定按钮文本
+	public String okBtnText(){
+	      String text=mainpage.getText(OKBTN);
+		return text;
+	}
+	//点击返回按钮
+	public void cancelBtnClick(){
+		try {
+			mainpage.getObj(CANCELBTN).click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	//判断返回按钮是否存在
+	public Boolean cancelBtnExist(){
+		return mainpage.isExist(CANCELBTN);
+	}
+	//获取返回按钮文本
+	public String cancelBtnText(){
+	      String text=mainpage.getText(CANCELBTN);
+		return text;
+	}
 	
 	
 	

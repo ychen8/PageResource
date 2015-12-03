@@ -55,7 +55,14 @@ public interface MainPageConstants {
       //上车地点
       static String UPLOCATION="com.szzc.ucar.driver:id/uplocation_name";
      //////////////////////////////////////////////////////////////////////////////////
+      //////弹出框ID
      //////////////////////////////////////////////////////////////////////////////////
-      
+  	//请先录入交班地址
+  	static String WARNING="com.szzc.ucar.driver:id/confirm_text";
+  	//确定按钮
+  	static String OKBTN="com.szzc.ucar.driver:id/ok_btn";
+  	//返回按钮
+  	static String CANCELBTN="com.szzc.ucar.driver:id/close_btn";
+  	/////////////////////////////////////////////////////////////////////////////////////
       
 }

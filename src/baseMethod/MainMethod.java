@@ -73,27 +73,20 @@ public class MainMethod extends UiAutomatorTestCase{
 			return true;
 		}
 		else
-		return false;
-		
+		return false;	
 	}
 	public Boolean isExist(String ResouceId){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
-		return obj.exists();
-		
-		
+		return obj.exists();		
 	}
 	public Boolean isExist(String ResouceId, int index){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
-		return obj.exists();
-		
-		
+		return obj.exists();	
 	}
 	
 	//是否存在 （寻找【指定父类】下，匹配【指定text】的子类）
 	public Boolean isExist(String ResouceId, String text){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).childSelector(new UiSelector().text(text)));
-		return obj.exists();
-		
-		
+		return obj.exists();		
 	}
 }
