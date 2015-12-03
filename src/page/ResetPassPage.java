@@ -48,9 +48,18 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	
 	//输入手机号
-	public void setPhone(){
+	public void setPhone(String test_env){
 		try {
-			resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE);
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE);
+			}
+			if(test_env=="test02"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE2);
+			}
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE_PRE);
+			}
+
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,9 +77,18 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	
 	//输入司机ＩＤ
-	public void setDriverid(){
+	public void setDriverid(String test_env){
 		try {
-			resetPassPage.getObj(PDRIVERID).setText(REPASS_DRIVERID_VALUE);
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_DRIVERID_VALUE);
+			}
+			if(test_env=="test02"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_DRIVERID_VALUE2);
+			}
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_DRIVERID_VALUE_PRE);
+			}
+
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -87,9 +105,18 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	
 	//输入验证码
-	public void setCode(){
+	public void setCode(String test_env){
 		try {
-			resetPassPage.getObj(AUTHCODE).setText(REPASS_CODE_VALUE);
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_CODE_VALUE);
+			}
+			if(test_env=="test02"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_CODE_VALUE2);
+			}
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_CODE_VALUE_PRE);
+			}
+
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -187,9 +214,18 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	
 	//输入新密码
-	public void setNewPass(){
+	public void setNewPass(String test_env){
 		try {
-			resetPassPage.getObj(NEW_PASS).setText(REPASS_NEW_PASS_VALUE);
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_NEW_PASS_VALUE);
+			}
+			if(test_env=="test02"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_NEW_PASS_VALUE2);
+			}
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_NEW_PASS_VALUE_PRE);
+			}
+			
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -207,9 +243,18 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	
 	//输入确认新密码
-	public void setRenewPass(){
+	public void setRenewPass(String test_env){
 		try {
-			resetPassPage.getObj(CONFIRM_NEW_PASS).setText( REPASS_RENEW_PASS_VALUE);
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_RENEW_PASS_VALUE);
+			}
+			if(test_env=="test02"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_RENEW_PASS_VALUE2);
+			}
+			if(test_env=="test"){
+				resetPassPage.getObj(PPHONE).setText(REPASS_RENEW_PASS_VALUE_PRE);
+			}
+
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
