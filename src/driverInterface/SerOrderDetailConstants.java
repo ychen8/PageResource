@@ -1,6 +1,6 @@
 package driverInterface;
 
-public interface SerOrderDetialConstants {
+public interface SerOrderDetailConstants {
 	
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -21,11 +21,11 @@ public interface SerOrderDetialConstants {
       //上车地点
       static String UPLOCATION="com.szzc.ucar.driver:id/position";
       //上车地点详情
-      static String UPLOCDETIAL="com.szzc.ucar.driver:id/position_detail";
+      static String UPLOCDETAIL="com.szzc.ucar.driver:id/position_detail";
       //下车地点
       static String DOWNLOCATION="com.szzc.ucar.driver:id/end_position";
       //下车地点详情
-      static String DOWNLOCDETIAL="com.szzc.ucar.driver:id/end_position_detail";      
+      static String DOWNLOCDETAIL="com.szzc.ucar.driver:id/end_position_detail";      
       //电话按钮
       static String CALLBTN="com.szzc.ucar.driver:id/call";
       //账户信息

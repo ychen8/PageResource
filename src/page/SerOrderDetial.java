@@ -5,9 +5,9 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-import driverInterface.SerOrderDetialConstants;
+import driverInterface.SerOrderDetailConstants;
 
-public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetialConstants{
+public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetailConstants{
 	MainMethod orderdetial= new MainMethod();
 
 	//判断标题栏是否存在
@@ -83,11 +83,11 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetia
 	}
 	//判断上车地点详情是否存在
 	public Boolean upLocDetialExist(){
-		return orderdetial.isExist(UPLOCDETIAL);
+		return orderdetial.isExist(UPLOCDETAIL);
 	}
 	//获取上车地点详情
 	public String upLocDetialText(){
-		return orderdetial.getText(UPLOCDETIAL);
+		return orderdetial.getText(UPLOCDETAIL);
 	}
 	//判断下车地点是否存在
 	public Boolean downLocExist(){
@@ -99,11 +99,11 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetia
 	}
 	//判断下车地点详情是否存在
 	public Boolean downLocDetialExist(){
-		return orderdetial.isExist(DOWNLOCDETIAL);
+		return orderdetial.isExist(DOWNLOCDETAIL);
 	}
 	//获取下车地点详情
 	public String downLocDetialText(){
-		return orderdetial.getText(DOWNLOCDETIAL);
+		return orderdetial.getText(DOWNLOCDETAIL);
 	}
 	//判断电话按钮是否存在
 	public Boolean callBtnExist(){
