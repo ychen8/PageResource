@@ -198,7 +198,7 @@ public class MainMethod extends UiAutomatorTestCase{
 		return false;
 	}
    //判断对象是否可点击
-	public Boolean objClicked(String ResourceId){
+	public Boolean objEnabled(String ResourceId){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
 		try {
 			return obj.isEnabled();
@@ -206,7 +206,6 @@ public class MainMethod extends UiAutomatorTestCase{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return false;
-		
+		return false;		
 	}
 }

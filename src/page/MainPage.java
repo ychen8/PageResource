@@ -297,4 +297,8 @@ public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
 	public Boolean workBtnExist(){
 		return mainpage.isExist(WORKBTN);
 	}
+	//判断确定上班按钮是否可点击
+	public Boolean workBtnEnable(){
+		return mainpage.objEnabled(WORKBTN);
+	}
 }
