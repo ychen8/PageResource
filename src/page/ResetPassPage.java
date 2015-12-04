@@ -21,12 +21,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	//点击返回
 	public void returnClick(){
-		try {
-			resetPassPage.getObj(RETURNICON).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.clickObj(RETURNICON);
 	}
 	//判断标题是否存在
 	public Boolean titleExist(){
@@ -39,88 +34,57 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	
 	//清空手机号
 	public void clearPhone(){
-		try {
-			resetPassPage.getObj(PPHONE).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.cleartxt(PPHONE);
 	}
 	
 	//输入手机号
 	public void setPhone(String test_env){
-		try {
 			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE);
+				resetPassPage.setxt(PPHONE,REPASS_PHONE_VALUE);
 			}
 			if(test_env=="test02"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE2);
+				resetPassPage.setxt(PPHONE,REPASS_PHONE_VALUE2);
 			}
-			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_PHONE_VALUE_PRE);
+			if(test_env=="pre"){
+				resetPassPage.setxt(PPHONE,REPASS_PHONE_VALUE_PRE);
 			}
 
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//清空司机ＩＤ
 	public void clearDriverid(){
-		try {
-			resetPassPage.getObj(PDRIVERID).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.cleartxt(PDRIVERID);
 	}
 	
 	//输入司机ＩＤ
 	public void setDriverid(String test_env){
-		try {
 			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_DRIVERID_VALUE);
+				resetPassPage.setxt(PDRIVERID,REPASS_DRIVERID_VALUE);
 			}
 			if(test_env=="test02"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_DRIVERID_VALUE2);
+				resetPassPage.setxt(PDRIVERID,REPASS_DRIVERID_VALUE2);
 			}
-			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_DRIVERID_VALUE_PRE);
+			if(test_env=="pre"){
+				resetPassPage.setxt(PDRIVERID,REPASS_DRIVERID_VALUE_PRE);
 			}
-
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	//清空验证码
 	public void clearCode(){
-		try {
-			resetPassPage.getObj(AUTHCODE).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.cleartxt(AUTHCODE);
 	}
 	
 	//输入验证码
 	public void setCode(String test_env){
-		try {
+
 			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_CODE_VALUE);
+				resetPassPage.setxt(AUTHCODE,REPASS_CODE_VALUE);
 			}
 			if(test_env=="test02"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_CODE_VALUE2);
+				resetPassPage.setxt(AUTHCODE,REPASS_CODE_VALUE2);
 			}
-			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_CODE_VALUE_PRE);
+			if(test_env=="pre"){
+				resetPassPage.setxt(AUTHCODE,REPASS_CODE_VALUE_PRE);
 			}
-
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	//判断获取验证码是否存在
 	public Boolean getCodeExist(){
@@ -128,12 +92,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	//点击获取验证码
 	public void getCodeClick(){
-		try {
-			resetPassPage.getObj(GETCODE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.clickObj(GETCODE);
 	}
 	//判断下一步是否存在
 	public Boolean nextExist(){
@@ -141,12 +100,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	//点击下一步
 	public void nextClick(){
-		try {
-			resetPassPage.getObj(NEXT).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.clickObj(NEXT);
 	}
 	//判断连续发送验证码是否存在
 	public Boolean tipExist(){
@@ -187,12 +141,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	//点击返回－重设密码第二步页面
 	public void return2Click(){
-		try {
-			resetPassPage.getObj(RETURNICON).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.clickObj(RETURNICON);
 	}
 	//判断标题是否存在－重设密码第二步页面
 	public Boolean title2Exist(){
@@ -205,60 +154,38 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	
 	//清空新密码
 	public void clearNewPass(){
-		try {
-			resetPassPage.getObj(NEW_PASS).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.cleartxt(NEW_PASS);
 	}
 	
 	//输入新密码
 	public void setNewPass(String test_env){
-		try {
 			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_NEW_PASS_VALUE);
+				resetPassPage.setxt(NEW_PASS,REPASS_NEW_PASS_VALUE);
 			}
 			if(test_env=="test02"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_NEW_PASS_VALUE2);
+				resetPassPage.setxt(NEW_PASS,REPASS_NEW_PASS_VALUE2);
 			}
-			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_NEW_PASS_VALUE_PRE);
+			if(test_env=="pre"){
+				resetPassPage.setxt(NEW_PASS,REPASS_NEW_PASS_VALUE_PRE);
 			}
-			
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//清空确认新密码
 	public void clearRenewPass(){
-		try {
-			resetPassPage.getObj(CONFIRM_NEW_PASS).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.cleartxt(CONFIRM_NEW_PASS);
 	}
 	
 	//输入确认新密码
 	public void setRenewPass(String test_env){
-		try {
 			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_RENEW_PASS_VALUE);
+				resetPassPage.setxt(CONFIRM_NEW_PASS,REPASS_RENEW_PASS_VALUE);
 			}
 			if(test_env=="test02"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_RENEW_PASS_VALUE2);
+				resetPassPage.setxt(CONFIRM_NEW_PASS,REPASS_RENEW_PASS_VALUE2);
 			}
-			if(test_env=="test"){
-				resetPassPage.getObj(PPHONE).setText(REPASS_RENEW_PASS_VALUE_PRE);
+			if(test_env=="pre"){
+				resetPassPage.setxt(CONFIRM_NEW_PASS,REPASS_RENEW_PASS_VALUE_PRE);
 			}
-
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//判断重设密码的限制提示是否存在－重设密码第二步页面
@@ -275,12 +202,7 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	}
 	//点击确定按钮
 	public void btnConfirmClick(){
-		try {
-			resetPassPage.getObj(BTN_CONFIRM).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			resetPassPage.clickObj(BTN_CONFIRM);
 	}
 
 }

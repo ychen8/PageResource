@@ -120,4 +120,7 @@ public interface ParameterConfig {
 
 	//充值金额
 	static String RECHARGE_VALUE = "10";
+	
+	//改派原因-其它原因描述
+	static String OTHER_REASON_DETAIL = "改派原因-其它原因描述";
 }

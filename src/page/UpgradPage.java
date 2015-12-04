@@ -36,12 +36,7 @@ public class UpgradPage extends UiAutomatorTestCase implements UpgradConstants{
 	}
 	//点击稍后升级内容
 	public void upgradLaterClick(){
-		try {
-			upgradPage.getObj(UPGRADLATER).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			upgradPage.clickObj(UPGRADLATER);
 	}
 	//判断立即升级是否存在
 	public Boolean upgradExist(){
@@ -49,12 +44,7 @@ public class UpgradPage extends UiAutomatorTestCase implements UpgradConstants{
 	}
 	//点击立即升级
 	public void upgradClick(){
-		try {
-			upgradPage.getObj(UPGRADIMMEDIATE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			upgradPage.clickObj(UPGRADIMMEDIATE);
 	}
 	
 }

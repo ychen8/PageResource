@@ -26,205 +26,138 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 	
 	//清空手机号
 	public void clearPhone(){
-		try {
-			loginPage.getObj(PHONE).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			loginPage.cleartxt(PHONE);
 	}
 	
 	//输入正确的手机号
 	public void setRightPhone(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(PHONE).setText(PHONE_VALUE);
+				loginPage.setxt(PHONE,PHONE_VALUE);
 			}
 			
 			if(test_env=="test02"){
-				loginPage.getObj(PHONE).setText(PHONE_VALUE2);
+				loginPage.setxt(PHONE,PHONE_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(PHONE).setText(PHONE_VALUE_PRE);
+				loginPage.setxt(PHONE,PHONE_VALUE_PRE);
 			}
-			
-			
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//输入不存在的手机号
 	public void setWrongPhone(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(PHONE).setText(WRONG_PHONE_VALUE);
+				loginPage.setxt(PHONE,WRONG_PHONE_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(PHONE).setText(WRONG_PHONE_VALUE2);
+				loginPage.setxt(PHONE,WRONG_PHONE_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(PHONE).setText(WRONG_PHONE_VALUE_PRE);
+				loginPage.setxt(PHONE,WRONG_PHONE_VALUE_PRE);
 			}
-			
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//输入驾驶证过期的手机号
 	public void setExpirePhone(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(PHONE).setText(EXPIRE_PHONE_VALUE);
+				loginPage.setxt(PHONE,EXPIRE_PHONE_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(PHONE).setText(EXPIRE_PHONE_VALUE2);
+				loginPage.setxt(PHONE,EXPIRE_PHONE_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(PHONE).setText(EXPIRE_PHONE_VALUE_PRE);
+				loginPage.setxt(PHONE,EXPIRE_PHONE_VALUE_PRE);
 			}
 			
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//清空司机ＩＤ
 	public void clearDriverid(){
-		try {
-			loginPage.getObj(DRIVERID).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			loginPage.cleartxt(DRIVERID);
 	}
 	
 	//输入正确的司机ＩＤ
 	public void setDriverid(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(DRIVERID).setText(DRIVERID_VALUE);
+				loginPage.setxt(DRIVERID,DRIVERID_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(DRIVERID).setText(DRIVERID_VALUE2);
+				loginPage.setxt(DRIVERID,DRIVERID_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(DRIVERID).setText(DRIVERID_VALUE_PRE);
+				loginPage.setxt(DRIVERID,DRIVERID_VALUE_PRE);
 			}
 
-
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//输入错误的司机ＩＤ
 	public void setWrongDriverid(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(DRIVERID).setText(WRONG_DRIVERID_VALUE);
+				loginPage.setxt(DRIVERID,WRONG_DRIVERID_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(DRIVERID).setText(WRONG_DRIVERID_VALUE2);
+				loginPage.setxt(DRIVERID,WRONG_DRIVERID_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(DRIVERID).setText(WRONG_DRIVERID_VALUE_PRE);
+				loginPage.setxt(DRIVERID,WRONG_DRIVERID_VALUE_PRE);
 			}
-
-			
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//输入驾驶证过期的司机ＩＤ
 	public void setExpireDriverid(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(DRIVERID).setText(EXPIRE_DRIVERID_VALUE);
+				loginPage.setxt(DRIVERID,EXPIRE_DRIVERID_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(DRIVERID).setText(EXPIRE_DRIVERID_VALUE2);
+				loginPage.setxt(DRIVERID,EXPIRE_DRIVERID_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(DRIVERID).setText(EXPIRE_DRIVERID_VALUE_PRE);
+				loginPage.setxt(DRIVERID,EXPIRE_DRIVERID_VALUE_PRE);
 			}
-			
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 	//清空密码
 	public void clearPassword(){
-		try {
-			loginPage.getObj(PASSWORD).clearTextField();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			loginPage.cleartxt(PASSWORD);
 	}
 	
 	//输入正确的密码
 	public void setPassword(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(DRIVERID).setText(PASSWORD_VALUE);
+				loginPage.setxt(PASSWORD,PASSWORD_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(DRIVERID).setText(PASSWORD_VALUE2);
+				loginPage.setxt(PASSWORD,PASSWORD_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(DRIVERID).setText(PASSWORD_VALUE_PRE);
+				loginPage.setxt(PASSWORD,PASSWORD_VALUE_PRE);
 			}
-
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	//输入错误的密码
 	public void setWrongPassword(String test_env){
-		try {
+
 			if(test_env=="test"){
-				loginPage.getObj(DRIVERID).setText(WRONG_PASSWORD_VALUE);
+				loginPage.setxt(PASSWORD,WRONG_PASSWORD_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(DRIVERID).setText(WRONG_PASSWORD_VALUE2);
+				loginPage.setxt(PASSWORD,WRONG_PASSWORD_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(DRIVERID).setText(WRONG_PASSWORD_VALUE_PRE);
+				loginPage.setxt(PASSWORD,WRONG_PASSWORD_VALUE_PRE);
 			}
 
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//输入驾驶证过期的密码
 	public void setExpirePassword(String test_env){
-		try {
 			if(test_env=="test"){
-				loginPage.getObj(DRIVERID).setText(EXPIRE_PASSWORD_VALUE);
+				loginPage.setxt(PASSWORD,EXPIRE_PASSWORD_VALUE);
 			}
 			if(test_env=="test02"){
-				loginPage.getObj(DRIVERID).setText(EXPIRE_PASSWORD_VALUE2);
+				loginPage.setxt(PASSWORD,EXPIRE_PASSWORD_VALUE2);
 			}
 			if(test_env=="pre"){
-				loginPage.getObj(DRIVERID).setText(EXPIRE_PASSWORD_VALUE_PRE);
+				loginPage.setxt(PASSWORD,EXPIRE_PASSWORD_VALUE_PRE);
 			}
-
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	//决断登录按钮是否存在
@@ -234,12 +167,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 	
 	//点击登录按钮
 	public void loginClick(){
-		try {
-			loginPage.getObj(LOGINBUTTON).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			loginPage.clickObj(LOGINBUTTON);	
 	}
 	//判断忘记密码是否存在
 	public Boolean forgetExist(){
@@ -247,12 +175,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 	}
 	//点击忘记密码
 	public void forgetPassClick(){
-		try {
-			loginPage.getObj(FORGETPASSWORD).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			loginPage.clickObj(FORGETPASSWORD);
 	}	
 	//判断手机号码不存在是否存在
 	public Boolean nophoneExist(){
@@ -311,12 +234,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 	
 	//点击弹框的确定按钮
 	public void okButtonClick(){
-		try {
-			loginPage.getObj(OKBUTTON).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			loginPage.clickObj(OKBUTTON);
 	}
 	
 }
