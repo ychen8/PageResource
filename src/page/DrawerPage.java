@@ -24,12 +24,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击司机姓名
 	public void driverNameClick(){
-		try {
-			drawerPage.getObj(DRIVER_NAME).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(DRIVER_NAME);
 	}
 	//判断车辆型号是否存在
 	public Boolean vhicleNumExist(){
@@ -41,12 +36,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击车辆型号
 	public void vhicleNumClick(){
-		try {
-			drawerPage.getObj(VHICLE_NUM).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(VHICLE_NUM);	
 	}
 	//判断今日排班是否存在
 	public Boolean classesExist(){
@@ -58,12 +48,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击今日排班
 	public void classesClick(){
-		try {
-			drawerPage.getObj(CLASSES).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(CLASSES);
 	}
 	//判断我的订单是否存在
 	public Boolean myOrderExist(){
@@ -75,12 +60,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击我的订单
 	public void myOrderClick(){
-		try {
-			drawerPage.getObj(MY_ORDER).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(MY_ORDER);
 	}
 	//判断我的绩效是否存在
 	public Boolean myPerformanceExist(){
@@ -92,12 +72,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击我的绩效　
 	public void myPerformanceClick(){
-		try {
-			drawerPage.getObj(MY_PERFORMANCE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(MY_PERFORMANCE);	
 	}
 	//判断我的钱包　是否存在
 	public Boolean myWalletExist(){
@@ -109,12 +84,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击我的钱包　
 	public void myWalletClick(){
-		try {
-			drawerPage.getObj(MY_WALLET).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(MY_WALLET);
 	}
 	//判断排行榜是否存在
 	public Boolean rankExist(){
@@ -126,12 +96,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击排行榜
 	public void rankClick(){
-		try {
-			drawerPage.getObj(RANK).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(RANK);
 	}
 	//判断微客服是否存在
 	public Boolean vkefuExist(){
@@ -143,12 +108,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击微客服
 	public void vkefuClick(){
-		try {
-			drawerPage.getObj(VKEFU).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(VKEFU);	
 	}
 	//判断设置是否存在
 	public Boolean settingExist(){
@@ -160,12 +120,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击设置
 	public void settingClick(){
-		try {
-			drawerPage.getObj(SETTINGS).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(SETTINGS);	
 	}
 	//判断司机分布是否存在
 	public Boolean driverDistributionExist(){
@@ -177,12 +132,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击司机分布
 	public void driverDistributionClick(){
-		try {
-			drawerPage.getObj(DRIVERDISTRIBUTION).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(DRIVERDISTRIBUTION);
 	}
 	//判断联系客服是否存在
 	public Boolean customServiceExist(){
@@ -194,12 +144,7 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	}
 	//点击联系客服
 	public void customServiceClick(){
-		try {
-			drawerPage.getObj(CUSTOM_SERVICE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+			drawerPage.clickObj(CUSTOM_SERVICE);	
 	}
 
 }
