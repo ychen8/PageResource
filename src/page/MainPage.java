@@ -264,4 +264,37 @@ public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
 	      String text=mainpage.getText(CANCELBTN);
 		return text;
 	}
+	/*
+	 * 输入里程弹出框
+	 * */
+	//获取里程框数字
+	public int kiloText(){
+		String s=mainpage.getText(KILOTXT);
+		int kilo=Integer.valueOf(s).intValue();
+		return kilo;
+	}
+	//判断里程框中是否有内容
+	public Boolean kiloTextExist(){
+		return mainpage.getText(KILOTXT).isEmpty();
+	}
+	//判断里程框是否存在
+	public Boolean kiloEditExist(){
+		return mainpage.isExist(KILOTXT);
+	}
+	//获取错误信息
+	public String errInfoKiloText(){
+		return mainpage.getText(ERRTXT);
+	}
+	//判断错误信息是否存在
+	public Boolean errInfoKiloExist(){
+		return mainpage.isExist(ERRTXT);
+	}
+	//点击确定上班按钮
+	public void workBtnClick(){
+		mainpage.clickObj(WORKBTN);
+	}
+	//判断确定上班按钮是否存在
+	public Boolean workBtnExist(){
+		return mainpage.isExist(WORKBTN);
+	}
 }

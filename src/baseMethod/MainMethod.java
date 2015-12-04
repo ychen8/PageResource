@@ -151,7 +151,7 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
-	//判断时段被选中
+	//判断对象是否被选中
 	public Boolean objChecked(String ResouceId){
 		try {
 			UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
