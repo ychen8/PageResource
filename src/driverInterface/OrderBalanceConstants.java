@@ -35,7 +35,19 @@ public interface OrderBalanceConstants {
       static String EDIT_FEE_BTN="com.szzc.ucar.driver:id/edit_fee";
       //提交并结束按钮
       static String ORDER_COMMIT_BTN="com.szzc.ucar.driver:id/order_commit";
-     //////////////////////////////////////////////////////////////////////////////////
+      //////////////////////////////////////////////////////////////////////////////////
+      //弹窗-资源ID
+      //////////////////////////////////////////////////////////////////////////////////
+      //弹窗
+      static String POPUPWIN="com.szzc.ucar.driver:id/fragment_bg_click";
+      //弹窗文字提示
+      static String CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
+      //确定按钮
+      static String OK_BTN="com.szzc.ucar.driver:id/ok_btn";
+      //取消按钮
+      static String CLOSE_BTN="com.szzc.ucar.driver:id/close_btn";
+
+      /////////////////////////////////////////////////////////////////////////////////
       ///////////////////订单结算-附加费用text//////////////////////////////////
       static String PARKING = "停车费";
       static String HIGHWAY = "路桥费";

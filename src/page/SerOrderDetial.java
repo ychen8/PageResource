@@ -2,9 +2,7 @@ package page;
 
 import baseMethod.MainMethod;
 
-import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
-
 import driverInterface.SerOrderDetailConstants;
 
 public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetailConstants{
@@ -16,8 +14,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//获取标题栏文字
 	public String titleText(){
-	      String text=orderdetial.getText(TITLE);
-		return text;
+		return orderdetial.getText(TITLE);		
 	}
 	//判断返回按钮是否存在
 	public Boolean backBtnExist(){
@@ -25,12 +22,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击返回按钮
 	public void backBtnClick(){	
-		try {
-			orderdetial.getObj(TITLE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(TITLE);
 	}	
 	//判断改派按钮是否存在
 	public Boolean changeBtnExist(){
@@ -38,13 +30,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击改派按钮
 	public void changeBtnClick(){
-		
-		try {
-			orderdetial.getObj(CHANGEORDERBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(CHANGEORDERBTN);
 	}
 	//判断VIP-banner关闭按钮是否存在
 	public Boolean vipCloseBtnExist(){
@@ -52,19 +38,12 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击VIP-banner关闭按钮
 	public void vipCloseBtnClick(){
-		
-		try {
-			orderdetial.getObj(VIPCLOSEBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(VIPCLOSEBTN);
 	}
 	//判断收藏司机标识是否存在
 	public Boolean collectDriverExist(){
 		return orderdetial.isExist(COLLECTDRIVER);
-	}
-	
+	}	
 	//判断客户姓名、手机号是否存在
 	public Boolean userMsgExist(){
 		return orderdetial.isExist(USERMSG);
@@ -111,12 +90,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击电话按钮
 	public void callBtnClick(){		
-		try {
-			orderdetial.getObj(CALLBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(CALLBTN);
 	}
 	//判断账户信息是否存在
 	public Boolean balanceExist(){
@@ -132,12 +106,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击充值按钮
 	public void rechargeBtnClick(){		
-		try {
-			orderdetial.getObj(RECHARGEBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(RECHARGEBTN);
 	}
 	//判断地图-剩余公里数是否存在
 	public Boolean mapDistanceExist(){
@@ -161,12 +130,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击地图-定位按钮
 	public void locBtnClick(){			
-		try {
-			orderdetial.getObj(LOCATIONBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(LOCATIONBTN);
 	}
 	//判断地图-开启导航按钮是否存在
 	public Boolean startNaviExist(){
@@ -174,12 +138,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击地图-开启导航按钮
 	public void startNaviClick(){			
-		try {
-			orderdetial.getObj(STARTNAVI).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(STARTNAVI);
 	}
 	//判断“点击查看所有/收起”是否存在
 	public Boolean slideBarExist(){
@@ -187,12 +146,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击“点击查看所有/收起”
 	public void slideBarClick(){			
-		try {
-			orderdetial.getObj(SLIDEBAR).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(SLIDEBAR);
 	}
 	//判断预约订单剩余时间是否存在
 	public Boolean remainTimeExist(){
@@ -220,14 +174,9 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击【订单状态切换】按钮
 	public void orderCommitClick(){			
-		try {
-			orderdetial.getObj(ORDERCOMMIT).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(ORDERCOMMIT);
 	}
-	///////////////////////下面是拨打电话弹窗部分/////////////////////////////
+	///////////////////////弹窗/////////////////////////////
 	//判断弹窗是否存在
 	public Boolean winExist(){
 		return orderdetial.isExist(POPUPWIN);
@@ -238,8 +187,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//获取提示文字
 	public String confirmTextText(){
-	      String text=orderdetial.getText(CONFIRM_TEXT);
-		return text;
+	    return orderdetial.getText(CONFIRM_TEXT);		
 	}
 	//判断取消按钮是否存在
 	public Boolean closeBtnExist(){
@@ -247,12 +195,7 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击取消按钮
 	public void closeBtnClick(){		
-		try {
-			orderdetial.getObj(CLOSE_BTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		orderdetial.clickObj(CLOSE_BTN);
 	}
 	//判断确定按钮是否存在
 	public Boolean okBtnExist(){
@@ -260,11 +203,6 @@ public class SerOrderDetial extends UiAutomatorTestCase implements SerOrderDetai
 	}
 	//点击确定按钮
 	public void okBtnClick(){		
-		try {
-			orderdetial.getObj(OK_BTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+		orderdetial.clickObj(OK_BTN);
+	}	
 }

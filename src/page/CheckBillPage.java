@@ -1,9 +1,7 @@
 package page;
 import baseMethod.*;
 
-import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
-
 import driverInterface.*;
 
 public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConstants,ParameterConfig{
@@ -16,8 +14,7 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//获取标题栏文本
 	public String titleText(){
-	      String text=checkbill.getText(TITLE);
-		return text;
+		return checkbill.getText(TITLE);
 	}	
 	//判断返回按钮是否存在
 	public Boolean backBtnExist(){
@@ -25,12 +22,7 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//点击返回按钮
 	public void backBtnClick(){		
-		try {
-			checkbill.getObj(BACKBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		checkbill.clickObj(BACKBTN);
 	}
 	//判断本次服务里程-文本是否存在
 	public Boolean killoTitleExist(){
@@ -38,8 +30,7 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//获取本次服务里程-文本
 	public String killoTitleText(){
-	      String text=checkbill.getText(KILLOTITLE);
-		return text;
+		return checkbill.getText(KILLOTITLE);
 	}
 	//判断里程输入框是否存在
 	public Boolean killoValueExist(){
@@ -47,17 +38,11 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//获取里程输入框文本
 	public String killoValueText(){
-	    String text=checkbill.getText(KILLOVALUE);
-		return text;
+		return checkbill.getText(KILLOVALUE);
 	}
 	//在里程框内输入
 	public void killoValueSetText(){
-		try {
-			checkbill.getObj(BACKBTN).setText(KILLO);
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		checkbill.setxt(BACKBTN, KILLO);
 	}
 	//判断公里-文本是否存在
 	public Boolean killoTextExist(){
@@ -65,18 +50,15 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//获取公里-文本
 	public String killoTextText(){
-	      String text=checkbill.getText(KILLOTEXT);
-		return text;
+		return checkbill.getText(KILLOTEXT);
 	}
-	
 	//判断附加费用-文本是否存在
 	public Boolean costNameExist(int index){
 		return checkbill.isExist(COSTNAME,index);
 	}
 	//获取附加费用-文本
 	public String costNameText(int index){
-	    String text=checkbill.getText(COSTNAME,index);
-		return text;
+		return checkbill.getText(COSTNAME,index);
 	}
 	//判断附加费用-输入框是否存在
 	public Boolean costValueExist(int index){
@@ -84,17 +66,11 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//获取附加费用-输入框
 	public String costValueText(int index){
-	    String text=checkbill.getText(COSTVALUE,index);
-		return text;
+		return checkbill.getText(COSTVALUE,index);
 	}
 	//输入附加费用
 	public void costValueSetText(int index, String amount){
-		try {
-			checkbill.getObj(COSTVALUE, index).setText(amount);
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		checkbill.setxt(COSTVALUE, amount, index);
 	}	
 	//判断元-文本是否存在
 	public Boolean yuanExist(int index){
@@ -102,8 +78,7 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//获取元-文本
 	public String yuanText(int index){
-	    String text=checkbill.getText(COSTNAME,index);
-		return text;
+		return checkbill.getText(COSTNAME,index);
 	}
 	//判断确认按钮是否存在
 	public Boolean chargeCommitExist(){
@@ -111,11 +86,6 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	}
 	//点击确认按钮
 	public void chargeCommitClick(){	
-		try {
-			checkbill.getObj(CHARGECOMMIT).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		checkbill.clickObj(CHARGECOMMIT);
 	}
 }
