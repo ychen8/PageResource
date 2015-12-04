@@ -29,23 +29,11 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//判断自动开启导航是否被选中
 	public Boolean autoNavChecked(){
-		try {
-			return setpage.getObj(AUTONAV).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objChecked(AUTONAV);
 	}
 	//判断自动开启导航是否可点击
 	public Boolean autoNavClickable(){
-		try {
-			return setpage.getObj(AUTONAV).isClickable();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objClickable(AUTONAV);
 	}
 
 	//点击使用高德导航
@@ -63,23 +51,11 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//判断使用高德导航是否被选中
 	public Boolean useGaoDeChecked(){
-		try {
-			return setpage.getObj(USEGAODE).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objChecked(USEGAODE);	
 	}
 	//判断使用高德导航是否可点击
 	public Boolean useGaoDeClickable(){
-		try {
-			return setpage.getObj(USEGAODE).isClickable();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objClickable(USEGAODE);
 	}
 	//点击橙色订单自动接单
 	public void autoAgainstOrgClick(){
@@ -96,23 +72,11 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//判断橙色订单自动接单是否被选中
 	public Boolean autoAgainstOrgChecked(){
-		try {
-			return setpage.getObj(AUTOAGAINSTORG).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objChecked(AUTOAGAINSTORG);
 	}
 	//判断橙色订单自动接单是否可点击
 	public Boolean autoAgainstOrgClickable(){
-		try {
-			return setpage.getObj(AUTOAGAINSTORG).isClickable();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objClickable(AUTOAGAINSTORG);
 	}
 	//点击是否接受蓝色订单
 	public void acceptBlueClick(){
@@ -129,23 +93,11 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//判断是否接受蓝色订单是否被选中
 	public Boolean acceptBlueChecked(){
-		try {
-			return setpage.getObj(ACCEPTBLUE).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objChecked(ACCEPTBLUE);
 	}
 	//判断是否接受蓝色订单是否可点击
 	public Boolean acceptBlueClickable(){
-		try {
-			return setpage.getObj(ACCEPTBLUE).isClickable();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return setpage.objClickable(ACCEPTBLUE);
 	}
 	//点击增大开始时间
 	public void incremStartClick(){

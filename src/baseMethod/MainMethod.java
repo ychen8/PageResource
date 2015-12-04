@@ -130,4 +130,46 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
+   //判断对象是否可点击
+	public Boolean objClickable(String ResouceId){
+		try {
+			 UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
+			 return obj.isClickable();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public Boolean objClickable(String ResouceId,int index){
+		try {
+			 UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+			 return obj.isClickable();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	//判断时段被选中
+	public Boolean objChecked(String ResouceId){
+		try {
+			UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
+			return obj.isChecked();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public Boolean objChecked(String ResouceId,int index){
+		try {
+			UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+			return obj.isChecked();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

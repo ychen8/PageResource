@@ -28,16 +28,8 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	}
 	//判断我要上班是否被选中
 	public Boolean startWorkChecked(){
-		try {
-			return swichpage.getObj(STARTWORK).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return swichpage.objChecked(STARTWORK);
 	}
-	
-	
 	//点击我要交班
 	public void alternateClick(){
 		swichpage.clickObj(ALTERNATE);
@@ -53,13 +45,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	}
 	//判断我要交班是否被选中
 	public Boolean alternateChecked(){
-		try {
-			return swichpage.getObj(ALTERNATE).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return swichpage.objChecked(ALTERNATE);
 	}
 	//点击我要回家
 	public void goHomeClick(){
@@ -76,13 +62,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	}
 	//判断我要回家是否被选中
 	public Boolean goHomeChecked(){
-		try {
-			return swichpage.getObj(GOHOME).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return swichpage.objChecked(GOHOME);
 	}
 
 	//点击临时小休
@@ -100,13 +80,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	}
 	//判断临时小休是否被选中
 	public Boolean tempFinishChecked(){
-		try {
-			return swichpage.getObj(TEMPFINISH).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return swichpage.objChecked(TEMPFINISH);
 	}
 
 	//点击我要下班
@@ -124,13 +98,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	}
 	//判断我要下班是否被选中
 	public Boolean finishWorkChecked(){
-		try {
-			return swichpage.getObj(FINISHWORK).isChecked();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return swichpage.objChecked(FINISHWORK);
 	}
 
 	//点击确定按钮
