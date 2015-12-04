@@ -84,7 +84,26 @@ public class MainMethod extends UiAutomatorTestCase{
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).childSelector(new UiSelector().text(text)));
 		return obj;
 	}
-	
+	//获取object（寻找【指定class】下，匹配【指定text】的子类）
+	public UiObject getObjFromClass(String className, String text) {
+		// TODO Auto-generated method stub
+		UiObject obj=new UiObject(new UiSelector().className(className).childSelector(new UiSelector().text(text)));
+		return obj;
+	}
+	//获取【指定父类】下，匹配【指定text】的子类的兄弟的text
+	public String getOtherChild(String parentResourceId,String text,String childResourceId){
+		UiObject obj = new UiObject(new UiSelector().resourceId(childResourceId));
+		String objText = "";
+		try {
+			obj = getObj(parentResourceId, text).getFromParent(new UiSelector().resourceId(childResourceId));
+			objText = obj.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return objText;
+	}
+
 	//断言
 
 	public Boolean testMatch(String expectResult, String actualResult) {
