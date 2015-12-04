@@ -14,7 +14,7 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 public class MainMethod extends UiAutomatorTestCase{
 
 	//点击
-	public Boolean clickObj(String resourceId){
+	public void clickObj(String resourceId){
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId));
 		try {
 			obj.click();
@@ -22,7 +22,6 @@ public class MainMethod extends UiAutomatorTestCase{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return false;
 		
 	}
 	
