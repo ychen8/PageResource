@@ -340,7 +340,4 @@ public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
 	      String text=mainpage.getText(CANCELBTN);
 		return text;
 	}
-	
-	
-	
 }
