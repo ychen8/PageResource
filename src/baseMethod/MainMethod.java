@@ -128,6 +128,12 @@ public class MainMethod extends UiAutomatorTestCase{
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().text(text)));
 		return obj.exists();		
 	}
+	//获取object（寻找【指定class】下，匹配【指定text】的子类）
+	public Boolean isExistFromClass(String className, String text) {
+		// TODO Auto-generated method stub
+		UiObject obj=new UiObject(new UiSelector().className(className).childSelector(new UiSelector().text(text)));
+		return obj.exists();
+	}
 	//输入文本
 	public Boolean setxt(String ResourceId, String input){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
