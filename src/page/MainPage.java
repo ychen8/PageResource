@@ -301,4 +301,5 @@ public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
 	public Boolean workBtnEnable(){
 		return mainpage.objEnabled(WORKBTN);
 	}
+	
 }
