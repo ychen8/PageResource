@@ -1,24 +1,7 @@
 package driverInterface;
 
 public interface ParameterConfig {
-	
-	//核实账单页输入数据
-	//核实账单-公里数
-	static String KILLO = "1.23";	
-	//附加费用-停车费
-	static String PARKING_AMOUNT = "10";
-	//附加费用-路桥费
-	static String HIGHWAY_AMOUNT = "10";
-	//附加费用-清洁费
-	static String CLEAN_AMOUNT = "10";
-	//附加费用-机场服务费
-	static String AIRPORT_SERVICE_AMOUNT = "10";
-	//附加费用-其它费用
-	static String OTHER_AMOUNT = "10";
-	//附加费用-其它费用描述
-	static String OTHER_AMOUNT_REMARK = "abcdefg";
-
-	
+		
 	//登录页面输入内容
 	//测试环境
 	static String TEST_ENV="test";
@@ -119,4 +102,22 @@ public interface ParameterConfig {
 	//确认新密码
 	static String REPASS_RENEW_PASS_VALUE_PRE="654321";
 	
+	//核实账单页输入数据
+	//核实账单-公里数
+	static String KILLO = "1.23";	
+	//附加费用-停车费
+	static String PARKING_AMOUNT = "10";
+	//附加费用-路桥费
+	static String HIGHWAY_AMOUNT = "10";
+	//附加费用-清洁费
+	static String CLEAN_AMOUNT = "10";
+	//附加费用-机场服务费
+	static String AIRPORT_SERVICE_AMOUNT = "10";
+	//附加费用-其它费用
+	static String OTHER_AMOUNT = "10";
+	//附加费用-其它费用描述
+	static String OTHER_AMOUNT_REMARK = "abcdefg";
+
+	//充值金额
+	static String RECHARGE_VALUE = "10";
 }
