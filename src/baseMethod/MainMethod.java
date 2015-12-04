@@ -35,6 +35,15 @@ public class MainMethod extends UiAutomatorTestCase{
 			e.printStackTrace();
 		}
 	}
+	public void clickObj(String classname,int index,String resuorceId){
+		UiObject obj=new UiObject(new UiSelector().className(classname).index(index).resourceId(resuorceId));
+		try {
+			obj.click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //点击方法
 ////////////////////////////////////////////////////////////////////////////////////
@@ -169,11 +178,17 @@ public class MainMethod extends UiAutomatorTestCase{
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().text(text)));
 		return obj.exists();		
 	}
-	//获取object（寻找【指定class】下，匹配【指定text】的子类）
+	//通过classname和text判断对象是否存在（寻找【指定class】下，匹配【指定text】的子类）
 	public Boolean isExistFromClass(String className, String text) {
 		// TODO Auto-generated method stub
 		UiObject obj=new UiObject(new UiSelector().className(className).childSelector(new UiSelector().text(text)));
 		return obj.exists();
+	}
+	//通过classname、text和resourceId判断对象是否存在
+	public Boolean isExist(String classname,int index,String resuorceId){
+		UiObject obj=new UiObject(new UiSelector().className(classname).index(index).resourceId(resuorceId));
+		return obj.exists();
+		
 	}
 ////////////////////////////////////////////////////////////////////////////////////
 //判断对象是否存在方法
