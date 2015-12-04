@@ -15,13 +15,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	MainMethod swichpage= new MainMethod();
 	//点击我要上班
 	public void startWorkClick(){
-	
-		try {
-			swichpage.getObj(STARTWORK).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		swichpage.clickObj(STARTWORK);
 	}
 	//判断我要上班是否存在
 	public Boolean startWorkExist(){
@@ -46,13 +40,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	
 	//点击我要交班
 	public void alternateClick(){
-	
-		try {
-			swichpage.getObj(ALTERNATE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		swichpage.clickObj(ALTERNATE);
 	}
 	//判断我要交班是否存在
 	public Boolean alternateExist(){
@@ -75,13 +63,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	}
 	//点击我要回家
 	public void goHomeClick(){
-	
-		try {
-			swichpage.getObj(GOHOME).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		swichpage.clickObj(GOHOME);
 	}
 	//判断我要回家是否存在
 	public Boolean goHomeExist(){
@@ -105,13 +87,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 
 	//点击临时小休
 	public void tempFinishClick(){
-	
-		try {
-			swichpage.getObj(TEMPFINISH).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		swichpage.clickObj(TEMPFINISH);
 	}
 	//判断临时小休是否存在
 	public Boolean tempFinishExist(){
@@ -135,13 +111,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 
 	//点击我要下班
 	public void finishWorkClick(){
-	
-		try {
-			swichpage.getObj(FINISHWORK).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		swichpage.clickObj(FINISHWORK);
 	}
 	//判断我要下班是否存在
 	public Boolean finishWorkExist(){
@@ -165,13 +135,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 
 	//点击确定按钮
 	public void okBtnClick(){
-	
-		try {
-			swichpage.getObj(OKBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		swichpage.clickObj(OKBTN);
 	}
 	//判断确定按钮是否存在
 	public Boolean okBtnExist(){
@@ -185,13 +149,7 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 
 	//点击返回按钮
 	public void cancelBtnClick(){
-	
-		try {
-			swichpage.getObj(CANCELBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		swichpage.clickObj(CANCELBTN);
 	}
 	//判断返回按钮是否存在
 	public Boolean cancelBtnExist(){
