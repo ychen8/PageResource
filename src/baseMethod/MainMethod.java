@@ -114,23 +114,23 @@ public class MainMethod extends UiAutomatorTestCase{
 		else
 		return false;	
 	}
-	public Boolean isExist(String ResouceId){
-		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
+	public Boolean isExist(String ResourceId){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
 		return obj.exists();		
 	}
-	public Boolean isExist(String ResouceId, int index){
-		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+	public Boolean isExist(String ResourceId, int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).index(index));
 		return obj.exists();	
 	}
 	
 	//是否存在 （寻找【指定父类】下，匹配【指定text】的子类）
-	public Boolean isExist(String ResouceId, String text){
-		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).childSelector(new UiSelector().text(text)));
+	public Boolean isExist(String ResourceId, String text){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().text(text)));
 		return obj.exists();		
 	}
 	//输入文本
-	public Boolean setxt(String ResouceId, String input){
-		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
+	public Boolean setxt(String ResourceId, String input){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
 		try {
 			return obj.setText(input);
 		} catch (UiObjectNotFoundException e) {
@@ -139,8 +139,8 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
-	public Boolean setxt(String ResouceId, String input,int index){
-		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+	public Boolean setxt(String ResourceId, String input,int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).index(index));
 		try {
 			return obj.setText(input);
 		} catch (UiObjectNotFoundException e) {
@@ -150,9 +150,9 @@ public class MainMethod extends UiAutomatorTestCase{
 		return false;
 	}
    //判断对象是否可点击
-	public Boolean objClickable(String ResouceId){
+	public Boolean objClickable(String ResourceId){
 		try {
-			 UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
+			 UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
 			 return obj.isClickable();
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -160,9 +160,9 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
-	public Boolean objClickable(String ResouceId,int index){
+	public Boolean objClickable(String ResourceId,int index){
 		try {
-			 UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+			 UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).index(index));
 			 return obj.isClickable();
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -171,9 +171,9 @@ public class MainMethod extends UiAutomatorTestCase{
 		return false;
 	}
 	//判断对象是否被选中
-	public Boolean objChecked(String ResouceId){
+	public Boolean objChecked(String ResourceId){
 		try {
-			UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
+			UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
 			return obj.isChecked();
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -181,9 +181,9 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
-	public Boolean objChecked(String ResouceId,int index){
+	public Boolean objChecked(String ResourceId,int index){
 		try {
-			UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+			UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).index(index));
 			return obj.isChecked();
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -191,5 +191,16 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
-	
+   //判断对象是否可点击
+	public Boolean objClicked(String ResourceId){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
+		try {
+			return obj.isEnabled();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+		
+	}
 }
