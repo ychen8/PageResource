@@ -13,6 +13,19 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 public class MainMethod extends UiAutomatorTestCase{
 
+	//点击
+	public Boolean clickObj(String resourceId){
+		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId));
+		try {
+			obj.click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+		
+	}
+	
 	//获取文本
 
 	public String getText(String resourceId) {
@@ -88,5 +101,26 @@ public class MainMethod extends UiAutomatorTestCase{
 	public Boolean isExist(String ResouceId, String text){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).childSelector(new UiSelector().text(text)));
 		return obj.exists();		
+	}
+	//输入文本
+	public Boolean setxt(String ResouceId, String input){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId));
+		try {
+			return obj.setText(input);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+	public Boolean setxt(String ResouceId, String input,int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResouceId).index(index));
+		try {
+			return obj.setText(input);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 }
