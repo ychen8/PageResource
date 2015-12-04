@@ -21,8 +21,16 @@ public class MainMethod extends UiAutomatorTestCase{
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}		
+	}
+	public void clickObj(String resourceId,int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).index(index));
+		try {
+			obj.click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
 	}
 	
 	//获取文本

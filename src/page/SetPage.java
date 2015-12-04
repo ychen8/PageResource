@@ -16,12 +16,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	MainMethod setpage= new MainMethod();
 	//点击自动开启导航
 	public void autoNavClick(){
-		try {
-			setpage.getObj(AUTONAV).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(AUTONAV);
 	}
 	//判断自动开启导航是否存在
 	public Boolean autoNavExist(){
@@ -55,12 +50,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 
 	//点击使用高德导航
 	public void useGaoDeClick(){
-		try {
-			setpage.getObj(USEGAODE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(USEGAODE);
 	}
 	//判断使用高德导航是否存在
 	public Boolean useGaoDeExist(){
@@ -93,12 +83,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//点击橙色订单自动接单
 	public void autoAgainstOrgClick(){
-		try {
-			setpage.getObj(AUTOAGAINSTORG).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(AUTOAGAINSTORG);
 	}
 	//判断橙色订单自动接单是否存在
 	public Boolean autoAgainstOrgExist(){
@@ -131,12 +116,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//点击是否接受蓝色订单
 	public void acceptBlueClick(){
-		try {
-			setpage.getObj(ACCEPTBLUE).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(ACCEPTBLUE);
 	}
 	//判断是否接受蓝色订单是否存在
 	public Boolean acceptBlueExist(){
@@ -169,12 +149,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//点击增大开始时间
 	public void incremStartClick(){
-		try {
-			setpage.getObj(INCREM, INCERM_START_INDEX).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(INCREM, INCERM_START_INDEX);
 	}
 	//判断增大开始时间是否存在
 	public Boolean incremStartExist(){
@@ -182,12 +157,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//点击减小开始时间
 	public void decremStartClick(){
-		try {
-			setpage.getObj(DECREM, DECERM_START_INDEX).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(DECREM, DECERM_START_INDEX);
 	}
 	//判断减小开始时间是否存在
 	public Boolean decremStartExist(){
@@ -195,12 +165,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//点击增大结束时间
 	public void incremStopClick(){
-		try {
-			setpage.getObj(INCREM, INCERM_STOP_INDEX).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(INCREM, INCERM_STOP_INDEX);
 	}
 	//判断增大结束时间是否存在
 	public Boolean incremStopExist(){
@@ -208,12 +173,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//点击减小结束时间
 	public void decremStopClick(){
-		try {
-			setpage.getObj(DECREM, DECERM_STOP_INDEX).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(DECREM, DECERM_STOP_INDEX);
 	}
 	//判断减小结束时间是否存在
 	public Boolean decremStopExist(){
@@ -241,12 +201,7 @@ public class SetPage extends UiAutomatorTestCase implements SetPageConstants{
 	}
 	//点击确定按钮
 	public void okBtnClick(){
-		try {
-			setpage.getObj(OKBTN).click();
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setpage.clickObj(OKBTN);
 	}
 	//判断确定按钮是否存在
 	public Boolean okBtnExist(){
