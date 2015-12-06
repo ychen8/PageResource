@@ -55,6 +55,14 @@ public class NoticeListPage extends UiAutomatorTestCase implements NoticeListCon
 	public void noticeContentClick(int index){
 		noticelistpage.clickObj(MSGCONTENT, index, MSGCONTENT);
 	}
+	//点击返回按钮
+	public void backBtnClick(){
+		noticelistpage.clickObj(BACKICON);
+	}
+	//判断返回按钮是否存在
+	public Boolean backBtnExist(){
+		return noticelistpage.isExist(BACKICON);
+	}
 
 	
 }
