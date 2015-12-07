@@ -222,6 +222,11 @@ public class MainMethod extends UiAutomatorTestCase{
 		return obj.exists();
 		
 	}
+	//判断【list】中，【指定index】的layout中，【指定子元素】是否存在
+	public boolean isExistFromList(String listResourceId,int relativeLayoutIndex,String childResourceId){
+		UiObject listObj = new UiObject(new UiSelector().resourceId(listResourceId).childSelector(new UiSelector().index(relativeLayoutIndex).childSelector(new UiSelector().resourceId(childResourceId))));
+		return listObj.exists();		
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //判断对象是否存在方法
 ////////////////////////////////////////////////////////////////////////////////////
