@@ -104,6 +104,20 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return objText;
 	}
+	//获取【list】中，【指定index】的layout中，【指定子元素】的text
+	public String getListText(String listResourceId,int relativeLayoutIndex,String childResourceId){
+		String text = "";
+		try{
+			UiObject listObj = new UiObject(new UiSelector().resourceId(listResourceId));
+			UiObject relativeLayout = listObj.getChild(new UiSelector().index(relativeLayoutIndex));
+			UiObject childObj = relativeLayout.getChild(new UiSelector().resourceId(childResourceId));
+			text = childObj.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;		
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //获取文本方法
 ////////////////////////////////////////////////////////////////////////////////////
