@@ -25,6 +25,7 @@ public interface NaviBeforeConstants {
     static String NAV_POI_ADDR="com.szzc.ucar.driver:id/nav_poi_addr";
     //导航类型栏
     static String NAVI_TYPE_BOX="com.szzc.ucar.driver:id/scroll_view";
+    static String NAVI_TYPE_BOX_CLASS="android.widget.HorizontalScrollView";
     //导航类型-不走高速
     static String NAVI_NOEXPRESS="com.szzc.ucar.driver:id/navi_item_noexpress";
     //导航类型-最快
@@ -45,4 +46,17 @@ public interface NaviBeforeConstants {
     static String NAVI_DISTANCE="com.szzc.ucar.driver:id/navi_distance";
     //开始导航按钮
     static String NAVI_BTN="com.szzc.ucar.driver:id/nav_navi";
+    
+    ////////////////////////////////index//////////////////////////////////////
+    //导航类型-不走高速
+    static int NAVI_NOEXPRESS_ID=0;
+    //导航类型-最快
+    static int NAVI_FAST_ID=1;
+    //导航类型-最短
+    static int NAVI_SHORT_ID=2;
+    //导航类型-避免拥堵
+    static int NAVI_FASTTIME_ID=3;
+    //导航类型-避免收费
+    static int NAVI_SAVEMONEY_ID=4;
+  
 }
