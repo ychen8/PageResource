@@ -5,7 +5,7 @@ public interface OrderPushConstants {
 	static String ORDERTYPE="com.szzc.ucar.driver:id/order_type";
 	//订单类型角标
 	static String ORDTYPEIMG="com.szzc.ucar.driver:id/imgorder_type";
-	//关闭按钮
+	//关闭按钮/订单取消页确定按钮
 	static String CLSBTN="com.szzc.ucar.driver:id/close_btn";
 	//使用时间
 	static String USEDATE="com.szzc.ucar.driver:id/use_date";
