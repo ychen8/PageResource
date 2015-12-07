@@ -123,4 +123,7 @@ public interface ParameterConfig {
 	
 	//改派原因-其它原因描述
 	static String OTHER_REASON_DETAIL = "改派原因-其它原因描述";
+	
+	//导航页输入目的地
+	static String DESTINATION = "天津站";
 }
