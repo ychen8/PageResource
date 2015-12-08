@@ -1,5 +1,6 @@
 package page;
 /**
+ * Description：订单结算页面
  * Date: 2015-12-2
  * @author 李怡萱
  * */

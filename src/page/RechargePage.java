@@ -1,6 +1,6 @@
 package page;
 /**
- * Description：
+ * Description：充值页面
  * Date: 2015-12-4
  * @author 李怡萱
  * */

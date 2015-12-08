@@ -1,5 +1,9 @@
 package driverInterface;
-
+/**
+ * Description：核实账单页面
+ * Date: 2015-12-2
+ * @author 李怡萱
+ * */
 public interface CheckBillConstants {
 	
 

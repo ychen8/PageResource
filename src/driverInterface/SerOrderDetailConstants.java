@@ -1,5 +1,9 @@
 package driverInterface;
-
+/**
+ * Description：服务流程订单详情页
+ * Date: 2015-12-2
+ * @author 李怡萱
+ * */
 public interface SerOrderDetailConstants {
 	
 

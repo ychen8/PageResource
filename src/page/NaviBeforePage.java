@@ -1,6 +1,6 @@
 package page;
 /**
- * Description：
+ * Description：导航准备页面
  * Date: 2015-12-7
  * @author 李怡萱
  * */

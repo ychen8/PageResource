@@ -1,4 +1,9 @@
 package page;
+/**
+ * Description：核实账单页
+ * Date: 2015-12-2
+ * @author 李怡萱
+ * */
 import baseMethod.*;
 
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
