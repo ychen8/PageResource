@@ -51,6 +51,14 @@ public class LeaveListPage extends UiAutomatorTestCase implements LeaveListConst
 	public void invalidTabClick(){
 		leavelistpage.clickObj(TAB_BAR, INVALID_TAB);
 	}
+	//判断无申请提示语是否存在
+	public Boolean noApplyTextExist(){
+		return leavelistpage.isExist(TAB_VIEW,NO_APPLY_ID);
+	}
+	//获取无申请提示语
+	public String noApplyTextText(){
+		return leavelistpage.getText(TAB_VIEW, NO_APPLY_ID);
+	}
 	//判断是否存在请假申请
 	public Boolean leaveListExist(){
 		return leavelistpage.isExist(LEAVE_LIST);

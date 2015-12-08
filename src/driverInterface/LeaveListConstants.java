@@ -19,6 +19,10 @@ public interface LeaveListConstants {
 	static int VALID_TAB=0;
 	//过期、无效ID
 	static int INVALID_TAB=1;
+	//tabview（无申请时展示）
+	static String TAB_VIEW="com.szzc.ucar.driver:id/tabview";
+	//无申请text-ID
+	static int NO_APPLY_ID=0;
 	//列表
 	static String LEAVE_LIST="android:id/list";
 	//申请时间-文本
