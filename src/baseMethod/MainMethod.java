@@ -44,6 +44,15 @@ public class MainMethod extends UiAutomatorTestCase{
 			e.printStackTrace();
 		}
 	}
+	public void clickObjFromClass(String classname, int index){
+		UiObject obj=new UiObject(new UiSelector().className(classname).childSelector(new UiSelector().index(index)));
+		try {
+			obj.click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //点击方法
 ////////////////////////////////////////////////////////////////////////////////////
@@ -74,6 +83,17 @@ public class MainMethod extends UiAutomatorTestCase{
 		String text="";
 		try {
 			text = obj.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;
+	}
+	public String getTextFromClass(String classname, int index){
+		UiObject obj=new UiObject(new UiSelector().className(classname).childSelector(new UiSelector().index(index)));
+		String text="";
+		try {
+			text=obj.getText();
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
