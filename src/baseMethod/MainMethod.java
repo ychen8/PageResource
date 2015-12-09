@@ -70,6 +70,15 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void clickPoint(int x,int y){
 		UiDevice.getInstance().click(x, y);
 	}
+	public void clickObjByText(String resourceId,String text){
+		UiObject listObj= new UiObject(new UiSelector().resourceId(resourceId).text(text));
+		try {
+			listObj.click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //点击方法
 ////////////////////////////////////////////////////////////////////////////////////
@@ -223,6 +232,16 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return childCount;
 	}
+	public int getChildCountByClass(String className){
+		UiObject obj=new UiObject(new UiSelector().className(className));
+		try {
+			return obj.getChildCount();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;		
+	}
 	
 ////////////////////////////////////////////////////////////////////////////////////
 //获取child总数方法
@@ -277,7 +296,7 @@ public class MainMethod extends UiAutomatorTestCase{
 		return obj.exists();		
 	}
 	//通过classname、text和resourceId判断对象是否存在
-	public Boolean isExist(String classname,int index,String resuorceId){
+	public boolean isExist(String classname,int index,String resuorceId){
 		UiObject obj=new UiObject(new UiSelector().className(classname).index(index).resourceId(resuorceId));
 		return obj.exists();
 		
@@ -286,6 +305,10 @@ public class MainMethod extends UiAutomatorTestCase{
 	public boolean isExistFromList(String listResourceId,int relativeLayoutIndex,String childResourceId){
 		UiObject listObj = new UiObject(new UiSelector().resourceId(listResourceId).childSelector(new UiSelector().index(relativeLayoutIndex).childSelector(new UiSelector().resourceId(childResourceId))));
 		return listObj.exists();		
+	}
+	public boolean isExistByText(String ResourceId,String text){
+		UiObject listObj= new UiObject(new UiSelector().resourceId(ResourceId).text(text));
+		return listObj.exists();
 	}
 ////////////////////////////////////////////////////////////////////////////////////
 //判断对象是否存在方法
