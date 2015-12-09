@@ -4,6 +4,7 @@ package baseMethod;
 //import android.text.StaticLayout;
 
 
+import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
@@ -65,6 +66,9 @@ public class MainMethod extends UiAutomatorTestCase{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public void clickPoint(int x,int y){
+		UiDevice.getInstance().click(x, y);
 	}
 ////////////////////////////////////////////////////////////////////////////////////
 //点击方法
