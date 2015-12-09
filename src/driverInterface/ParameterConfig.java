@@ -1,3 +1,10 @@
+/**
+ *创建日期:2015-12-8
+ *作者： 郭艳松
+ */
+
+
+
 package driverInterface;
 
 public interface ParameterConfig {
