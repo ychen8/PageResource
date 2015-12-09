@@ -113,6 +113,18 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return text;
 	}
+	//获取指定父类的，匹配指定index的子类
+	public String getTextFromId(String resourceId, int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).childSelector(new UiSelector().index(index)));
+		String text="";
+		try {
+			text=obj.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;
+	}
 	//通过class\index\resourceId获取文本
 	public String getText(String classname,int index,String resourceId){
 		String text="";
@@ -254,6 +266,11 @@ public class MainMethod extends UiAutomatorTestCase{
 		// TODO Auto-generated method stub
 		UiObject obj=new UiObject(new UiSelector().className(className).childSelector(new UiSelector().text(text)));
 		return obj.exists();
+	}
+	//是否存在 （寻找【指定父类】下，匹配【指定index】的子类）
+	public Boolean isExistFromId(String ResourceId, int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().index(index)));
+		return obj.exists();		
 	}
 	//通过classname、text和resourceId判断对象是否存在
 	public Boolean isExist(String classname,int index,String resuorceId){
