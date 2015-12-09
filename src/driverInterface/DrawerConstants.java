@@ -26,4 +26,10 @@ public interface DrawerConstants {
 	static String DRIVERDISTRIBUTION="com.szzc.ucar.driver:id/txt_driver_location";
 	//联系客服
 	static String CUSTOM_SERVICE="com.szzc.ucar.driver:id/btn_conn_custom_service";
+	//联系客服弹框内容
+	static String CUSTOM_CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
+	//联系客服弹框－拨打电话
+	static String PHONE_CALL="com.szzc.ucar.driver:id/ok_btn";
+	//联系客服弹框－取消
+	static String CLOSE_BTN="com.szzc.ucar.driver:id/close_btn";
 }
