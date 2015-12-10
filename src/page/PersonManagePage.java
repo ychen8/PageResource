@@ -4,7 +4,7 @@ import baseMethod.MainMethod;
 
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-import driverInterface.LoginConstants;
+
 import driverInterface.ParameterConfig;
 import driverInterface.PersonManageConstants;
 
