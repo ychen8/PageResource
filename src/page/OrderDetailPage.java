@@ -50,11 +50,11 @@ public class OrderDetailPage  extends UiAutomatorTestCase implements OrderDetail
 	}
 	//判断元-文本是否存在
 	public Boolean yuanExist(){
-		return orderdetailpage.isExist(ORDER_MONEY_LAYOUT, YUAN);
+		return orderdetailpage.isExistFromId(ORDER_MONEY_LAYOUT, YUAN);
 	}
 	//获取元-文本
 	public String yuanText(){
-		return orderdetailpage.getText(ORDER_MONEY_LAYOUT, YUAN);
+		return orderdetailpage.getTextFromId(ORDER_MONEY_LAYOUT, YUAN);
 	}
 	//判断支付状态是否存在
 	public Boolean moneyDetailExist(){
