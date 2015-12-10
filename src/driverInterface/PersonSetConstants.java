@@ -32,6 +32,15 @@ public interface PersonSetConstants {
 	static int INDEX_CHECK_UPDATE_VALUE=1;
 	//退出登录
 	static String BTN_LOGOUT="com.szzc.ucar.driver:id/btn_logout";
+	//退出登录弹框-文本标题
+	static String CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
+	//退出登录弹框－是否退出登录
+	static String CONFIRM_DESC="com.szzc.ucar.driver:id/confirm_desc";
+	//退出登录弹框－取消
+	static String CLOSE_BTN="com.szzc.ucar.driver:id/close_btn";
+	//退出登录弹框－确定
+	static String OK_BTN="com.szzc.ucar.driver:id/ok_btn";
+	
 
 
 }

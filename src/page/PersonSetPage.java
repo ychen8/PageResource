@@ -105,5 +105,45 @@ public class PersonSetPage extends UiAutomatorTestCase implements
 	public void logoutClick(){
 		personSetPage.clickObj(BTN_LOGOUT);
 	}
+	//判断退出登录弹框-文本标题是否存在
+	public Boolean confirmTextExist(){
+		return personSetPage.isExist(CONFIRM_TEXT);
+	}
+	//获取退出登录弹框-文本标题内容
+	public String confirmTextText(){
+		return personSetPage.getText(CONFIRM_TEXT);
+	}
+	//判断退出登录弹框-是否退出登录是否存在
+	public Boolean confirmDescExist(){
+		return personSetPage.isExist(CONFIRM_DESC);
+	}
+	//获取退出登录弹框-是否退出登录内容
+	public String confirmDescText(){
+		return personSetPage.getText(CONFIRM_DESC);
+	}
+	//判断退出登录弹框－取消是否存在
+	public Boolean closeBtnExist(){
+		return personSetPage.isExist(CLOSE_BTN);
+	}
+	//获取退出登录弹框－取消　　
+	public String closeBtnText(){
+		return personSetPage.getText(CLOSE_BTN);
+	}
+	//点击退出登录弹框－取消
+	public void closeBtnClick(){
+		personSetPage.clickObj(CLOSE_BTN);	
+	}
+	//判断退出登录弹框－确定是否存在
+	public Boolean okBtnExist(){
+		return personSetPage.isExist(OK_BTN);
+	}
+	//获取退出登录弹框－确定　
+	public String okBtnText(){
+		return personSetPage.getText(OK_BTN);
+	}
+	//点击退出登录弹框－确定
+	public void okBtnClick(){
+		personSetPage.clickObj(OK_BTN);	
+	}
 
 }
