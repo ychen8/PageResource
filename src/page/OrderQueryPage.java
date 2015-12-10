@@ -126,6 +126,14 @@ public class OrderQueryPage extends UiAutomatorTestCase implements OrderQueryCon
 	public String saturdayText(){
 		return orderquerypage.getTextFromId(TABLE_VIEW,SATURDAY_ID);
 	}
+	//判断年份是否存在
+	public Boolean yearNameExist(){
+		return orderquerypage.isExist(YEAR_NAME);
+	}
+	//获取年份text
+	public String yearNameText(){
+		return orderquerypage.getText(YEAR_NAME);
+	}
 	//判断查询按钮是否存在
 	public Boolean queryBtnExist(){
 		return orderquerypage.isExist(QUERY_BTN);

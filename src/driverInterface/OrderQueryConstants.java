@@ -22,7 +22,7 @@ public interface OrderQueryConstants {
 	static String TABLE_VIEW="com.szzc.ucar.driver:id/tabview";
 	//日历-上月按钮
 	static String PRE_MONTH_BTN="com.szzc.ucar.driver:id/btn_pre_month";
-	//月份
+	//按日查询-月份
 	static String MONTH_NAME="com.szzc.ucar.driver:id/month_name";
 	//周日-ID
 	static int SUNDAY_ID=2;
@@ -38,6 +38,8 @@ public interface OrderQueryConstants {
 	static int FRIDAY_ID=7;
 	//周六-ID
 	static int SATURDAY_ID=8;
+	//按月查询-年份
+	static String YEAR_NAME="com.szzc.ucar.driver:id/year_name";
 	//查询按钮
 	static String QUERY_BTN="com.szzc.ucar.driver:id/btn_query";
 	
