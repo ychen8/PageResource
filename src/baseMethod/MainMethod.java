@@ -54,6 +54,15 @@ public class MainMethod extends UiAutomatorTestCase{
 			e.printStackTrace();
 		}
 	}
+	public void clickObjFromId(String resourceId, int index){
+		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).childSelector(new UiSelector().index(index)));
+		try {
+			obj.click();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	//点击【list】中，【指定index】的layout中，【指定的子元素】
 	public void clickObjFromList(String listResourceId,int relativeLayoutIndex,String childResourceId){
 		UiObject obj = new UiObject(new UiSelector().resourceId(childResourceId));
