@@ -6,13 +6,13 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.LoginConstants;
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 
 /**
  *创建日期:2015-12-2
  *作者： 陈玉婵
  */
-public class LoginPage extends UiAutomatorTestCase implements LoginConstants,ParameterConfig{
+public class LoginPage extends UiAutomatorTestCase implements LoginConstants,ParameterConfigConstants{
 	MainMethod loginPage= new MainMethod();
 	
 	//判断测试版本与环境控件是否存在

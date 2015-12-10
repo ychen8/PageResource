@@ -7,7 +7,7 @@
 
 package driverInterface;
 
-public interface ParameterConfig {
+public interface ParameterConfigConstants {
 		
 	//登录页面输入内容
 	//测试环境

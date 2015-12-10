@@ -5,14 +5,14 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 import driverInterface.PersonManageConstants;
 
 /**
  *创建日期:2015-12-8
  *作者： 陈玉婵
  */
-public class PersonManagePage extends UiAutomatorTestCase implements PersonManageConstants,ParameterConfig{
+public class PersonManagePage extends UiAutomatorTestCase implements PersonManageConstants,ParameterConfigConstants{
 	MainMethod personManagepage= new MainMethod();
 	//判断返回icon是否存在
 	public Boolean returnExist(){

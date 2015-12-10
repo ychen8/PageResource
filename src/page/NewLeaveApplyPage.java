@@ -9,10 +9,10 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.NewLeaveApplyConstants;
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 
 
-public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveApplyConstants,ParameterConfig{
+public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveApplyConstants,ParameterConfigConstants{
 	MainMethod newleaveapplypage = new MainMethod();
 
 	//判断标题栏是否存在

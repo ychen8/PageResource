@@ -8,9 +8,9 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.NaviBeforeConstants;
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 
-public class NaviBeforePage extends UiAutomatorTestCase implements NaviBeforeConstants,ParameterConfig{
+public class NaviBeforePage extends UiAutomatorTestCase implements NaviBeforeConstants,ParameterConfigConstants{
 	
 	MainMethod navibeforepage= new MainMethod();
 	

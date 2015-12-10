@@ -5,14 +5,14 @@ import baseMethod.MainMethod;
 
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 import driverInterface.ResetPassConstants;
 
 /**
  *创建日期:2015-12-2
  *作者： 陈玉婵
  */
-public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConstants,ParameterConfig {
+public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConstants,ParameterConfigConstants {
 	MainMethod resetPassPage= new MainMethod();
 	
 	//判断返回icon是否存在
