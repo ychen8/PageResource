@@ -25,7 +25,7 @@ public class LeaveListPage extends UiAutomatorTestCase implements LeaveListConst
 	}
 	//点击返回按钮
 	public void backBtnClick(){	
-		leavelistpage.clickObj(TITLE);
+		leavelistpage.clickObj(BACKBTN);
 	}	
 	//判断进行中tab是否存在
 	public Boolean validTabExist(){
