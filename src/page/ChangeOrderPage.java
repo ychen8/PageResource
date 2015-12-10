@@ -9,10 +9,10 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.ChangeOrderConstants;
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 
 
-public class ChangeOrderPage extends UiAutomatorTestCase implements ChangeOrderConstants,ParameterConfig{
+public class ChangeOrderPage extends UiAutomatorTestCase implements ChangeOrderConstants,ParameterConfigConstants{
 	MainMethod changeorderpage= new MainMethod();
 	
 	//判断标题栏是否存在

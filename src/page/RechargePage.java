@@ -8,10 +8,10 @@ import baseMethod.MainMethod;
 
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 import driverInterface.RechargeConstants;
 
-public class RechargePage extends UiAutomatorTestCase implements RechargeConstants,ParameterConfig{
+public class RechargePage extends UiAutomatorTestCase implements RechargeConstants,ParameterConfigConstants{
 	
 	MainMethod rechargepage= new MainMethod();
 	

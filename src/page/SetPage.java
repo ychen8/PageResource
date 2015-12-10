@@ -6,7 +6,7 @@ package page;
 
 import baseMethod.MainMethod;
 
-import com.android.uiautomator.core.UiObjectNotFoundException;
+
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.SetPageConstants;

@@ -29,35 +29,35 @@ public class LeaveListPage extends UiAutomatorTestCase implements LeaveListConst
 	}	
 	//判断进行中tab是否存在
 	public Boolean validTabExist(){
-		return leavelistpage.isExist(TAB_BAR, VALID_TAB);
+		return leavelistpage.isExistFromId(TAB_BAR, VALID_TAB);
 	}
 	//获取进行中text
 	public String validTabText(){
-		return leavelistpage.getText(TAB_BAR, VALID_TAB);
+		return leavelistpage.getTextFromId(TAB_BAR, VALID_TAB);
 	}
 	//点击进行中tab
 	public void validTabClick(){
-		leavelistpage.clickObj(TAB_BAR, VALID_TAB);
+		leavelistpage.clickObjFromId(TAB_BAR, VALID_TAB);
 	}
 	//判断过期/无效tab是否存在
 	public Boolean invalidTabExist(){
-		return leavelistpage.isExist(TAB_BAR, INVALID_TAB);
+		return leavelistpage.isExistFromId(TAB_BAR, INVALID_TAB);
 	}
 	//获取过期/无效text
 	public String invalidTabText(){
-		return leavelistpage.getText(TAB_BAR, INVALID_TAB);
+		return leavelistpage.getTextFromId(TAB_BAR, INVALID_TAB);
 	}
 	//点击过期/无效tab
 	public void invalidTabClick(){
-		leavelistpage.clickObj(TAB_BAR, INVALID_TAB);
+		leavelistpage.clickObjFromId(TAB_BAR, INVALID_TAB);
 	}
 	//判断无申请提示语是否存在
 	public Boolean noApplyTextExist(){
-		return leavelistpage.isExist(TAB_VIEW,NO_APPLY_ID);
+		return leavelistpage.isExistFromId(TAB_VIEW,NO_APPLY_ID);
 	}
 	//获取无申请提示语
 	public String noApplyTextText(){
-		return leavelistpage.getText(TAB_VIEW, NO_APPLY_ID);
+		return leavelistpage.getTextFromId(TAB_VIEW, NO_APPLY_ID);
 	}
 	//判断是否存在请假申请
 	public Boolean leaveListExist(){

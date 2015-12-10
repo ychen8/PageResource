@@ -8,9 +8,9 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.NaviBeforeConstants;
-import driverInterface.ParameterConfig;
+import driverInterface.ParameterConfigConstants;
 
-public class NaviBeforePage extends UiAutomatorTestCase implements NaviBeforeConstants,ParameterConfig{
+public class NaviBeforePage extends UiAutomatorTestCase implements NaviBeforeConstants,ParameterConfigConstants{
 	
 	MainMethod navibeforepage= new MainMethod();
 	
@@ -64,7 +64,7 @@ public class NaviBeforePage extends UiAutomatorTestCase implements NaviBeforeCon
 	}
 	//点击目的地选项
 	public void navPoiClick(int index){
-		navibeforepage.clickObj(DESTINATION_LIST, index);
+		navibeforepage.clickObjFromId(DESTINATION_LIST, index);
 	}
 	//判断导航类型栏是否存在
 	public Boolean naviTypeBoxExist(){
@@ -72,7 +72,7 @@ public class NaviBeforePage extends UiAutomatorTestCase implements NaviBeforeCon
 	}
 	//判断导航类型-各个类型是否存在
 	public Boolean naviNoexpressExist(int index){
-		return navibeforepage.isExist(NAVI_TYPE_BOX,index);
+		return navibeforepage.isExistFromId(NAVI_TYPE_BOX,index);
 	}
 	//判断导航类型-中间字是否存在
 	public Boolean naviTypeBigExist(int index){
