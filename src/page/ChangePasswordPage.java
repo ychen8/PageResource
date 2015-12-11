@@ -13,7 +13,6 @@ import driverInterface.ChangePasswordConstants;
 public class ChangePasswordPage extends UiAutomatorTestCase implements
 		ChangePasswordConstants {
 	MainMethod changePassPage=new MainMethod();
-	MainMethod vKeFuPage= new MainMethod();
 	//判断返回icon是否存在
 	public Boolean returnExist(){
 		return changePassPage.isExist(BACK);
