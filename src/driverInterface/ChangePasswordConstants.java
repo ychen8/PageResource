@@ -18,6 +18,11 @@ public interface ChangePasswordConstants {
 	static String SHOW_CK="com.szzc.ucar.driver:id/show_ck";
 	//确定按钮
 	static String PW_MODFIY_OK="com.szzc.ucar.driver:id/pw_modfiy_ok";
+	//弹框－文本
+	static String CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
+	//弹框－确定
+	static String OK_BTN="com.szzc.ucar.driver:id/ok_btn";
+	
 	
 	//当前密码值
 	static String PW_CUR_VALUE="123456";

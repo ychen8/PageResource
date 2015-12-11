@@ -96,5 +96,21 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	public void pwModfiyClick(){
 		changePassPage.clickObj(PW_MODFIY_OK);
 	}
+	//判断退出登录弹框-文本标题是否存在
+	public Boolean confirmTextExist(){
+		return changePassPage.isExist(CONFIRM_TEXT);
+	}
+	//获取退出登录弹框-文本标题内容
+	public String confirmTextText(){
+		return changePassPage.getText(CONFIRM_TEXT);
+	}
+	//获取弹框－确定　
+	public String okBtnText(){
+		return changePassPage.getText(OK_BTN);
+	}
+	//点击弹框－确定
+	public void okBtnClick(){
+		changePassPage.clickObj(OK_BTN);	
+	}
 
 }
