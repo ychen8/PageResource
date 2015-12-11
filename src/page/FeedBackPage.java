@@ -37,7 +37,45 @@ public class FeedBackPage extends UiAutomatorTestCase implements
 	public void llAdviceTypeClick(){
 		feedBackPage.clickObj(LL_ADVICE_TYPE);
 	}
-	
-	
+	//判断意见反馈类型栏-文本是否存在
+	public Boolean txtAdviceTypeExist(){
+		return feedBackPage.isExist(TXT_ADVICE_TYPE);
+	}
+	//获取意见反馈类型栏-文本内容
+	public String txtAdviceTypeText(){
+		return feedBackPage.getText(TXT_ADVICE_TYPE);
+	}
+	//判断意见反馈－输入提示是否存在
+	public Boolean etAdviceExist(){
+		return feedBackPage.isExist(ET_ADVICE);
+	}
+	//获取意见反馈－输入提示内容
+	public String etAdviceText(){
+		return feedBackPage.getText(ET_ADVICE);
+	}
+	//判断提交按钮是否存在
+	public Boolean btnSubmitExist(){
+		return feedBackPage.isExist(BTN_SUBMIT);
+	}
+	//点击提交按钮
+	public void btnSubmitClick(){
+		feedBackPage.clickObj(BTN_SUBMIT);
+	}
+	//判断弹框－文本是否存在
+	public Boolean confirmTextExist(){
+		return feedBackPage.isExist(CONFIRM_TEXT);
+	}
+	//获取弹框－文本内容
+	public String confirmTextText(){
+		return feedBackPage.getText(CONFIRM_TEXT);
+	}
+	//获取弹框－确定　
+	public String okBtnText(){
+		return feedBackPage.getText(OK_BTN);
+	}
+	//点击弹框－确定
+	public void okBtnClick(){
+		feedBackPage.clickObj(OK_BTN);	
+	}
 
 }
