@@ -185,6 +185,33 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return text;		
 	}
+	public String getListGrandChildText(String listResourceId,int childIndex,int grandIndex){
+		String text = "";
+		try{
+			UiObject listObj = new UiObject(new UiSelector().resourceId(listResourceId));
+			UiObject childLayout = listObj.getChild(new UiSelector().index(childIndex));
+			UiObject grandchildObj = childLayout.getChild(new UiSelector().index(grandIndex));
+			text = grandchildObj.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;		
+	}
+	public String getListRegrandChildText(String listResourceId,int childIndex,int grandIndex,int regrandIndex){
+		String text = "";
+		try{
+			UiObject listObj = new UiObject(new UiSelector().resourceId(listResourceId));
+			UiObject childLayout = listObj.getChild(new UiSelector().index(childIndex));
+			UiObject grandchildObj = childLayout.getChild(new UiSelector().index(grandIndex));
+			UiObject regrandchildObj = grandchildObj.getChild(new UiSelector().index(regrandIndex));
+			text = grandchildObj.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;		
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //获取文本方法
 ////////////////////////////////////////////////////////////////////////////////////
@@ -318,6 +345,14 @@ public class MainMethod extends UiAutomatorTestCase{
 	public boolean isExistByText(String ResourceId,String text){
 		UiObject listObj= new UiObject(new UiSelector().resourceId(ResourceId).text(text));
 		return listObj.exists();
+	}
+	public boolean isExistFromListGrand(String ResourceId,int childindex,int grandindex){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().index(childindex)).childSelector(new UiSelector().index(grandindex)));
+		return obj.exists();
+	}
+	public boolean isExistFromListRegrand(String ResourceId,int childindex,int grandindex,int regrandindex){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().index(childindex)).childSelector(new UiSelector().index(grandindex)).childSelector(new UiSelector().index(regrandindex)));
+		return obj.exists();
 	}
 ////////////////////////////////////////////////////////////////////////////////////
 //判断对象是否存在方法

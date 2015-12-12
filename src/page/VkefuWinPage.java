@@ -29,48 +29,21 @@ public class VkefuWinPage extends UiAutomatorTestCase implements
 	public String titleText(){
 		return vkefuWinPage.getText(TITLE);
 	}
-	//判断时间是否存在
-	public Boolean timeStampExist(){
-		return vkefuWinPage.isExist(TIMESTAMP);
+	//判断列表下的各孙子元素是否存在
+	public Boolean grandChildExist(int childIndex,int grandIndex){
+		return vkefuWinPage.isExistFromListGrand(LIST, childIndex, grandIndex);
 	}
-	//获取时间内容
-	public String timeStampText(){
-		return vkefuWinPage.getText(TIMESTAMP);
+	//获取列表下的各孙子元素内容
+	public String grandChildText(int childIndex,int grandIndex){
+		return vkefuWinPage.getListGrandChildText(LIST, childIndex, grandIndex);
 	}
-	//判断订单列表是否存在
-	public Boolean tvChatContentExist(){
-		return vkefuWinPage.isExist(TV_CHATCONTENT);
+	//判断列表下的各重孙子元素是否存在
+	public Boolean reGrandChildExist(int childIndex,int grandIndex,int regrandIndex){
+		return vkefuWinPage.isExistFromListRegrand(LIST, childIndex, grandIndex,regrandIndex);
 	}
-	//获取订单列表内容
-	public String tvChatContentText(){
-		return vkefuWinPage.getText(TV_CHATCONTENT);
-	}
-	//判断用户头像是否存在
-	public Boolean ivUserheadExist(){
-		return vkefuWinPage.isExist(IV_USERHEAD);
-	}
-	//判断问题列表的问题序号是否存在
-	public Boolean tvExist(int index){
-		return vkefuWinPage.isExistFromClass(CLASS_LINEARLAYOUT, index);
-	}
-	public String tvText(int index){
-		return vkefuWinPage.getText(CLASS_LINEARLAYOUT, index);
-	}
-	//判断问题列表的问题1是否存在
-	public Boolean tvQuestion1Exist(){
-		return vkefuWinPage.isExistFromList(LIST, INDEX_QS_LINEARLAYOUT,QUESTION1);
-	}
-	//判断问题列表的问题2是否存在
-	public Boolean tvQuestion2Exist(){
-		return vkefuWinPage.isExistFromList(LIST, INDEX_QS_LINEARLAYOUT,QUESTION2);
-	}
-	//判断问题列表的问题3是否存在
-	public Boolean tvQuestion3Exist(){
-		return vkefuWinPage.isExistFromList(LIST, INDEX_QS_LINEARLAYOUT,QUESTION3);
-	}
-	//判断问题列表的问题4是否存在
-	public Boolean tvQuestion4Exist(){
-		return vkefuWinPage.isExistFromList(LIST, INDEX_QS_LINEARLAYOUT,QUESTION4);
+	//获取列表下的各重孙子元素内容
+	public String reGrandChildText(int childIndex,int grandIndex,int regrandIndex){
+		return vkefuWinPage.getListRegrandChildText(LIST, childIndex, grandIndex,regrandIndex);
 	}
 	//判断语音icon是否存在
 	public Boolean btnSetVoiceExist(){
