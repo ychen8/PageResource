@@ -20,19 +20,9 @@ public interface LoginConstants {
 	static String LOGINBUTTON="com.szzc.ucar.driver:id/login_commitbutton";
 	//忘记密码
 	static String FORGETPASSWORD="com.szzc.ucar.driver:id/login_forgotpassword";
-	//手机号码不存在
-	static String NOPHONE="com.szzc.ucar.driver:id/confirm_text";
+	//弹框文本信息
+	static String CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
 	//确定按钮－所有弹框一样
 	static String OKBUTTON="com.szzc.ucar.driver:id/ok_btn";
-	//司机ＩＤ有误
-	static String WRONGDRIVERID="com.szzc.ucar.driver:id/confirm_text";
-	//密码不正确
-	static String WRONGPASSWORD="com.szzc.ucar.driver:id/confirm_text";
-	//驾驶证到期
-	static String LICENSEEXPIRESED="com.szzc.ucar.driver:id/confirm_text";
-	//驾驶证快到期
-	static String LICENSEEXPIRES="com.szzc.ucar.driver:id/confirm_text";
-	//登录司机无效
-	static String INVALIDDRIVER="com.szzc.ucar.driver:id/confirm_text";
 
 }

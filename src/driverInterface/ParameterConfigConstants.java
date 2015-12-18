@@ -34,10 +34,6 @@ public interface ParameterConfigConstants {
 	static String EXPIRE_PASSWORD_VALUE="123456";
 		
 	//重设密码页面输入内容	
-	//公司配备手机号
-	static String REPASS_PHONE_VALUE="15522585168";
-	//司机ＩＤ
-	static String REPASS_DRIVERID_VALUE="33936";
 	//验证码
 	static String REPASS_CODE_VALUE="";
 	//新密码
@@ -66,10 +62,6 @@ public interface ParameterConfigConstants {
 	static String EXPIRE_PASSWORD_VALUE2="123456";
 		
 	//重设密码页面输入内容	
-	//公司配备手机号
-	static String REPASS_PHONE_VALUE2="15100000006";
-	//司机ＩＤ
-	static String REPASS_DRIVERID_VALUE2="33600";
 	//验证码
 	static String REPASS_CODE_VALUE2="";
 	//新密码
@@ -98,10 +90,6 @@ public interface ParameterConfigConstants {
 	static String EXPIRE_PASSWORD_VALUE_PRE="123456";
 		
 	//重设密码页面输入内容	
-	//公司配备手机号
-	static String REPASS_PHONE_VALUE_PRE="15100000008";
-	//司机ＩＤ
-	static String REPASS_DRIVERID_VALUE_PRE="33600";
 	//验证码
 	static String REPASS_CODE_VALUE_PRE="";
 	//新密码

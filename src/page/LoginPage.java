@@ -23,14 +23,16 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 	public String testEnvText(){
 		return loginPage.getText(VERSION_CUR);
 	}
-	
+	public Boolean phoneExist(){
+		return loginPage.isExist(PHONE);
+	}
 	//清空手机号
 	public void clearPhone(){
 			loginPage.cleartxt(PHONE);
 	}
 	
 	//输入正确的手机号
-	public void setRightPhone(String test_env){
+	public void setPhone(String test_env){
 			if(test_env=="test"){
 				loginPage.setxt(PHONE,PHONE_VALUE);
 			}
@@ -70,6 +72,9 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 			
 	}
 	
+	public Boolean driveridExist(){
+		return loginPage.isExist(DRIVERID);
+	}
 	//清空司机ＩＤ
 	public void clearDriverid(){
 			loginPage.cleartxt(DRIVERID);
@@ -114,6 +119,9 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 				loginPage.setxt(DRIVERID,EXPIRE_DRIVERID_VALUE_PRE);
 			}
 
+	}
+	public Boolean passwordExist(){
+		return loginPage.isExist(PASSWORD);
 	}
 	//清空密码
 	public void clearPassword(){
@@ -162,7 +170,11 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 	
 	//决断登录按钮是否存在
 	public Boolean loginExist(){
-		return loginPage.isExist(VERSION_CUR);
+		return loginPage.isExist(LOGINBUTTON);
+	}
+	//决断登录按钮是否被激活
+	public Boolean loginClickable(){
+		return loginPage.objClickable(LOGINBUTTON);
 	}
 	
 	//点击登录按钮
@@ -177,56 +189,14 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,Par
 	public void forgetPassClick(){
 			loginPage.clickObj(FORGETPASSWORD);
 	}	
-	//判断手机号码不存在是否存在
-	public Boolean nophoneExist(){
-		return loginPage.isExist(NOPHONE);
+	//判断弹框信息内容是否存在
+	public Boolean confirmTextExist(){
+		return loginPage.isExist(CONFIRM_TEXT);
 	}
-	//获取弹框信息内容－手机号码不存在
-	public String nophoneText(){
-		return loginPage.getText(NOPHONE);
-	}
-	//判断司机ＩＤ有误是否存在
-	public Boolean driveridExist(){
-		return loginPage.isExist(WRONGDRIVERID);
-	}
-	//获取弹框信息内容－司机ＩＤ有误
-	public String driveridText(){
-		return loginPage.getText(WRONGDRIVERID);
+	//获取弹框信息内容
+	public String confirmTextText(){
+		return loginPage.getText(CONFIRM_TEXT);
 	}	
-	//判断密码错误是否存在
-	public Boolean wrongPassExist(){
-		return loginPage.isExist(WRONGPASSWORD);
-	}
-	//获取弹框信息内容－密码错误
-	public String wrongPassText(){
-		return loginPage.getText(WRONGPASSWORD);
-	}
-	//判断驾驶证到期是否存在
-	public Boolean testLicenExpiredExist(){
-		return loginPage.isExist(LICENSEEXPIRESED);
-	}
-	//获取弹框信息内容－驾驶证到期
-	public String licenExpiredText(){
-		return loginPage.getText(LICENSEEXPIRESED);
-	}
-	//判断驾驶证快到期是否存在
-	public Boolean licenExpirExist(){
-		return loginPage.isExist(LICENSEEXPIRES);
-	}
-	//获取弹框信息内容－驾驶证快到期
-	public String licenExpirText(){
-		return loginPage.getText(LICENSEEXPIRES);
-	}
-	
-	//判断登录司机无效是否存在
-	public Boolean invaledDriverExist(){
-		return loginPage.isExist(INVALIDDRIVER);
-	}
-	//获取弹框信息内容－登录司机无效
-	public String invaledDriverText(){
-		return loginPage.getText(INVALIDDRIVER);
-	}
-	
 	//决断弹框确定按钮是否存在
 	public Boolean okButtonExist(){
 		return loginPage.isExist(OKBUTTON);

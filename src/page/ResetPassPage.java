@@ -31,7 +31,10 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	public String titleText(){
 		return resetPassPage.getText(PASSWORDTITLE);
 	}
-	
+	//判断手机号是否存在
+	public Boolean phoneExist(){
+		return resetPassPage.isExist(PPHONE);
+	}
 	//清空手机号
 	public void clearPhone(){
 			resetPassPage.cleartxt(PPHONE);
@@ -40,17 +43,33 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	//输入手机号
 	public void setPhone(String test_env){
 			if(test_env=="test"){
-				resetPassPage.setxt(PPHONE,REPASS_PHONE_VALUE);
+				resetPassPage.setxt(PPHONE,PHONE_VALUE);
 			}
 			if(test_env=="test02"){
-				resetPassPage.setxt(PPHONE,REPASS_PHONE_VALUE2);
+				resetPassPage.setxt(PPHONE,PHONE_VALUE2);
 			}
 			if(test_env=="pre"){
-				resetPassPage.setxt(PPHONE,REPASS_PHONE_VALUE_PRE);
+				resetPassPage.setxt(PPHONE,PHONE_VALUE_PRE);
 			}
 
 	}
-	
+	//输入不存在的手机号
+	public void setWrongPhone(String test_env){
+			if(test_env=="test"){
+				resetPassPage.setxt(PPHONE,WRONG_PHONE_VALUE);
+			}
+			if(test_env=="test02"){
+				resetPassPage.setxt(PPHONE,WRONG_PHONE_VALUE);
+			}
+			if(test_env=="pre"){
+				resetPassPage.setxt(PPHONE,WRONG_PHONE_VALUE);
+			}
+
+	}
+	//判断司机ＩＤ是否存在
+	public Boolean driveridExist(){
+		return resetPassPage.isExist(PDRIVERID);
+	}
 	//清空司机ＩＤ
 	public void clearDriverid(){
 			resetPassPage.cleartxt(PDRIVERID);
@@ -59,13 +78,25 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	//输入司机ＩＤ
 	public void setDriverid(String test_env){
 			if(test_env=="test"){
-				resetPassPage.setxt(PDRIVERID,REPASS_DRIVERID_VALUE);
+				resetPassPage.setxt(PDRIVERID,DRIVERID_VALUE);
 			}
 			if(test_env=="test02"){
-				resetPassPage.setxt(PDRIVERID,REPASS_DRIVERID_VALUE2);
+				resetPassPage.setxt(PDRIVERID,DRIVERID_VALUE2);
 			}
 			if(test_env=="pre"){
-				resetPassPage.setxt(PDRIVERID,REPASS_DRIVERID_VALUE_PRE);
+				resetPassPage.setxt(PDRIVERID,DRIVERID_VALUE_PRE);
+			}
+	}
+	//输入错误司机ＩＤ
+	public void setWrongDriverid(String test_env){
+			if(test_env=="test"){
+				resetPassPage.setxt(PDRIVERID,WRONG_DRIVERID_VALUE);
+			}
+			if(test_env=="test02"){
+				resetPassPage.setxt(PDRIVERID,WRONG_DRIVERID_VALUE2);
+			}
+			if(test_env=="pre"){
+				resetPassPage.setxt(PDRIVERID,WRONG_DRIVERID_VALUE_PRE);
 			}
 	}
 	//清空验证码
@@ -90,6 +121,11 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	public Boolean getCodeExist(){
 		return resetPassPage.isExist(GETCODE);
 	}
+	//判断获取验证码是否可点击
+	public Boolean getCodeClickable(){
+		return resetPassPage.objClickable(GETCODE);
+	}
+	
 	//点击获取验证码
 	public void getCodeClick(){
 			resetPassPage.clickObj(GETCODE);
@@ -111,20 +147,12 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 		return resetPassPage.getText(TIP);
 	}
 	//判断手机号未注册是否存在
-	public Boolean noPhoneExist(){
-		return resetPassPage.isExist(PNOPHONE);
+	public Boolean reConfirmTextExist(){
+		return resetPassPage.isExist(CONFIRM_TEXT);
 	}
 	//获取手机号未注册提示内容
-	public String noPhoneText(){
-		return resetPassPage.getText(PNOPHONE);
-	}
-	//判断司机ＩＤ有误是否存在
-	public Boolean wrongDriveridExist(){
-		return resetPassPage.isExist(PWRONGDRIVERID);
-	}
-	//获取司机ＩＤ有误提示内容
-	public String wrongDriveridText(){
-		return resetPassPage.getText(PWRONGDRIVERID);
+	public String reConfirmTextText(){
+		return resetPassPage.getText(CONFIRM_TEXT);
 	}
 	//判断验证码有误是否存在
 	public Boolean wrongCodeExist(){

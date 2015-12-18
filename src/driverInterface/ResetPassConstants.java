@@ -23,10 +23,8 @@ public interface ResetPassConstants {
 	static String NEXT="com.szzc.ucar.driver:id/btn_commit";
 	//重设密码－连续发送验证密码提示
 	static String TIP="com.szzc.ucar.driver:id/confirm_text";
-	//重设密码-手机号尚未注册提示
-	static String PNOPHONE="com.szzc.ucar.driver:id/confirm_text";
-	//重设密码-司机ＩＤ有误
-	static String PWRONGDRIVERID="com.szzc.ucar.driver:id/confirm_text";
+	//重设密码-弹框信息内容
+	static String CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
 	//重设密码-验证码有误
 	static String WRONGCODE="com.szzc.ucar.driver:id/confirm_text";
 	//重设密码第二步-返回icon
