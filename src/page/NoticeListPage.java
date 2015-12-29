@@ -25,6 +25,10 @@ public class NoticeListPage extends UiAutomatorTestCase implements NoticeListCon
 	public Boolean noticeListTitleExist(){
 		return noticelistpage.isExist(NOTICEPAGETITLE);
 	}
+	//获取消息数量
+	public int noticeAmount(){
+		return noticelistpage.getChildCount(LISTVIEW);
+	}
 	//获取标题内容(通过index)
 	public String noticeTitleTxt(int index){
 		return noticelistpage.getText(LISTVIEW, index,MSGTITLE);
