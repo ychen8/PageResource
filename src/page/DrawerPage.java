@@ -98,18 +98,6 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	public void rankClick(){
 			drawerPage.clickObj(RANK);
 	}
-	//判断微客服是否存在
-	public Boolean vkefuExist(){
-		return drawerPage.isExist(VKEFU);
-	}
-	//获取微客服
-	public String vkefuText(){
-		return drawerPage.getText(VKEFU);
-	}
-	//点击微客服
-	public void vkefuClick(){
-			drawerPage.clickObj(VKEFU);	
-	}
 	//判断设置是否存在
 	public Boolean settingExist(){
 		return drawerPage.isExist(SETTINGS);
@@ -138,45 +126,9 @@ public class DrawerPage extends UiAutomatorTestCase implements DrawerConstants{
 	public Boolean customServiceExist(){
 		return drawerPage.isExist(CUSTOM_SERVICE);
 	}
-	//获取联系客服　　　　
-	public String customServiceText(){
-		return drawerPage.getText(CUSTOM_SERVICE);
-	}
 	//点击联系客服
 	public void customServiceClick(){
 			drawerPage.clickObj(CUSTOM_SERVICE);	
-	}
-	//判断联系客服弹框是否存在
-	public Boolean customConfirmtExist(){
-		return drawerPage.isExist(CUSTOM_CONFIRM_TEXT);
-	}
-	//获取联系客服弹框文本　　　　
-	public String customConfirmtText(){
-		return drawerPage.getText(CUSTOM_CONFIRM_TEXT);
-	}
-	//判断拨打电话是否存在
-	public Boolean phoneCallExist(){
-		return drawerPage.isExist(PHONE_CALL);
-	}
-	//获取拨打电话　　　
-	public String phoneCallText(){
-		return drawerPage.getText(PHONE_CALL);
-	}
-	//点击拨打电话
-	public void phoneCallClick(){
-			drawerPage.clickObj(PHONE_CALL);	
-	}
-	//判断联系客服弹框－取消是否存在
-	public Boolean closeBtnExist(){
-		return drawerPage.isExist(CLOSE_BTN);
-	}
-	//获取联系客服弹框－取消　　
-	public String closeBtnText(){
-		return drawerPage.getText(CLOSE_BTN);
-	}
-	//点击联系客服弹框－取消
-	public void closeBtnClick(){
-			drawerPage.clickObj(CLOSE_BTN);	
 	}
 
 }

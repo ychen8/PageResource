@@ -18,18 +18,19 @@ public interface DrawerConstants {
 	static String MY_WALLET="com.szzc.ucar.driver:id/txt_my_wallet";
 	//排行榜
 	static String RANK="com.szzc.ucar.driver:id/txt_rank";
-	//微客服　
-	static String VKEFU="com.szzc.ucar.driver:id/txt_vkefu";
 	//设置
 	static String SETTINGS="com.szzc.ucar.driver:id/txt_settings";
 	//司机分布
 	static String DRIVERDISTRIBUTION="com.szzc.ucar.driver:id/txt_driver_location";
 	//联系客服
 	static String CUSTOM_SERVICE="com.szzc.ucar.driver:id/btn_conn_custom_service";
-	//联系客服弹框内容
-	static String CUSTOM_CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
-	//联系客服弹框－拨打电话
-	static String PHONE_CALL="com.szzc.ucar.driver:id/ok_btn";
-	//联系客服弹框－取消
-	static String CLOSE_BTN="com.szzc.ucar.driver:id/close_btn";
+	
+	//1.8.4版本将该入口替换为微客服，删除弹窗
+//	//联系客服弹框内容
+//	static String CUSTOM_CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
+//	//联系客服弹框－拨打电话
+//	static String PHONE_CALL="com.szzc.ucar.driver:id/ok_btn";
+//	//联系客服弹框－取消
+//	static String CLOSE_BTN="com.szzc.ucar.driver:id/close_btn";
+	
 }
