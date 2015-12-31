@@ -20,35 +20,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	UpgradPage upgrad=new UpgradPage();
 	ResetPassPage resetPass=new ResetPassPage();
 	Watcher watcher=new Watcher();
-	/**
-	//1、正常登录
-	public void testloginSuceess(){
-		watcher.watchPhone();
-		watcher.watchNetwork();
-		if(upgrad.upgradTitleExist()){
-			upgrad.upgradLaterClick();
-		}
-		if(login.phoneExist()){
-			login.clearPhone();
-			login.setPhone(TEST_ENV);
-		}
-		if(login.driveridExist()){
-			login.clearDriverid();
-			login.setDriverid(TEST_ENV);
-		}
-		if(login.passwordExist()){
-			login.clearPassword();
-			login.setPassword(TEST_ENV);
-		}
-		if(login.loginExist()){
-			if(login.loginClickable()){
-				login.loginClick();
-			}
-		}
-		assertTrue(main.stateBtnExist());
-		
-	}
-	**/
+
 	//１、登录成功
 	public void testloginSuceess(){
 		watcher.watchPhone();
@@ -72,7 +44,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		login.clearPassword();//清空密码输入框
 		login.setPassword(TEST_ENV);//输入密码
 		
-		assertTrue(login.loginClickable());//判断长级框是否可点击
+		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
 		assertTrue(main.stateBtnExist());//登录成功的话，判断首页的上班按钮是否存在
 		
@@ -81,26 +53,28 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	public void testNoPhone(){
 		watcher.watchPhone();
 		watcher.watchNetwork();
+		//判断是否弹升级框，如果弹则按稍后升级
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
-		if(login.phoneExist()){
-			login.clearPhone();
-			login.setWrongPhone(TEST_ENV);
-		}
-		if(login.driveridExist()){
-			login.clearDriverid();
-			login.setDriverid(TEST_ENV);
-		}
-		if(login.passwordExist()){
-			login.clearPassword();
-			login.setPassword(TEST_ENV);
-		}
-		if(login.loginExist()){
-			if(login.loginClickable()){
-				login.loginClick();
-			}
-		}
+		//判断登录页面的各控件是否存在
+		assertTrue(login.phoneExist());
+		assertTrue(login.driveridExist());
+		assertTrue(login.passwordExist());
+		assertTrue(login.loginExist());
+		
+		login.clearPhone();//清空手机号输入框
+		login.setWrongPhone(TEST_ENV);//输入手机号
+	
+		login.clearDriverid();//清空司机ＩＤ输入框
+		login.setDriverid(TEST_ENV);//输入司机ＩＤ
+	
+		login.clearPassword();//清空密码输入框
+		login.setPassword(TEST_ENV);//输入密码
+	
+		assertTrue(login.loginClickable());//判断登录按钮是否可点击
+		login.loginClick();//点击登录按钮
+			
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"手机号码不存在");
 
@@ -113,23 +87,24 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
-		if(login.phoneExist()){
-			login.clearPhone();
-			login.setPhone(TEST_ENV);
-		}
-		if(login.driveridExist()){
-			login.clearDriverid();
-			login.setWrongDriverid(TEST_ENV);
-		}
-		if(login.passwordExist()){
-			login.clearPassword();
-			login.setPassword(TEST_ENV);
-		}
-		if(login.loginExist()){
-			if(login.loginClickable()){
-				login.loginClick();
-			}
-		}
+		//判断登录页面的各控件是否存在
+		assertTrue(login.phoneExist());
+		assertTrue(login.driveridExist());
+		assertTrue(login.passwordExist());
+		assertTrue(login.loginExist());
+
+		login.clearPhone();
+		login.setPhone(TEST_ENV);
+
+		login.clearDriverid();
+		login.setWrongDriverid(TEST_ENV);
+
+		login.clearPassword();
+		login.setPassword(TEST_ENV);
+
+		assertTrue(login.loginClickable());//判断登录按钮是否可点击
+		login.loginClick();//点击登录按钮
+		
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"司机ID有误");
 		
@@ -141,23 +116,24 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
-		if(login.phoneExist()){
-			login.clearPhone();
-			login.setPhone(TEST_ENV);
-		}
-		if(login.driveridExist()){
-			login.clearDriverid();
-			login.setDriverid(TEST_ENV);
-		}
-		if(login.passwordExist()){
-			login.clearPassword();
-			login.setWrongPassword(TEST_ENV);
-		}
-		if(login.loginExist()){
-			if(login.loginClickable()){
-				login.loginClick();
-			}
-		}
+		//判断登录页面的各控件是否存在
+		assertTrue(login.phoneExist());
+		assertTrue(login.driveridExist());
+		assertTrue(login.passwordExist());
+		assertTrue(login.loginExist());
+
+		login.clearPhone();
+		login.setPhone(TEST_ENV);
+
+		login.clearDriverid();
+		login.setDriverid(TEST_ENV);
+
+		login.clearPassword();
+		login.setWrongPassword(TEST_ENV);
+
+		assertTrue(login.loginClickable());//判断登录按钮是否可点击
+		login.loginClick();//点击登录按钮
+			
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"密码不正确");
 		
@@ -170,23 +146,24 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
-		if(login.phoneExist()){
-			login.clearPhone();
-			login.setExpirePhone(TEST_ENV);
-		}
-		if(login.driveridExist()){
-			login.clearDriverid();
-			login.setExpireDriverid(TEST_ENV);
-		}
-		if(login.passwordExist()){
-			login.clearPassword();
-			login.setExpirePassword(TEST_ENV);
-		}
-		if(login.loginExist()){
-			if(login.loginClickable()){
-				login.loginClick();
-			}
-		}
+		//判断登录页面的各控件是否存在
+		assertTrue(login.phoneExist());
+		assertTrue(login.driveridExist());
+		assertTrue(login.passwordExist());
+		assertTrue(login.loginExist());
+
+		login.clearPhone();
+		login.setExpirePhone(TEST_ENV);
+
+		login.clearDriverid();
+		login.setExpireDriverid(TEST_ENV);
+
+		login.clearPassword();
+		login.setExpirePassword(TEST_ENV);
+
+		assertTrue(login.loginClickable());//判断登录按钮是否可点击
+		login.loginClick();//点击登录按钮
+		
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"驾驶证已到期，换证更新信息后方可登录");
 	}
@@ -197,22 +174,23 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
-		if(login.forgetExist()){
-			login.forgetPassClick();
-		}
-		if(resetPass.phoneExist()){
-			resetPass.clearPhone();
-			resetPass.setWrongPhone(TEST_ENV);		
-		}
-		if(resetPass.driveridExist()){
-			resetPass.clearDriverid();
-			resetPass.setDriverid(TEST_ENV);
-		}
-		if(resetPass.getCodeExist()){
-			if(resetPass.getCodeClickable()){
-				resetPass.getCodeClick();
-			}
-		}
+		//判断各控件是否存在
+		assertTrue(login.forgetExist());
+		assertTrue(resetPass.phoneExist());
+		assertTrue(resetPass.driveridExist());
+		assertTrue(resetPass.getCodeExist());
+
+		login.forgetPassClick();
+
+		resetPass.clearPhone();
+		resetPass.setWrongPhone(TEST_ENV);		
+
+		resetPass.clearDriverid();
+		resetPass.setDriverid(TEST_ENV);
+
+		assertTrue(resetPass.getCodeClickable());
+		resetPass.getCodeClick();
+
 		assertTrue(resetPass.reConfirmTextExist());
 		assertEquals(resetPass.reConfirmTextText(),"该手机号尚未注册");
 	}
@@ -223,22 +201,23 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
-		if(login.forgetExist()){
-			login.forgetPassClick();
-		}
-		if(resetPass.phoneExist()){
-			resetPass.clearPhone();
-			resetPass.setPhone(TEST_ENV);		
-		}
-		if(resetPass.driveridExist()){
-			resetPass.clearDriverid();
-			resetPass.setWrongDriverid(TEST_ENV);
-		}
-		if(resetPass.getCodeExist()){
-			if(resetPass.getCodeClickable()){
-				resetPass.getCodeClick();
-			}	
-		}
+		//判断各控件是否存在
+		assertTrue(login.forgetExist());
+		assertTrue(resetPass.phoneExist());
+		assertTrue(resetPass.driveridExist());
+		assertTrue(resetPass.getCodeExist());
+
+		login.forgetPassClick();
+
+		resetPass.clearPhone();
+		resetPass.setPhone(TEST_ENV);		
+
+		resetPass.clearDriverid();
+		resetPass.setWrongDriverid(TEST_ENV);
+
+		assertTrue(resetPass.getCodeClickable());
+		resetPass.getCodeClick();
+		
 		assertTrue(resetPass.reConfirmTextExist());
 		assertEquals(resetPass.reConfirmTextText(),"司机ID有误");
 	}

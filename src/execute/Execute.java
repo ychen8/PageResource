@@ -9,11 +9,7 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
  */
 public class Execute extends UiAutomatorTestCase{
 	Base base=new Base();
-
-	/**
-	 * @param args
-	 */
-
+	
 	@Override
 	protected void setUp() throws Exception {
 		// TODO Auto-generated method stub
