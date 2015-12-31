@@ -29,7 +29,8 @@ public class Base extends UiAutomatorTestCase implements ParameterConfigConstant
 	Watcher watcher=new Watcher();
 
     public void launchApp() {
-    	exit();
+    	pressKeyCode(KeyEvent.KEYCODE_BACK, 4);
+    	pressKeyCode(KeyEvent.KEYCODE_HOME, 1);
     	try{
     		new UiObject(new UiSelector().text(APP_NAME)).clickAndWaitForNewWindow();
     	}catch (UiObjectNotFoundException e) {

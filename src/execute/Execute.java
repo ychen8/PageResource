@@ -8,30 +8,17 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
  *作者： 陈玉婵
  */
 public class Execute extends UiAutomatorTestCase{
-	Base base=new Base();
-	
-	@Override
-	protected void setUp() throws Exception {
-		// TODO Auto-generated method stub
-		base.launchApp();
-		base.login();
-		super.setUp();
-	}
 
-	@Override
-	protected void tearDown() throws Exception {
-		// TODO Auto-generated method stub
-		base.exit();
-		super.tearDown();
-	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		   String jarName="demo";
-		   String testClass="";
-		   String testName="";
-		   String androidId="";
+		   String jarName="a";
+		   String testClass="testcase.LoginCase";
+		   String testName="testNoPhone";
+		   String androidId="5";
 		   new UiAutomatorHelper(jarName, testClass, testName, androidId);
 
-	}
+	}	
+
+
 
 }

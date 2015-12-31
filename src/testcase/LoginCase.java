@@ -1,10 +1,12 @@
 package testcase;
 
+import baseMethod.Base;
 import baseMethod.Watcher;
 
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.ParameterConfigConstants;
+import execute.UiAutomatorHelper;
 import page.LoginPage;
 import page.MainPage;
 import page.ResetPassPage;
@@ -20,6 +22,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	UpgradPage upgrad=new UpgradPage();
 	ResetPassPage resetPass=new ResetPassPage();
 	Watcher watcher=new Watcher();
+	Base base=new Base();
 
 	//１、登录成功
 	public void testloginSuceess(){
@@ -58,10 +61,11 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 			upgrad.upgradLaterClick();
 		}
 		//判断登录页面的各控件是否存在
-		assertTrue(login.phoneExist());
+		/**assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
+		**/
 		
 		login.clearPhone();//清空手机号输入框
 		login.setWrongPhone(TEST_ENV);//输入手机号
@@ -220,6 +224,19 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		
 		assertTrue(resetPass.reConfirmTextExist());
 		assertEquals(resetPass.reConfirmTextText(),"司机ID有误");
+	}
+	@Override
+	protected void setUp() throws Exception {
+		// TODO Auto-generated method stub
+		super.setUp();
+		base.launchApp();	
+	}
+	@Override
+	protected void tearDown() throws Exception {
+		// TODO Auto-generated method stub
+		super.tearDown();
+		base.exit();
+		
 	}
 
 }
