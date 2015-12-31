@@ -43,16 +43,17 @@ public class Base extends UiAutomatorTestCase implements ParameterConfigConstant
     public void login(){
 		watcher.watchPhone();
 		watcher.watchNetwork();
+		sleep(1000);
 		//判断是否弹升级框，如果弹则按稍后升级
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
 		//判断登录页面的各控件是否存在
-		assertTrue(login.phoneExist());
+		/*assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
-	
+	*/
 		login.clearPhone();//清空手机号输入框
 		login.setPhone(TEST_ENV);//输入手机号
 		
@@ -62,8 +63,11 @@ public class Base extends UiAutomatorTestCase implements ParameterConfigConstant
 		login.clearPassword();//清空密码输入框
 		login.setPassword(TEST_ENV);//输入密码
 		
-		assertTrue(login.loginClickable());//判断长级框是否可点击
+		UiDevice.getInstance().pressBack();
+		
+		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
+		sleep(1000);
 		assertTrue(main.stateBtnExist());//登录成功的话，判断首页的上班按钮是否存在
 	
     }

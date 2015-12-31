@@ -3,6 +3,7 @@ package testcase;
 import baseMethod.Base;
 import baseMethod.Watcher;
 
+import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.ParameterConfigConstants;
@@ -46,6 +47,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	
 		login.clearPassword();//清空密码输入框
 		login.setPassword(TEST_ENV);//输入密码
+		UiDevice.getInstance().pressBack();
 		
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
@@ -61,11 +63,10 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 			upgrad.upgradLaterClick();
 		}
 		//判断登录页面的各控件是否存在
-		/**assertTrue(login.phoneExist());
+		assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
-		**/
 		
 		login.clearPhone();//清空手机号输入框
 		login.setWrongPhone(TEST_ENV);//输入手机号
@@ -75,6 +76,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	
 		login.clearPassword();//清空密码输入框
 		login.setPassword(TEST_ENV);//输入密码
+		UiDevice.getInstance().pressBack();
 	
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
@@ -105,6 +107,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		login.clearPassword();
 		login.setPassword(TEST_ENV);
+		UiDevice.getInstance().pressBack();
 
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
@@ -134,6 +137,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		login.clearPassword();
 		login.setWrongPassword(TEST_ENV);
+		UiDevice.getInstance().pressBack();
 
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
@@ -164,6 +168,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		login.clearPassword();
 		login.setExpirePassword(TEST_ENV);
+		UiDevice.getInstance().pressBack();
 
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮

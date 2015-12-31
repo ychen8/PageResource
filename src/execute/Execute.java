@@ -13,7 +13,7 @@ public class Execute extends UiAutomatorTestCase{
 		// TODO Auto-generated method stub
 		   String jarName="a";
 		   String testClass="testcase.LoginCase";
-		   String testName="testNoPhone";
+		   String testName="";
 		   String androidId="5";
 		   new UiAutomatorHelper(jarName, testClass, testName, androidId);
 
