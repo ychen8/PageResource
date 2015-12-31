@@ -1,5 +1,6 @@
 package testcase;
 
+import android.util.Log;
 import baseMethod.Base;
 import baseMethod.Watcher;
 
@@ -24,7 +25,6 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	ResetPassPage resetPass=new ResetPassPage();
 	Watcher watcher=new Watcher();
 	Base base=new Base();
-
 	//１、登录成功
 	public void testloginSuceess(){
 		watcher.watchPhone();
@@ -33,6 +33,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
+		sleep(2000);
 		//判断登录页面的各控件是否存在
 		assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
@@ -51,6 +52,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
+		sleep(5000);
 		assertTrue(main.stateBtnExist());//登录成功的话，判断首页的上班按钮是否存在
 		
 	}
@@ -62,6 +64,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
+		sleep(2000);
 		//判断登录页面的各控件是否存在
 		assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
@@ -80,7 +83,8 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
-			
+		
+		sleep(5000);
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"手机号码不存在");
 
@@ -93,6 +97,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
+		sleep(2000);
 		//判断登录页面的各控件是否存在
 		assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
@@ -111,7 +116,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
-		
+		sleep(5000);
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"司机ID有误");
 		
@@ -123,6 +128,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
+		sleep(2000);
 		//判断登录页面的各控件是否存在
 		assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
@@ -141,7 +147,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
-			
+		sleep(5000);	
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"密码不正确");
 		
@@ -154,6 +160,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
+		sleep(2000);
 		//判断登录页面的各控件是否存在
 		assertTrue(login.phoneExist());
 		assertTrue(login.driveridExist());
@@ -172,7 +179,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		assertTrue(login.loginClickable());//判断登录按钮是否可点击
 		login.loginClick();//点击登录按钮
-		
+		sleep(5000);
 		assertTrue(login.confirmTextExist());
 		assertEquals(login.confirmTextText(),"驾驶证已到期，换证更新信息后方可登录");
 	}
@@ -183,13 +190,14 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
+		sleep(2000);
 		//判断各控件是否存在
 		assertTrue(login.forgetExist());
+		login.forgetPassClick();
+		sleep(1000);
 		assertTrue(resetPass.phoneExist());
 		assertTrue(resetPass.driveridExist());
 		assertTrue(resetPass.getCodeExist());
-
-		login.forgetPassClick();
 
 		resetPass.clearPhone();
 		resetPass.setWrongPhone(TEST_ENV);		
@@ -199,6 +207,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		assertTrue(resetPass.getCodeClickable());
 		resetPass.getCodeClick();
+		sleep(5000);
 
 		assertTrue(resetPass.reConfirmTextExist());
 		assertEquals(resetPass.reConfirmTextText(),"该手机号尚未注册");
@@ -210,13 +219,15 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
+		sleep(2000);
 		//判断各控件是否存在
-		assertTrue(login.forgetExist());
+		assertTrue(login.forgetExist());	
+
+		login.forgetPassClick();
+		sleep(1000);
 		assertTrue(resetPass.phoneExist());
 		assertTrue(resetPass.driveridExist());
 		assertTrue(resetPass.getCodeExist());
-
-		login.forgetPassClick();
 
 		resetPass.clearPhone();
 		resetPass.setPhone(TEST_ENV);		
@@ -226,7 +237,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		assertTrue(resetPass.getCodeClickable());
 		resetPass.getCodeClick();
-		
+		sleep(5000);
 		assertTrue(resetPass.reConfirmTextExist());
 		assertEquals(resetPass.reConfirmTextText(),"司机ID有误");
 	}
@@ -239,9 +250,8 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	@Override
 	protected void tearDown() throws Exception {
 		// TODO Auto-generated method stub
-		super.tearDown();
+		super.tearDown();	
 		base.exit();
-		
 	}
 
 }

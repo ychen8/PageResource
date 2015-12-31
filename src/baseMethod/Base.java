@@ -29,14 +29,14 @@ public class Base extends UiAutomatorTestCase implements ParameterConfigConstant
 	Watcher watcher=new Watcher();
 
     public void launchApp() {
-    	pressKeyCode(KeyEvent.KEYCODE_BACK, 4);
-    	pressKeyCode(KeyEvent.KEYCODE_HOME, 1);
+    	exit();
     	try{
     		new UiObject(new UiSelector().text(APP_NAME)).clickAndWaitForNewWindow();
     	}catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
+    	sleep(2000);
 
 	}
     
@@ -48,27 +48,30 @@ public class Base extends UiAutomatorTestCase implements ParameterConfigConstant
 		if(upgrad.upgradTitleExist()){
 			upgrad.upgradLaterClick();
 		}
-		//判断登录页面的各控件是否存在
-		/*assertTrue(login.phoneExist());
-		assertTrue(login.driveridExist());
-		assertTrue(login.passwordExist());
-		assertTrue(login.loginExist());
-	*/
-		login.clearPhone();//清空手机号输入框
-		login.setPhone(TEST_ENV);//输入手机号
+
+		if(login.phoneExist()){
+			login.clearPhone();//清空手机号输入框
+			login.setPhone(TEST_ENV);//输入手机号
+		}
+
+		if(login.driveridExist()){
+			login.clearDriverid();//清空司机ＩＤ输入框
+			login.setDriverid(TEST_ENV);//输入司机ＩＤ
+		}
 		
-		login.clearDriverid();//清空司机ＩＤ输入框
-		login.setDriverid(TEST_ENV);//输入司机ＩＤ
-	
-		login.clearPassword();//清空密码输入框
-		login.setPassword(TEST_ENV);//输入密码
+		if(login.passwordExist()){
+			login.clearPassword();//清空密码输入框
+			login.setPassword(TEST_ENV);//输入密码
+			UiDevice.getInstance().pressBack();
+		}	
 		
-		UiDevice.getInstance().pressBack();
+		if(login.loginExist()){
+			if(login.loginClickable()){
+				login.loginClick();//点击登录按钮
+				sleep(5000);
+			}
+		}
 		
-		assertTrue(login.loginClickable());//判断登录按钮是否可点击
-		login.loginClick();//点击登录按钮
-		sleep(1000);
-		assertTrue(main.stateBtnExist());//登录成功的话，判断首页的上班按钮是否存在
 	
     }
     
@@ -86,8 +89,10 @@ public class Base extends UiAutomatorTestCase implements ParameterConfigConstant
 		if(perset.logoutExist()){
 			perset.logoutClick();
 		}
-		assertTrue(perset.closeBtnExist());
-		perset.closeBtnClick();
+		if(perset.okBtnExist()){
+			perset.okBtnClick();
+		}
+		
 		sleep(500);
 		pressKeyCode(KeyEvent.KEYCODE_HOME, 1);
 
