@@ -8,6 +8,7 @@
 package driverInterface;
 
 public interface ParameterConfigConstants {
+	static String APP_NAME="专车司机版";
 		
 	//登录页面输入内容
 	//测试环境
