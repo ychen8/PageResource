@@ -133,9 +133,12 @@ public class MainPageCase extends UiAutomatorTestCase{
 		assertTrue(noticelistpage.backBtnExist());
 		assertEquals("消息通知", noticelistpage.noticeListTitleTxt());
 		for(int i=1 ; i<noticelistpage.noticeAmount(); i++){
-			assertTrue(noticelistpage.noticeTitleExist(i));//判断消息标题是否存在
-			assertTrue(noticelistpage.noticeTimeExist(i));//判断消息时间是否存在
-			assertTrue(noticelistpage.noticeContentExist(i));//判断消息内容是否存在
+			
+			Boolean[] isMsgExist = noticelistpage.noticeExist(i);	
+			
+			assertTrue(isMsgExist[0]);//判断消息标题是否存在
+			assertTrue(isMsgExist[1]);//判断消息时间是否存在
+			assertTrue(isMsgExist[2]);//判断消息内容是否存在
 		}
 
 		noticelistpage.backBtnClick();//返回首页
