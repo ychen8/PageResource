@@ -40,17 +40,17 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	
 		do{
 			login.clearPhone();// 清空手机号输入框
-		}while(login.phoneNull());
+		}while(!login.phoneNull());
 		login.setPhone(TEST_ENV);//输入手机号
 		
 		do{
 			login.clearDriverid();// 清空司机ＩＤ输入框
-		}while(login.driverIdNull());	
+		}while(!login.driverIdNull());	
 		login.setDriverid(TEST_ENV);//输入司机ＩＤ
 	
 		do{
 			login.clearPassword();// 清空密码输入框
-		}while(login.passwordNull());	
+		}while(!login.passwordNull());	
 		login.setPassword(TEST_ENV);//输入密码
 		UiDevice.getInstance().pressBack();
 		
