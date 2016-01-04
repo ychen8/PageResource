@@ -38,7 +38,9 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
 	
-		login.clearPhone();// 清空手机号输入框
+		do{
+			login.clearPhone();// 清空手机号输入框
+		}while(!login.phoneText().equals("手机号"));
 		login.setPhone(TEST_ENV);//输入手机号
 		
 		login.clearDriverid();// 清空司机ＩＤ输入框
@@ -72,7 +74,9 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
 		
-		login.clearPhone();//清空手机号输入框
+		do{
+			login.clearPhone();// 清空手机号输入框
+		}while(!login.phoneText().equals("手机号"));
 		login.setWrongPhone(TEST_ENV);//输入手机号
 	
 		login.clearDriverid();//清空司机ＩＤ输入框
@@ -105,7 +109,9 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
 
-		login.clearPhone();
+		do{
+			login.clearPhone();// 清空手机号输入框
+		}while(!login.phoneText().equals("手机号"));
 		login.setPhone(TEST_ENV);
 
 		login.clearDriverid();
@@ -136,7 +142,9 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
 
-		login.clearPhone();
+		do{
+			login.clearPhone();// 清空手机号输入框
+		}while(!login.phoneText().equals("手机号"));
 		login.setPhone(TEST_ENV);
 
 		login.clearDriverid();
@@ -168,7 +176,9 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
 
-		login.clearPhone();
+		do{
+			login.clearPhone();// 清空手机号输入框
+		}while(!login.phoneText().equals("手机号"));
 		login.setExpirePhone(TEST_ENV);
 
 		login.clearDriverid();

@@ -23,8 +23,11 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 		watcher.watchNetwork();
 		// 1.司机A登录
 		base.login();
-		sleep(2000);
+		//sleep(2000);
 		// 2.司机A点击“我要上班”
+		while(!main.stateBtnExist()){
+			sleep(1000);
+		}
 		assertTrue(main.stateBtnExist());
 		System.out.println("是我要上班么:" + main.stateBtnText());
 		System.out.println(main.stateBtnText().equals("我要上班"));
@@ -40,13 +43,21 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 		}
 		assertEquals(main.stateBtnText(),"上班中");
 		sleep(2000);
-		assertTrue(main.setBtnExist());
-		sleep(1000);
-		assertEquals(main.setBtnText(),"接单设置");
+		//assertTrue(main.setBtnExist());
+		while(!main.setBtnExist()){
+			sleep(1000);
+		}
+		System.out.println("接单设置是么:"+main.setBtnText());
+		String text="接单"+"\n"+"设置";
+		assertEquals(main.setBtnText(),text);
+		//assertEquals(main.setBtnText(),)
+		//assertEquals(main.setBtnText(),"接单设置");
 		sleep(1000);
 		assertTrue(main.changeBtnExist());
 		sleep(1000);
-		assertEquals(main.changeBtnText(),"状态切换");
+		String text2="状态"+"\n"+"切换";
+		assertEquals(main.changeBtnText(),text2);
+		System.out.println(main.changeBtnText());
 		main.changeBtnClick();
 		
 	}
