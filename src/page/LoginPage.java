@@ -32,9 +32,6 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 	public void clearPhone() {
 		loginPage.cleartxt(PHONE);
 	}
-	public Boolean phoneNull(){
-		return loginPage.getText(PHONE).equals("");
-	}
 
 	// 输入正确的手机号
 	public void setPhone(String test_env) {
@@ -85,9 +82,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 	public void clearDriverid() {
 		loginPage.cleartxt(DRIVERID);
 	}
-	public Boolean driverIdNull(){
-		return loginPage.getText(DRIVERID).equals("");
-	}
+
 	// 输入正确的司机ＩＤ
 	public void setDriverid(String test_env) {
 		if (test_env == "test") {
@@ -137,9 +132,7 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 	public void clearPassword() {
 		loginPage.cleartxt(PASSWORD);
 	}
-	public Boolean passwordNull(){
-		return loginPage.getText(PASSWORD).equals("");
-	}
+
 	// 输入正确的密码
 	public void setPassword(String test_env) {
 		if (test_env == "test") {
