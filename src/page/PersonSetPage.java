@@ -29,6 +29,14 @@ public class PersonSetPage extends UiAutomatorTestCase implements
 	public String titleText(){
 		return personSetPage.getText(TITLE);
 	}
+	//判断修改密码是否存在
+	public Boolean llModifyPassExist(){
+		return personSetPage.isExist(LL_MODIFY_PASS);
+	}
+	//点击修改密码
+	public void llModifyPassClick(){
+		personSetPage.clickObj(LL_MODIFY_PASS);
+	}
 	//判断导航下载栏是否存在
 	public Boolean llOffLineExist(){
 		return personSetPage.isExist(LL_OFFLINE_MAP);
