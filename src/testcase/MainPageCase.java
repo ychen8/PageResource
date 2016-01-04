@@ -22,9 +22,9 @@ public class MainPageCase extends UiAutomatorTestCase{
 	
 	//首页UI
 	public void testMainPageUI() throws UiObjectNotFoundException{				
-				
+		System.out.print("测试首页UI");		
 		assertTrue(mainpage.msgExist());//判断消息控件是否存在
-		assertTrue(mainpage.msgCountExist());//判断消息数控件是否存在
+//		assertTrue(mainpage.msgCountExist());//判断消息数控件是否存在
 		assertTrue(mainpage.testEnvExist());//判断测试环境控件是否存在
 		assertTrue(mainpage.titleExist());//判断标题是否存在
 		assertTrue(mainpage.personBtnExist());//判断抽屉按钮是否存在
@@ -35,9 +35,9 @@ public class MainPageCase extends UiAutomatorTestCase{
 		assertTrue(mainpage.rechargeAmountExist());//判断代充金额是否存在
 		assertTrue(mainpage.myOrderExist());//判断我的订单是否存在
 		assertTrue(mainpage.stateBtnExist());//判断当前工作状态是否存在
-		assertTrue(mainpage.setBtnExist());//判断接单设置是否存在
+		assertFalse(mainpage.setBtnExist());//判断接单设置是否存在
 		assertTrue(mainpage.changeBtnExist());//判断切换状态是否存在
-		assertTrue(mainpage.unFinishCountExist());//判断未完成订单数是否存在
+//		assertTrue(mainpage.unFinishCountExist());//判断未完成订单数是否存在
 			
 	}
 //	//消息数为1
@@ -50,17 +50,24 @@ public class MainPageCase extends UiAutomatorTestCase{
 //	}
 	//未完成订单
 	public void testMainPageOrder() throws UiObjectNotFoundException{
-
-		assertTrue(mainpage.orderTypeExist());//判断订单类型是否存在
-		assertTrue(mainpage.flightNoExist());//判断航班号是否存在
-		assertTrue(mainpage.orderStatusExist());//判断订单状态是否存在
-		assertTrue(mainpage.useDateExist());//判断用车时间是否存在
-		assertTrue(mainpage.changeOrderBtnExist());//判断改派按钮是否存在
-		assertTrue(mainpage.upLocationExist());//判断上车地点是否存在		
+		System.out.print("测试首页订单");		
+		
+		if(mainpage.myOrderText() == "未完成订单"){
+			assertTrue(mainpage.orderTypeExist());//判断订单类型是否存在
+			assertTrue(mainpage.flightNoExist());//判断航班号是否存在
+			assertTrue(mainpage.orderStatusExist());//判断订单状态是否存在
+			assertTrue(mainpage.useDateExist());//判断用车时间是否存在
+			assertTrue(mainpage.changeOrderBtnExist());//判断改派按钮是否存在
+			assertTrue(mainpage.upLocationExist());//判断上车地点是否存在	
+		}
+		else{
+			assertEquals("我的订单", mainpage.myOrderText());
+		}
 		
 	}
 	//首页-链接至订单列表页
 	public void testOrderListPage() throws UiObjectNotFoundException{
+		System.out.print("测试订单列表页");		
 		
 		mainpage.myOrderClick();
 		
@@ -76,12 +83,12 @@ public class MainPageCase extends UiAutomatorTestCase{
 		
 		for(int i=0 ; i<orderlistpage.getorderAmount(); i++){
 			assertTrue(orderlistpage.orderTypeExist(i));//判断订单类型是否存在
-			assertTrue(orderlistpage.flightnoExist(i));//判断航班号是否存在
+//			assertTrue(orderlistpage.flightnoExist(i));//判断航班号是否存在
 			assertTrue(orderlistpage.orderPriceExist(i));//判断订单金额是否存在
 			assertTrue(orderlistpage.orderStateExist(i));//判断订单状态是否存在
 			assertTrue(orderlistpage.ordernoExist(i));//判断订单号是否存在
 			assertTrue(orderlistpage.orderDateExist(i));//判断订单日期是否存在
-			assertTrue(orderlistpage.changeOrderBtnExist(i));//判断改派按钮是否存在
+//			assertTrue(orderlistpage.changeOrderBtnExist(i));//判断改派按钮是否存在
 			assertTrue(orderlistpage.upLocExist(i));//判断上车地点是否存在
 			assertTrue(orderlistpage.upLocDetailExist(i));//判断上车地点详情是否存在
 			assertTrue(orderlistpage.downLocExist(i));//判断下车地点是否存在
@@ -92,6 +99,7 @@ public class MainPageCase extends UiAutomatorTestCase{
 	}
 	//首页-抽屉页
 	public void testDrawerPage() throws UiObjectNotFoundException{
+		System.out.print("测试抽屉页");		
 		
 		mainpage.personBtnClick();
 		
@@ -117,6 +125,7 @@ public class MainPageCase extends UiAutomatorTestCase{
 	}
 	//首页-消息列表
 	public void testMsgListPage() throws UiObjectNotFoundException{
+		System.out.print("测试消息列表页");		
 		
 		mainpage.msgClick();
 		

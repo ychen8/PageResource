@@ -16,8 +16,8 @@ public interface NoticeListConstants {
 	static String MSGTIME="com.szzc.ucar.driver:id/message_time";
 	//消息内容
 	static String MSGCONTENT="com.szzc.ucar.driver:id/message_content";
-	//LISTVIEW的class
-	static String LISTVIEW="android.widget.ListView";
+	//LISTVIEW的resourceId
+	static String LISTVIEW="android:id/list";
 	//返回按钮
 	static String BACKICON="com.szzc.ucar.driver:id/titlebar_lefticon";
 }
