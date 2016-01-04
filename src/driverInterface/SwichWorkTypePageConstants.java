@@ -19,4 +19,5 @@ public interface SwichWorkTypePageConstants {
 	static String CANCELBTN="com.szzc.ucar.driver:id/close_btn";
 	//我要上班
 	static String STARTWORK="com.szzc.ucar.driver:id/rbstate_startwork";
+	static String CONFIRM_TEXT="com.szzc.ucar.driver:id/confirm_text";
 }

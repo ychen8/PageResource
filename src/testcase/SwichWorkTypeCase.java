@@ -17,13 +17,14 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 	LoginCase login = new LoginCase();
 	Base base = new Base();
 	Watcher watcher = new Watcher();
-	//１.我要上班
-	public void testStartWork() {
+	//用例上班中、回家中、交班中、临时小休、我要上班
+	public void testSwichWork() {
 		watcher.watchPhone();
 		watcher.watchNetwork();
 		// 1.司机A登录
 		base.login();
-		//sleep(2000);
+	
+		///////用例－上班中///////////
 		// 2.司机A点击“我要上班”
 		while(!main.stateBtnExist()){
 			sleep(1000);
@@ -41,14 +42,18 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 			main.workBtnClick();
 			sleep(5000);
 		}
+		//上班成功，上班状态显示上班中
 		assertEquals(main.stateBtnText(),"上班中");
-		sleep(2000);
+		sleep(5000);
 		//assertTrue(main.setBtnExist());
+		
 		while(!main.setBtnExist()){
 			sleep(1000);
+			System.out.println(main.setBtnExist());
 		}
 		System.out.println("接单设置是么:"+main.setBtnText());
 		String text="接单"+"\n"+"设置";
+		//显示接单设置按钮
 		assertEquals(main.setBtnText(),text);
 		//assertEquals(main.setBtnText(),)
 		//assertEquals(main.setBtnText(),"接单设置");
@@ -56,15 +61,82 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 		assertTrue(main.changeBtnExist());
 		sleep(1000);
 		String text2="状态"+"\n"+"切换";
+		//显示状态切换按钮
 		assertEquals(main.changeBtnText(),text2);
 		System.out.println(main.changeBtnText());
-		main.changeBtnClick();
 		
+		////////用例＝回家中///////
+		//改变上班状态为回家中
+		main.changeBtnClick();
+		while(!swtype.goHomeExist()){
+			sleep(1000);
+		}
+		do{
+			swtype.goHomeClick();
+		}while(!swtype.goHomeChecked());
+		swtype.okBtnClick();
+		sleep(2000);
+		if(swtype.limitConfirmExist()){
+			swtype.okBtnClick();
+			swtype.cancelBtnClick();
+
+			assertEquals(main.stateBtnText(),"上班中");
+		}
+		else{
+			//判断上班状态是否变为回家中
+			assertEquals(main.stateBtnText(),"回家中");
+		}
+
+		
+		////////用例－交班中///////
+		main.changeBtnClick();
+		while(!swtype.alternateExist()){
+			sleep(1000);
+		}
+		do{
+			swtype.alternateClick();
+		}while(!swtype.alternateChecked());
+		swtype.okBtnClick();
+		sleep(2000);
+		if(swtype.limitConfirmExist()){
+			swtype.okBtnClick();
+			swtype.cancelBtnClick();
+
+			assertEquals(main.stateBtnText(),"上班中");
+		}
+		else{
+			assertEquals(main.stateBtnText(),"交班中");
+		}
+		
+		
+		/////临时小休//////
+		main.changeBtnClick();
+		while(!swtype.tempFinishExist()){
+			sleep(1000);
+		}
+		do{
+			swtype.tempFinishClick();
+		}while(!swtype.tempFinishChecked());
+		swtype.okBtnClick();
+		sleep(2000);
+		assertEquals(main.stateBtnText(),"临时小休");
+		
+		//////正常下班//////
+		main.changeBtnClick();
+		while(!swtype.finishWorkExist()){
+			sleep(1000);
+		}
+		do{
+			swtype.finishWorkClick();
+		}while(!swtype.finishWorkChecked());
+		swtype.okBtnClick();
+		sleep(2000);
+		assertEquals(main.stateBtnText(),"我要上班");
+		
+		
+				
 	}
 	
-	public void testGoHome(){
-		
-	}
 
 	@Override
 	protected void setUp() throws Exception {

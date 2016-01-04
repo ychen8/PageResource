@@ -64,6 +64,15 @@ public class SwichWorkTypePage extends UiAutomatorTestCase implements SwichWorkT
 	public Boolean goHomeChecked(){
 		return swichpage.objChecked(GOHOME);
 	}
+	//判断我要回家是否存在
+	public Boolean limitConfirmExist(){
+		return swichpage.isExist(CONFIRM_TEXT);
+	}
+	//获取我要回家文本
+	public String limitConfirmText(){
+	      String text=swichpage.getText(CONFIRM_TEXT);
+		return text;
+	}
 
 	//点击临时小休
 	public void tempFinishClick(){
