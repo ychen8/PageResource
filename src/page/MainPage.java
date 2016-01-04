@@ -10,8 +10,9 @@ import baseMethod.MainMethod;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.MainPageConstants;
+import driverInterface.ParameterConfigConstants;
 
-public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
+public class MainPage extends UiAutomatorTestCase implements MainPageConstants,ParameterConfigConstants{
 	MainMethod mainpage= new MainMethod();
 	//点击消息按钮
 	public void msgClick(){
@@ -280,6 +281,10 @@ public class MainPage extends UiAutomatorTestCase implements MainPageConstants{
 	//判断里程框是否存在
 	public Boolean kiloEditExist(){
 		return mainpage.isExist(KILOTXT);
+	}
+	public void kiloSetText(){
+		mainpage.setxt(KILOTXT, Integer.toString(KILO));
+		
 	}
 	//获取错误信息
 	public String errInfoKiloText(){

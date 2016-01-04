@@ -1,6 +1,5 @@
 package testcase;
 
-import android.util.Log;
 import baseMethod.Base;
 import baseMethod.Watcher;
 
@@ -8,7 +7,6 @@ import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 import driverInterface.ParameterConfigConstants;
-import execute.UiAutomatorHelper;
 import page.LoginPage;
 import page.MainPage;
 import page.ResetPassPage;
