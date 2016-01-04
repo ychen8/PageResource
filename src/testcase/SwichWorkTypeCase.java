@@ -39,10 +39,13 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 			sleep(5000);
 		}
 		assertEquals(main.stateBtnText(),"上班中");
-		sleep(1000);
+		sleep(2000);
 		assertTrue(main.setBtnExist());
+		sleep(1000);
 		assertEquals(main.setBtnText(),"接单设置");
+		sleep(1000);
 		assertTrue(main.changeBtnExist());
+		sleep(1000);
 		assertEquals(main.changeBtnText(),"状态切换");
 		main.changeBtnClick();
 		
