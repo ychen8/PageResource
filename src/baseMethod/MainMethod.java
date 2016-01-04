@@ -212,6 +212,30 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return text;		
 	}
+	//获取文本（针对消息通知列表特殊嵌套模式）
+	public String[] getTextForMsg(String ListResourceId, int index, String[] ResourceId) {
+		// TODO Auto-generated method stub
+		String[] text = {"","",""};
+		try{
+			UiObject listObj=new UiObject(new UiSelector().resourceId(ListResourceId));
+			UiObject obj1=listObj.getChild(new UiSelector().index(index));
+			UiObject obj2 = obj1.getChild(new UiSelector().index(0));
+			UiObject obj3 = obj2.getChild(new UiSelector().index(0));
+			UiObject obj4 = obj3.getChild(new UiSelector().index(0));
+			UiObject obj5 = obj4.getChild(new UiSelector().index(0));
+			UiObject childObj1 = obj5.getChild(new UiSelector().resourceId(ResourceId[0]));//标题
+			UiObject childObj2 = obj4.getChild(new UiSelector().resourceId(ResourceId[1]));//时间
+			UiObject childObj3 = obj3.getChild(new UiSelector().resourceId(ResourceId[2]));//内容
+		
+			text[0] = childObj1.getText();
+			text[1] = childObj2.getText();
+			text[2] = childObj3.getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //获取文本方法
 ////////////////////////////////////////////////////////////////////////////////////
@@ -251,6 +275,7 @@ public class MainMethod extends UiAutomatorTestCase{
 		UiObject obj=new UiObject(new UiSelector().className(className).childSelector(new UiSelector().text(text)));
 		return obj;
 	}
+
 ////////////////////////////////////////////////////////////////////////////////////
 //获取对象方法
 ////////////////////////////////////////////////////////////////////////////////////
@@ -353,6 +378,30 @@ public class MainMethod extends UiAutomatorTestCase{
 	public boolean isExistFromListRegrand(String ResourceId,int childindex,int grandindex,int regrandindex){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().index(childindex)).childSelector(new UiSelector().index(grandindex)).childSelector(new UiSelector().index(regrandindex)));
 		return obj.exists();
+	}
+	//判断是否存在（针对消息通知列表特殊嵌套模式）
+	public Boolean[] isExistForMsg(String ListResourceId, int index, String[] ResourceId) {
+		// TODO Auto-generated method stub
+		Boolean[] isExist = {false,false,false};
+		try{
+			UiObject listObj=new UiObject(new UiSelector().resourceId(ListResourceId));
+			UiObject obj1=listObj.getChild(new UiSelector().index(index));
+			UiObject obj2 = obj1.getChild(new UiSelector().index(0));
+			UiObject obj3 = obj2.getChild(new UiSelector().index(0));
+			UiObject obj4 = obj3.getChild(new UiSelector().index(0));
+			UiObject obj5 = obj4.getChild(new UiSelector().index(0));
+			UiObject childObj1 = obj5.getChild(new UiSelector().resourceId(ResourceId[0]));//标题
+			UiObject childObj2 = obj4.getChild(new UiSelector().resourceId(ResourceId[1]));//时间
+			UiObject childObj3 = obj3.getChild(new UiSelector().resourceId(ResourceId[2]));//内容
+		
+			isExist[0] = childObj1.exists();
+			isExist[1] = childObj2.exists();
+			isExist[2] = childObj3.exists();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return isExist;
 	}
 ////////////////////////////////////////////////////////////////////////////////////
 //判断对象是否存在方法

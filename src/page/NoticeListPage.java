@@ -29,41 +29,17 @@ public class NoticeListPage extends UiAutomatorTestCase implements NoticeListCon
 	public int noticeAmount(){
 		return noticelistpage.getChildCount(LISTVIEW);
 	}
-	//获取标题内容(通过index)
-	public String noticeTitleTxt(int index){
-		return noticelistpage.getText(LISTVIEW, index,MSGTITLE);
+	//判断标题/时间/内容是否存在
+	public Boolean[] noticeExist(int index){
+		return noticelistpage.isExistForMsg(LISTVIEW, index, MSG);
 	}
-	//判断标题内容是否存在（通过index）
-	public Boolean noticeTitleExist(int index){
-		return noticelistpage.isExist(LISTVIEW, index, MSGTITLE);
+	//获取消息(通过index)
+	public String[] noticeTxt(int index){
+		return noticelistpage.getTextForMsg(LISTVIEW, index,MSG);
 	}
-	//点击标题内容（通过index）
-	public void noticeTitleClick(int index){
-		noticelistpage.clickObj(LISTVIEW, index, MSGTITLE);
-	}
-	//获取消息时间（通过index）
-	public String noticeTimeTxt(int index){
-		return noticelistpage.getText(LISTVIEW, index, MSGTIME);
-	}
-	//判断消息事件是否存在（通过index）
-	public Boolean noticeTimeExist(int index){
-		return noticelistpage.isExist(LISTVIEW, index, MSGTIME);
-	}
-	//点击消息时间（通过index）
-	public void noticeTimeClick(int index){
-		noticelistpage.clickObj(LISTVIEW, index, MSGTIME);
-	}
-	//获取消息内容（通过index）
-	public String noticeContenTxt(int index){
-		return noticelistpage.getText(LISTVIEW,index,MSGCONTENT);
-	}
-	//判断消息内容是否存在（通过index）
-	public Boolean noticeContentExist(int index){
-		return noticelistpage.isExist(MSGCONTENT, index, MSGCONTENT);
-	}
-	//点击消息内容（通过index）
-	public void noticeContentClick(int index){
-		noticelistpage.clickObj(MSGCONTENT, index, MSGCONTENT);
+	//点击消息（通过index）
+	public void noticeClick(int index){
+		noticelistpage.clickObj(LISTVIEW, index);
 	}
 	//点击返回按钮
 	public void backBtnClick(){
