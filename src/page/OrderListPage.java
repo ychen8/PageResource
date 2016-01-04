@@ -38,7 +38,7 @@ public class OrderListPage extends UiAutomatorTestCase implements OrderListConst
 	public Boolean queryBtnExist(){
 		return orderlistpage.isExist(QUERYBTN);        
 	}
-	//点击返回按钮
+	//点击查询按钮
 	public void queryBtnClick(){	
 		orderlistpage.clickObj(QUERYBTN);
 	}	
