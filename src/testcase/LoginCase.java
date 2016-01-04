@@ -38,9 +38,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		assertTrue(login.passwordExist());
 		assertTrue(login.loginExist());
 	
-		do{
-			login.clearPhone();// 清空手机号输入框
-		}while(login.phoneNull());
+		login.clearPhone();// 清空手机号输入框
 		login.setPhone(TEST_ENV);//输入手机号
 		
 		login.clearDriverid();// 清空司机ＩＤ输入框
