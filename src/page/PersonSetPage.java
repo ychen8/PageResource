@@ -33,6 +33,14 @@ public class PersonSetPage extends UiAutomatorTestCase implements
 	public Boolean llModifyPassExist(){
 		return personSetPage.isExist(LL_MODIFY_PASS);
 	}
+	//判断修改密码文本是否存在
+	public Boolean modifyPassExist(){
+		return personSetPage.isExistFromId(LL_MODIFY_PASS,INDEX_LL_MODIFY_PASS);
+	}
+	//获取修改密码文本内容
+	public String modifyPassText(){
+		return personSetPage.getTextFromId(LL_MODIFY_PASS,INDEX_LL_MODIFY_PASS);
+	}
 	//点击修改密码
 	public void llModifyPassClick(){
 		personSetPage.clickObj(LL_MODIFY_PASS);
@@ -89,17 +97,29 @@ public class PersonSetPage extends UiAutomatorTestCase implements
 	public Boolean llCheckUpdateExist(){
 		return personSetPage.isExist(LL_CHECK_UPDATE);
 	}
+	//判断检测新版本栏是否可点击
+	public Boolean llCheckUpdateClickable(){
+		return personSetPage.objClickable(LL_CHECK_UPDATE);
+	}
 	//点击检测新版本栏
 	public void llCheckUpdateClick(){
 		personSetPage.clickObj(LL_CHECK_UPDATE);
 	}
-	//判断检测新版本栏文本或值是否存在
-	public Boolean checkUpdateExist(int index){
-		return personSetPage.isExistFromId(LL_CHECK_UPDATE,index);
+	//判断检测新版本栏文本是否存在
+	public Boolean checkUpdateExist(){
+		return personSetPage.isExistFromId(LL_CHECK_UPDATE,INDEX_CHECK_UPDATE);
 	}
-	//获取检测新版本栏文本或值内容
-	public String checkUpdateText(int index){
-		return personSetPage.getTextFromId(LL_CHECK_UPDATE,index);
+	//获取检测新版本栏文本内容
+	public String checkUpdateText(){
+		return personSetPage.getTextFromId(LL_CHECK_UPDATE,INDEX_CHECK_UPDATE);
+	}
+	//判断检测新版本栏值是否存在
+	public Boolean checkUpdateValueExist(){
+		return personSetPage.isExistFromId(LL_CHECK_UPDATE,INDEX_CHECK_UPDATE_VALUE);
+	}
+	//获取检测新版本栏值内容
+	public String checkUpdateValueText(){
+		return personSetPage.getTextFromId(LL_CHECK_UPDATE,INDEX_CHECK_UPDATE_VALUE);
 	}
 	//判断退出登录是否存在
 	public Boolean logoutExist(){
