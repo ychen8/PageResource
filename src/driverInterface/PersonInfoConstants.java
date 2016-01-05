@@ -6,6 +6,8 @@ public interface PersonInfoConstants {
 	static String PERINFOTITLE="com.szzc.ucar.driver:id/titlebar_title";
 	//返回按钮
 	static String BACKBTN="com.szzc.ucar.driver:id/titlebar_title";
+	//司机头像
+	static String DRIVERIMG="com.szzc.ucar.driver:id/img_driver_photo";
 	//司机姓名
 	static String DRIVERNAME="com.szzc.ucar.driver:id/txt_driver_name";
 	//司机电话

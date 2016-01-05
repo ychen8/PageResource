@@ -26,6 +26,10 @@ public class PersonInfoPage extends UiAutomatorTestCase implements PersonInfoCon
 	public void backBtnClick(){
 		perinfo.clickObj(BACKBTN);
 	}
+	//判断司机头像是否存在
+	public boolean driverImgExist(){
+		return perinfo.isExist(DRIVERIMG);
+	}
 	//判断司机姓名是否存在
 	public boolean driverNameExist(){
 		return perinfo.isExist(DRIVERNAME);
