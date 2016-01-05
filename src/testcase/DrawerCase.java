@@ -68,8 +68,12 @@ public class DrawerCase extends UiAutomatorTestCase{
 		assertTrue(personmanagepage.txtTransClassAddrExist());//判断交班地址值是否存在
 		assertTrue(personmanagepage.txtMonthClassExist());//判断本月排班表是否存在
 		assertEquals("本月排班表", personmanagepage.txtMonthClassText());
+		assertTrue(personmanagepage.myChangeClassesExist());//判断我的换班申请是否存在
+		assertEquals("我的换班申请", personmanagepage.myChangeClassesText());
 		assertTrue(personmanagepage.txtMyLeaveExist());//判断我的请假申请是否存在
 		assertEquals("我的请假申请", personmanagepage.txtMyLeaveText());
+		assertTrue(personmanagepage.txtChangeClassesExist());//判断对班换班申请是否存在
+		assertEquals("对班换班申请", personmanagepage.txtChangeClassesText());
 		
 		personmanagepage.returnClick();
 		sleep(1000);
