@@ -33,6 +33,10 @@ public class OrderPushPage extends UiAutomatorTestCase implements OrderPushConst
 	public Boolean orderTypeExist(){
 		return orderpush.isExist(ORDERTYPE);
 	}
+	//获取订单类型文本
+	public String orderTypeText(){
+		return orderpush.getText(ORDERTYPE);
+	}
 	//判断订单颜色
 	//////////////////////////////////////////
 	///////////////////不知道怎么写////////////
