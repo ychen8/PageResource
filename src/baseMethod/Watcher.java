@@ -1,5 +1,7 @@
 package baseMethod;
 
+import page.OrderPushPage;
+
 import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.core.UiWatcher;
 
@@ -8,10 +10,9 @@ import com.android.uiautomator.core.UiWatcher;
  *作者： 陈玉婵
  */
 public class Watcher {
+	OrderPushPage push=new OrderPushPage();
 
-	/**
-	 * @param args
-	 */
+
 	public void watchPhone(){
 		UiDevice.getInstance().registerWatcher("endPhone", new UiWatcher(){
 
@@ -34,6 +35,31 @@ public class Watcher {
 			}
 			
 		});
+	}
+	public void watchOrderPush(){
+		UiDevice.getInstance().registerWatcher("orderPush", new UiWatcher(){
+
+			@Override
+			public boolean checkForCondition() {
+				if(push.orderTypeExist()){
+					push.clsBtnClick();
+				}
+				return false;
+			}
+			
+		});		
+	}
+	public void watchOrderCancel(){
+		UiDevice.getInstance().registerWatcher("orderCancel", new UiWatcher(){
+
+			@Override
+			public boolean checkForCondition() {
+				if(push.orderTypeExist()&push.orderTypeText().equals("取消用车")){
+					push.okBtnClick();
+				}
+				return false;
+			}		
+		});	
 	}
 
 }
