@@ -68,20 +68,14 @@ public class OrderListPage extends UiAutomatorTestCase implements OrderListConst
 	}
 	//判断近三月-无订单提示语是否存在
 	public Boolean noOrderText1Exist(){
-		return orderlistpage.isExistFromId(TAB_VIEW1,NO_ORDER_ID);
+		return orderlistpage.isExistFromText(NO_ORDER);
 	}
-	//获取近三月-无订单提示语
-	public String noOrderText1Text(){
-		return orderlistpage.getTextFromId(TAB_VIEW1, NO_ORDER_ID);
-	}
+
 	//判断其他时间-无订单提示语是否存在
 	public Boolean noOrderText2Exist(){
-		return orderlistpage.isExistFromId(TAB_VIEW2,NO_ORDER_ID);
+		return orderlistpage.isExistFromText(NO_ORDER);
 	}
-	//获取其他时间-无订单提示语
-	public String noOrderText2Text(){
-		return orderlistpage.getTextFromId(TAB_VIEW2, NO_ORDER_ID);
-	}
+
 	//判断是否存在订单
 	public Boolean orderListExist(){
 		return orderlistpage.isExist(ORDER_LIST);

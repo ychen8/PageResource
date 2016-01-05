@@ -331,6 +331,10 @@ public class MainMethod extends UiAutomatorTestCase{
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId));
 		return obj.exists();		
 	}
+	public Boolean isExistFromText(String text){
+		UiObject obj=new UiObject(new UiSelector().text(text));
+		return obj.exists();		
+	}
 	public Boolean isExist(String ResourceId, int index){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).index(index));
 		return obj.exists();	

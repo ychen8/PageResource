@@ -24,8 +24,8 @@ public interface OrderListConstants {
 	static String TAB_VIEW1="com.szzc.ucar.driver:id/tabview";
 	//tabview（其他时间-无订单）
 	static String TAB_VIEW2="com.szzc.ucar.driver:id/order_pull_list";
-	//无订单text-ID
-	static int NO_ORDER_ID=0;
+	//无订单
+	static String NO_ORDER="此查询条件下无订单";
 	//列表
 	static String ORDER_LIST="android:id/list";
 	//订单类型
