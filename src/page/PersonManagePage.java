@@ -94,6 +94,10 @@ public class PersonManagePage extends UiAutomatorTestCase implements PersonManag
 	public String txtFamilyAddrText(){
 		return personManagepage.getTextFromId(LL_FAMIFY_ADDR, INDEX_TXT_FAMILY_ADDR);
 	}
+	//判断箭头入口是否存在
+	public Boolean editHomeAddrExist(){
+		return personManagepage.isExistFromId(LL_FAMIFY_ADDR, INDEX_EDIT_FAMILY_ADDR);
+	}
 	//点击家庭地址栏
 	public void llFamilyAddrClick(){
 		personManagepage.clickObj(LL_FAMIFY_ADDR);
@@ -117,6 +121,10 @@ public class PersonManagePage extends UiAutomatorTestCase implements PersonManag
 	//获取交班地址文本值
 	public String txtTransClassAddrText(){
 		return personManagepage.getTextFromId(LL_TRANSFER_CLASS_ADDR, INDEX_TXT_TRANSFER_CLASS_ADDR);
+	}
+	//判断箭头入口是否存在
+	public Boolean editTransClassAddrExist(){
+		return personManagepage.isExistFromId(LL_FAMIFY_ADDR, INDEX_EDIT_TRANSFER_CLASS_ADDR);
 	}
 	//点击交班地址栏
 	public void llTransClassAddrClick(){

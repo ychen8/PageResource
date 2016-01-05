@@ -34,6 +34,8 @@ public interface PersonManageConstants {
 	static String TXT_FAMILY_ADDR="com.szzc.ucar.driver:id/txt_family_addr";
 	//家庭地址文本值-index
 	static int INDEX_TXT_FAMILY_ADDR=1;
+	//家庭地址修改入口
+	static int INDEX_EDIT_FAMILY_ADDR=2;
 	//交班地址栏
 	static String LL_TRANSFER_CLASS_ADDR="com.szzc.ucar.driver:id/ll_transfer_class_addr";
 	//交班地址维护
@@ -42,6 +44,8 @@ public interface PersonManageConstants {
 	static int INDEX_TRANSFER_CLASS_ADDR=0;
 	//交班地址维护文本值－index
 	static int INDEX_TXT_TRANSFER_CLASS_ADDR=1;	
+	//家庭地址修改入口
+	static int INDEX_EDIT_TRANSFER_CLASS_ADDR=2;
 	//本月排班表信
 	static String TXT_MONTH_CLASSES="com.szzc.ucar.driver:id/txt_month_classes";
 	//我的换班申请
