@@ -80,59 +80,55 @@ public class PersonManagePage extends UiAutomatorTestCase implements PersonManag
 	}
 	//判断家庭地址是否存在
 	public Boolean familyAddrExist(){
-		return personManagepage.isExistFromClass(TOPFRAME, INDEX_FAMILY_ADDR);
+		return personManagepage.isExistFromId(LL_FAMIFY_ADDR, INDEX_FAMILY_ADDR);
 	}
 	//获取家庭地址
 	public String familyAddrText(){
-		return personManagepage.getTextFromClass(TOPFRAME, INDEX_FAMILY_ADDR);
-	}
-	//点击家庭地址
-	public void familyAddrClick(){
-		personManagepage.clickObjFromClass(TOPFRAME, INDEX_FAMILY_ADDR);
+		return personManagepage.getTextFromId(LL_FAMIFY_ADDR, INDEX_FAMILY_ADDR);
 	}
 	//判断家庭地址文本值是否存在
 	public Boolean txtFamilyAddrExist(){
-		return personManagepage.isExistFromClass(TOPFRAME, INDEX_TXT_FAMILY_ADDR);
+		return personManagepage.isExistFromId(LL_FAMIFY_ADDR, INDEX_TXT_FAMILY_ADDR);
 	}
 	//获取家庭地址文本值
 	public String txtFamilyAddrText(){
-		return personManagepage.getTextFromClass(TOPFRAME, INDEX_TXT_FAMILY_ADDR);
+		return personManagepage.getTextFromId(LL_FAMIFY_ADDR, INDEX_TXT_FAMILY_ADDR);
 	}
-	//点击家庭地址文本值
-	public void txtFamilyAddrClick(){
-		personManagepage.clickObj(TXT_FAMILY_ADDR);
+	//点击家庭地址栏
+	public void llFamilyAddrClick(){
+		personManagepage.clickObj(LL_FAMIFY_ADDR);
+	}
+	//判断交班地址栏是否存在
+	public Boolean llTransClassAddrExist(){
+		return personManagepage.isExist(LL_TRANSFER_CLASS_ADDR);
 	}
 	//判断交班地址是否存在
 	public Boolean transClassAddrExist(){
-		return personManagepage.isExistFromClass(TOPFRAME, INDEX_TRANSFER_CLASS_ADDR);
+		return personManagepage.isExistFromId(LL_TRANSFER_CLASS_ADDR, INDEX_TRANSFER_CLASS_ADDR);
 	}
 	//获取交班地址
 	public String transClassAddrText(){
-		return personManagepage.getTextFromClass(TOPFRAME, INDEX_TRANSFER_CLASS_ADDR);
+		return personManagepage.getTextFromId(LL_TRANSFER_CLASS_ADDR, INDEX_TRANSFER_CLASS_ADDR);
 	}
-	//点击交班地址
-	public void transClassAddrClick(){
-		personManagepage.clickObjFromClass(TOPFRAME, INDEX_TRANSFER_CLASS_ADDR);
-	}	
 	//判断交班地址文本值是否存在
 	public Boolean txtTransClassAddrExist(){
-		return personManagepage.isExistFromClass(TOPFRAME, INDEX_TXT_TRANSFER_CLASS_ADDR);
+		return personManagepage.isExistFromId(LL_TRANSFER_CLASS_ADDR, INDEX_TXT_TRANSFER_CLASS_ADDR);
 	}
 	//获取交班地址文本值
 	public String txtTransClassAddrText(){
-		return personManagepage.getTextFromClass(TOPFRAME, INDEX_TXT_TRANSFER_CLASS_ADDR);
+		return personManagepage.getTextFromId(LL_TRANSFER_CLASS_ADDR, INDEX_TXT_TRANSFER_CLASS_ADDR);
 	}
-	//点击交班地址文本值
-	public void txtTransClassAddrClick(){
-		personManagepage.clickObj(TXT_TRANSFER_CLASS_ADDR);
+	//点击交班地址栏
+	public void llTransClassAddrClick(){
+		personManagepage.clickObj(LL_TRANSFER_CLASS_ADDR);
 	}	
 	//判断本月排班表是否存在
 	public Boolean txtMonthClassExist(){
-		return personManagepage.isExistFromClass(TOPFRAME, INDEX_TXT_MONTH_CLASSES);
+		return personManagepage.isExist(TXT_MONTH_CLASSES);
 	}
 	//获取本月排班表
 	public String txtMonthClassText(){
-		return personManagepage.getTextFromClass(TOPFRAME, INDEX_TXT_MONTH_CLASSES);
+		return personManagepage.getText(TXT_MONTH_CLASSES);
 	}
 	//点击本月排班表
 	public void txtMonthClassClick(){
@@ -140,16 +136,42 @@ public class PersonManagePage extends UiAutomatorTestCase implements PersonManag
 	}	
 	//判断请假申请是否存在
 	public Boolean txtMyLeaveExist(){
-		return personManagepage.isExistFromClass(TOPFRAME, INDEX_TXT_MY_LEAVE);
+		return personManagepage.isExist(TXT_MY_LEAVE);
 	}
 	//获取我的请假申请
 	public String txtMyLeaveText(){
-		return personManagepage.getTextFromClass(TOPFRAME, INDEX_TXT_MY_LEAVE);
+		return personManagepage.getText(TXT_MY_LEAVE);
 	}
 	//点击我的请假申请
 	public void txtMyLeaveClick(){
 		personManagepage.clickObj(TXT_MY_LEAVE);
 	}
+	//判断我的换班申请是否存在
+	public Boolean myChangeClassesExist(){
+		return personManagepage.isExist(TXT_MY_CHANGE_CLASSES);
+	}
+	//获取我的换班申请
+	public String myChangeClassesText(){
+		return personManagepage.getText(TXT_MY_CHANGE_CLASSES);
+	}
+	//点击我的换班申请
+	public void myChangeClassesClick(){
+		personManagepage.clickObj(TXT_MY_CHANGE_CLASSES);
+	}
+	//判断对换班申请是否存在
+	public Boolean txtChangeClassesExist(){
+		return personManagepage.isExist(TXT_CHANGE_CLASSES);
+	}
+	//获取对换班申请
+	public String txtChangeClassesText(){
+		return personManagepage.getText(TXT_CHANGE_CLASSES);
+	}
+	//点击对换班申请
+	public void txtChangeClassesClick(){
+		personManagepage.clickObj(TXT_CHANGE_CLASSES);
+	}
+	
+	
 	
 	
 }

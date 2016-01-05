@@ -4,8 +4,6 @@ package driverInterface;
  *作者： 陈玉婵
  */
 public interface PersonManageConstants {
-	//
-	static String TOPFRAME="android.widget.FrameLayout";
 	//返回icon
 	static String BACK="com.szzc.ucar.driver:id/titlebar_lefticon";
 	//标题
@@ -28,24 +26,31 @@ public interface PersonManageConstants {
 	static String TXT_PRIVATE_PHONE="com.szzc.ucar.driver:id/txt_private_phone";
 	//私人电话文本值-index
 	static int INDEX_TXT_PRIVATE_PHONE=1;
+	//家庭地址栏
+	static String LL_FAMIFY_ADDR="com.szzc.ucar.driver:id/ll_famify_addr";
 	//家庭地址文本-index
-	static int INDEX_FAMILY_ADDR=3;
+	static int INDEX_FAMILY_ADDR=0;
 	//家庭地址文本值
 	static String TXT_FAMILY_ADDR="com.szzc.ucar.driver:id/txt_family_addr";
 	//家庭地址文本值-index
-	static int INDEX_TXT_FAMILY_ADDR=4;
+	static int INDEX_TXT_FAMILY_ADDR=1;
+	//交班地址栏
+	static String LL_TRANSFER_CLASS_ADDR="com.szzc.ucar.driver:id/ll_transfer_class_addr";
 	//交班地址维护
 	static String TXT_TRANSFER_CLASS_ADDR="com.szzc.ucar.driver:id/txt_transfer_class_addr";
 	//交班地址维护-index
-	static int INDEX_TRANSFER_CLASS_ADDR=5;
+	static int INDEX_TRANSFER_CLASS_ADDR=0;
 	//交班地址维护文本值－index
-	static int INDEX_TXT_TRANSFER_CLASS_ADDR=6;	
+	static int INDEX_TXT_TRANSFER_CLASS_ADDR=1;	
 	//本月排班表信
 	static String TXT_MONTH_CLASSES="com.szzc.ucar.driver:id/txt_month_classes";
-	static int INDEX_TXT_MONTH_CLASSES=7;
+	//我的换班申请
+	static String TXT_MY_CHANGE_CLASSES="com.szzc.ucar.driver:id/txt_my_change_classes";
 	//我的请假申请信
 	static String TXT_MY_LEAVE="com.szzc.ucar.driver:id/txt_my_leave";
-	static int INDEX_TXT_MY_LEAVE=8;
+	//对换班申请
+	static String TXT_CHANGE_CLASSES="com.szzc.ucar.driver:id/txt_change_classes";
+	
 	
 
 }
