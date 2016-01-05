@@ -91,7 +91,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		
 		sleep(5000);
 		assertTrue(login.confirmTextExist());
-		assertEquals(login.confirmTextText(),"手机号码不存在");
+		assertEquals("手机号码不存在",login.confirmTextText());
 
 		
 	}
@@ -125,7 +125,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		login.loginClick();//点击登录按钮
 		sleep(5000);
 		assertTrue(login.confirmTextExist());
-		assertEquals(login.confirmTextText(),"司机ID有误");
+		assertEquals("司机ID有误",login.confirmTextText());
 		
 	}
 	//4.密码错误
@@ -158,7 +158,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		login.loginClick();//点击登录按钮
 		sleep(5000);	
 		assertTrue(login.confirmTextExist());
-		assertEquals(login.confirmTextText(),"密码不正确");
+		assertEquals("密码不正确",login.confirmTextText());
 		
 	}
 	//5.驾照将到期
@@ -192,7 +192,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		login.loginClick();//点击登录按钮
 		sleep(5000);
 		assertTrue(login.confirmTextExist());
-		assertEquals(login.confirmTextText(),"驾驶证已到期，换证更新信息后方可登录");
+		assertEquals("驾驶证已到期，换证更新信息后方可登录",login.confirmTextText());
 	}
 	//7。重设密码-获取验证码-手机号未注册
 	public void testReWrongPhone(){
@@ -221,7 +221,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		sleep(5000);
 
 		assertTrue(resetPass.reConfirmTextExist());
-		assertEquals(resetPass.reConfirmTextText(),"该手机号尚未注册");
+		assertEquals("该手机号尚未注册",resetPass.reConfirmTextText());
 	}
 	//8.重设密码-获取验证码-司机ID有误
 	public void testReWrongDriverid(){
@@ -250,7 +250,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		resetPass.getCodeClick();
 		sleep(5000);
 		assertTrue(resetPass.reConfirmTextExist());
-		assertEquals(resetPass.reConfirmTextText(),"司机ID有误");
+		assertEquals("司机ID有误",resetPass.reConfirmTextText());
 	}
 	@Override
 	protected void setUp() throws Exception {

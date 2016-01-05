@@ -158,6 +158,26 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return text;
 	}
+	public String getTextBrother(String parentText,int childindex){
+		String text="";
+		try{
+			text=new UiObject(new UiSelector().text(parentText).fromParent(new UiSelector().index(childindex))).getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;
+	}
+	public String getTextBrotherChild(String parentText,int broindex,int childindex){
+		String text="";
+		try{
+			text=new UiObject(new UiSelector().text(parentText).fromParent(new UiSelector().index(broindex)).childSelector(new UiSelector().index(childindex))).getText();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return text;
+	}
 	//获取【指定父类】下，匹配【指定text】的子类的兄弟的text
 	public String getOtherChild(String parentResourceId,String text,String childResourceId){
 		UiObject obj = new UiObject(new UiSelector().resourceId(childResourceId));
@@ -334,6 +354,16 @@ public class MainMethod extends UiAutomatorTestCase{
 	public Boolean isExistFromText(String text){
 		UiObject obj=new UiObject(new UiSelector().text(text));
 		return obj.exists();		
+	}
+	//找到匹配ＴＥＸＴ的兄弟类
+	public Boolean isExistTextBrother(String text,int index){
+		UiObject obj=new UiObject(new UiSelector().text(text).fromParent(new UiSelector().index(index)));
+		return obj.exists();
+	}
+	//找到匹配ＴＥＸＴ的兄弟类的子类
+	public Boolean isExistTextBroChild(String text,int broindex,int childindex){
+		UiObject obj=new UiObject(new UiSelector().text(text).fromParent(new UiSelector().index(broindex)).childSelector(new UiSelector().index(childindex)));
+		return obj.exists();
 	}
 	public Boolean isExist(String ResourceId, int index){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).index(index));
