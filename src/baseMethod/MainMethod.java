@@ -21,7 +21,7 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void clickObj(String resourceId){
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId));
 		try {
-			obj.click();
+			obj.clickAndWaitForNewWindow(10000);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,7 +30,7 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void clickObj(String resourceId,int index){
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).index(index));
 		try {
-			obj.click();
+			obj.clickAndWaitForNewWindow(10000);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,7 +39,7 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void clickObj(String classname,int index,String resuorceId){
 		UiObject obj=new UiObject(new UiSelector().className(classname).index(index).resourceId(resuorceId));
 		try {
-			obj.click();
+			obj.clickAndWaitForNewWindow(10000);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,7 +48,7 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void clickObjFromClass(String classname, int index){
 		UiObject obj=new UiObject(new UiSelector().className(classname).childSelector(new UiSelector().index(index)));
 		try {
-			obj.click();
+			obj.clickAndWaitForNewWindow(10000);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -57,7 +57,7 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void clickObjFromId(String resourceId, int index){
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).childSelector(new UiSelector().index(index)));
 		try {
-			obj.click();
+			obj.clickAndWaitForNewWindow(10000);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -70,7 +70,7 @@ public class MainMethod extends UiAutomatorTestCase{
 			UiObject listObj = new UiObject(new UiSelector().resourceId(listResourceId));
 			UiObject relativeLayout = listObj.getChild(new UiSelector().index(relativeLayoutIndex));
 			obj = relativeLayout.getChild(new UiSelector().resourceId(childResourceId));
-			obj.click();
+			obj.clickAndWaitForNewWindow(10000);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -82,7 +82,7 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void clickObjByText(String resourceId,String text){
 		UiObject listObj= new UiObject(new UiSelector().resourceId(resourceId).text(text));
 		try {
-			listObj.click();
+			listObj.clickAndWaitForNewWindow(10000);
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
