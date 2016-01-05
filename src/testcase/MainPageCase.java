@@ -38,7 +38,9 @@ public class MainPageCase extends UiAutomatorTestCase{
 		assertFalse(mainpage.setBtnExist());//判断接单设置是否存在
 		assertTrue(mainpage.changeBtnExist());//判断切换状态是否存在
 //		assertTrue(mainpage.unFinishCountExist());//判断未完成订单数是否存在
-			
+		
+		sleep(1000);
+
 	}
 //	//消息数为1
 //	public void testMsgCount1() throws UiObjectNotFoundException{		
@@ -64,6 +66,8 @@ public class MainPageCase extends UiAutomatorTestCase{
 			assertEquals("我的订单", mainpage.myOrderText());
 		}
 		
+		sleep(1000);
+
 	}
 	//首页-链接至订单列表页
 	public void testOrderListPage() throws UiObjectNotFoundException{
@@ -81,7 +85,7 @@ public class MainPageCase extends UiAutomatorTestCase{
 		assertEquals("已完成", orderlistpage.finishedTabText());//已完成text
 		assertTrue(orderlistpage.orderListExist());//判断订单是否存在
 		
-		for(int i=0 ; i<orderlistpage.getorderAmount(); i++){
+		for(int i=1 ; i<orderlistpage.getorderAmount()-1; i++){
 			assertTrue(orderlistpage.orderTypeExist(i));//判断订单类型是否存在
 //			assertTrue(orderlistpage.flightnoExist(i));//判断航班号是否存在
 			assertTrue(orderlistpage.orderPriceExist(i));//判断订单金额是否存在
@@ -96,12 +100,15 @@ public class MainPageCase extends UiAutomatorTestCase{
 		}
 		
 		orderlistpage.backBtnClick();//返回首页
+		sleep(1000);
+
 	}
 	//首页-抽屉页
 	public void testDrawerPage() throws UiObjectNotFoundException{
 		System.out.print("测试抽屉页");		
 		
 		mainpage.personBtnClick();
+		sleep(1000);
 		
 		assertTrue(drawerpage.driverNameExist());//判断司机姓名是否存在
 		assertTrue(drawerpage.vhicleNumExist());//判断车牌号是否存在
@@ -121,6 +128,7 @@ public class MainPageCase extends UiAutomatorTestCase{
 		assertTrue(drawerpage.customServiceExist());//判断联系客服是否存在
 		
 		mainpage.myOrderClick(); //返回首页
+		sleep(1000);
 
 	}
 	//首页-消息列表
@@ -128,20 +136,22 @@ public class MainPageCase extends UiAutomatorTestCase{
 		System.out.print("测试消息列表页");		
 		
 		mainpage.msgClick();
+		sleep(1000);
 		
 		assertTrue(noticelistpage.noticeListTitleExist());//判断标题栏是否存在
 		assertTrue(noticelistpage.backBtnExist());
 		assertEquals("消息通知", noticelistpage.noticeListTitleTxt());
-		for(int i=1 ; i<noticelistpage.noticeAmount(); i++){
+		for(int i=1 ; i<noticelistpage.noticeAmount()-1; i++){
 			
-			Boolean[] isMsgExist = noticelistpage.noticeExist(i);	
-			
+			Boolean[] isMsgExist = noticelistpage.noticeExist(i);
 			assertTrue(isMsgExist[0]);//判断消息标题是否存在
 			assertTrue(isMsgExist[1]);//判断消息时间是否存在
 			assertTrue(isMsgExist[2]);//判断消息内容是否存在
 		}
 
 		noticelistpage.backBtnClick();//返回首页
+		sleep(1000);
+
 	}
 	
 		

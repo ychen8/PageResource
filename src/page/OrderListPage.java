@@ -32,7 +32,7 @@ public class OrderListPage extends UiAutomatorTestCase implements OrderListConst
 	}
 	//点击返回按钮
 	public void backBtnClick(){	
-		orderlistpage.clickObj(TITLE);
+		orderlistpage.clickObj(BACKBTN);
 	}	
 	//判断查询按钮是否存在
 	public Boolean queryBtnExist(){
