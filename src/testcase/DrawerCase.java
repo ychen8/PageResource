@@ -61,15 +61,15 @@ public class DrawerCase extends UiAutomatorTestCase{
 		assertEquals("私人电话", personmanagepage.privatePhoneText());
 		assertTrue(personmanagepage.txtPrivatePhoneExist());//判断私人电话值是否存在
 		assertTrue(personmanagepage.familyAddrExist());//判断家庭地址是否存在
-//		assertEquals("家庭地址", personmanagepage.familyAddrText());
+		assertEquals("家庭地址维护", personmanagepage.familyAddrText());
 		assertTrue(personmanagepage.txtFamilyAddrExist());//判断家庭地址值是否存在
 		assertTrue(personmanagepage.transClassAddrExist());//判断交班地址是否存在
-//		assertEquals("交班地址", personmanagepage.transClassAddrText());
+		assertEquals("交接班地址维护", personmanagepage.transClassAddrText());
 		assertTrue(personmanagepage.txtTransClassAddrExist());//判断交班地址值是否存在
 		assertTrue(personmanagepage.txtMonthClassExist());//判断本月排班表是否存在
-//		assertEquals("本月排班表", personmanagepage.txtMonthClassText());
+		assertEquals("本月排班表", personmanagepage.txtMonthClassText());
 		assertTrue(personmanagepage.txtMyLeaveExist());//判断我的请假申请是否存在
-//		assertEquals("我的请假申请", personmanagepage.txtMyLeaveText());
+		assertEquals("我的请假申请", personmanagepage.txtMyLeaveText());
 		
 		personmanagepage.returnClick();
 		sleep(1000);
@@ -123,41 +123,27 @@ public class DrawerCase extends UiAutomatorTestCase{
 		assertEquals("本月绩效", performancepage.titleText());
 		assertTrue(performancepage.returnExist());//判断返回按钮是否存在
 		
-//		assertTrue(performancepage.rlWorkTimeExist());//判断平均工作时长栏是否存在
-//		assertTrue(performancepage.workTimeExist());//判断平均工作时长是否存在
-//		assertEquals("平均工作时长", performancepage.workTimeText());
-//		assertTrue(performancepage.workTimeValueExist());//判断平均工作时长的值是否存在
-//		
-//		assertTrue(performancepage.rlWorkDaysExist());//判断工作天数栏是否存在
-//		assertTrue(performancepage.workDaysExist());//判断工作天数是否存在
-//		assertEquals("工作天数", performancepage.workDaysText());
-//		assertTrue(performancepage.workDaysValueExist());//判断工作天数的值是否存在
-//		assertTrue(performancepage.wholeDaysValueExist());//判断应出勤天数的值是否存在
-//		
-//		assertTrue(performancepage.rlRspRateExist());//判断响应率栏是否存在
-//		assertTrue(performancepage.rspRateExist());//判断响应率是否存在
-//		assertEquals("响应率", performancepage.rspRateText());
-//		assertTrue(performancepage.rspRateValueExist());//判断响应率的值是否存在
-//		
-//		assertTrue(performancepage.rlSvcScoreExist());//判断服务评分栏是否存在
-//		assertTrue(performancepage.svcScoreExist());//判断服务评分是否存在
-//		assertEquals("服务评分", performancepage.svcScoreText());
-//		assertTrue(performancepage.svcScoreValueExist());//判断服务评分的值是否存在
-//
-//		assertTrue(performancepage.llOrderQuantityExist());//判断订单量栏是否存在
-//		assertTrue(performancepage.orderQuantityExist());//判断订单量是否存在
-//		assertEquals("订单量", performancepage.orderQuantityText());
-//		assertTrue(performancepage.orderQuantityValueExist());//判断订单量的值是否存在
-//		
-//		assertTrue(performancepage.llRechargeAmountExist());//判断客户充值额栏是否存在
-//		assertTrue(performancepage.rechargeAmountExist());//判断客户充值额是否存在
-//		assertEquals("客户充值额", performancepage.rechargeAmountText());
-//		assertTrue(performancepage.rechargeAmountValueExist());//判断客户充值额的值是否存在
-//
-//		assertTrue(performancepage.llTurnoverExist());//判断计奖营业额栏是否存在
-//		assertTrue(performancepage.turnoverExist());//判断计奖营业额是否存在
-//		assertEquals("计奖营业额", performancepage.turnoverText());
-//		assertTrue(performancepage.turnoverValueExist());//判断计奖营业额的值是否存在
+		assertTrue(performancepage.workTimeExist());//判断平均工作时长是否存在
+		assertTrue(performancepage.workTimeValueExist());//判断平均工作时长的值是否存在
+		
+		assertTrue(performancepage.workDaysExist());//判断工作天数是否存在
+		assertTrue(performancepage.workDaysValueExist());//判断工作天数的值是否存在
+		assertTrue(performancepage.wholeDaysValueExist());//判断应出勤天数的值是否存在
+		
+		assertTrue(performancepage.rspRateExist());//判断响应率是否存在
+		assertTrue(performancepage.rspRateValueExist());//判断响应率的值是否存在
+		
+		assertTrue(performancepage.svcScoreExist());//判断服务评分是否存在
+		assertTrue(performancepage.svcScoreValueExist());//判断服务评分的值是否存在
+
+		assertTrue(performancepage.orderQuantityExist());//判断订单量是否存在
+		assertTrue(performancepage.orderQuantityValueExist());//判断订单量的值是否存在
+		
+		assertTrue(performancepage.rechargeAmountExist());//判断客户充值额是否存在
+		assertTrue(performancepage.rechargeAmountValueExist());//判断客户充值额的值是否存在
+
+		assertTrue(performancepage.turnoverExist());//判断计奖营业额是否存在
+		assertTrue(performancepage.turnoverValueExist());//判断计奖营业额的值是否存在
 		
 		performancepage.returnClick();
 		sleep(1000);
@@ -178,11 +164,11 @@ public class DrawerCase extends UiAutomatorTestCase{
 		assertTrue(ranklistpage.returnExist());//判断返回按钮是否存在
 		assertTrue(ranklistpage.llRechargeAmountExist());//判断充值金额栏是否存在
 		assertTrue(ranklistpage.rechargeAmountExist());//判断充值金额是否存在
-//		assertEquals("充值金额", ranklistpage.rechargeAmountText());
+		assertEquals("充值金额", ranklistpage.rechargeAmountText());
 		
 		assertTrue(ranklistpage.llFinishOrderExist());//判断完成订单栏是否存在
 		assertTrue(ranklistpage.finishOrderExist());//判断完成订单是否存在
-//		assertEquals("完成订单", ranklistpage.finishOrderText());
+		assertEquals("完成订单", ranklistpage.finishOrderText());
 		
 		ranklistpage.returnClick();	
 		sleep(1000);
