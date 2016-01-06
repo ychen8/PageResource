@@ -447,7 +447,11 @@ public class MainMethod extends UiAutomatorTestCase{
 	public void cleartxt(String resourceId){
 		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId));
 		try {
-			obj.clearTextField();
+			for(int i=0;i<11;i++){
+				obj.longClickBottomRight();
+				UiDevice.getInstance().pressDelete();
+			}
+			
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
