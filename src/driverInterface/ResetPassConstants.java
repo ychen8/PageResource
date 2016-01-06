@@ -39,4 +39,6 @@ public interface ResetPassConstants {
 	static String RESET_PASS_TIP="com.szzc.ucar.driver:id/txt_reset_pass_tip";
 	//重设密码第二步－确定按钮
 	static String BTN_CONFIRM="com.szzc.ucar.driver:id/btn_confirm";
+	//重设密码第一步－确定按钮
+	static String BTN_OK="com.szzc.ucar.driver:id/ok_btn";
 }

@@ -232,5 +232,9 @@ public class ResetPassPage extends UiAutomatorTestCase implements ResetPassConst
 	public void btnConfirmClick(){
 			resetPassPage.clickObj(BTN_CONFIRM);
 	}
+	//点击第一步弹框确定按钮
+	public void btnOkClick(){
+			resetPassPage.clickObj(BTN_OK);
+	}
 
 }

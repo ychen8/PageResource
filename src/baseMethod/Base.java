@@ -25,6 +25,7 @@ public class Base extends UiAutomatorTestCase implements
 	UpgradPage upgrad = new UpgradPage();
 	DrawerPage draw = new DrawerPage();
 	PersonSetPage perset = new PersonSetPage();
+	MainMethod loading = new MainMethod();
 	Watcher watcher = new Watcher();
 
 	public void launchApp() {
@@ -108,11 +109,16 @@ public class Base extends UiAutomatorTestCase implements
 		pressKeyCode(KeyEvent.KEYCODE_HOME, 1);
 
 	}
+	
+	public Boolean loadingImgExist() {
+		return loading.isExistFromText("加载中...");
+	}
 
 	public static void pressKeyCode(int keyCode, int time) {
 		for (int i = 0; i < time; i++) {
 			UiDevice.getInstance().pressKeyCode(keyCode);
 		}
 	}
+	
 
 }
