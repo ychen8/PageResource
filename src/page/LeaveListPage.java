@@ -147,6 +147,22 @@ public class LeaveListPage extends UiAutomatorTestCase implements LeaveListConst
 	public String applyStatusText(int index){
 		return leavelistpage.getListText(LEAVE_LIST, index, APPLY_STATUS);
 	}
+	//判断审批意见-文本是否存在
+	public Boolean opinionTextExist(int index){
+		return leavelistpage.isExistFromList(LEAVE_LIST, index, OPINION_TEXT);
+	}
+	//获取审批意见-文本
+	public String opinionTextText(int index){
+		return leavelistpage.getListText(LEAVE_LIST, index, OPINION_TEXT);
+	}
+	//判断审批意见是否存在
+	public Boolean opinionExist(int index){
+		return leavelistpage.isExistFromList(LEAVE_LIST, index, OPINION);
+	}
+	//获取审批意见
+	public String opinionText(int index){
+		return leavelistpage.getListText(LEAVE_LIST, index, OPINION);
+	}
 	//判断取消申请按钮是否存在
 	public Boolean cancelBtnExist(int index){
 		return leavelistpage.isExistFromList(LEAVE_LIST, index, CANCEL_BTN);

@@ -47,6 +47,10 @@ public interface LeaveListConstants {
 	static String APPLY_STATUS="com.szzc.ucar.driver:id/txt_apply_status";
 	//取消申请按钮
 	static String CANCEL_BTN="com.szzc.ucar.driver:id/btn_cancel_apply";
+	//审批意见-文本
+	static String OPINION_TEXT="com.szzc.ucar.driver:id/title_approval_opinion";
+	//审批意见
+	static String OPINION="com.szzc.ucar.driver:id/txt_approval_opinion";
 	//添加新申请按钮
 	static String ADD_APPLY_BTN="com.szzc.ucar.driver:id/btn_add_new_apply";
     //////////////////////////////////////////////////////////////////////////////////
