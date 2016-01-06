@@ -24,7 +24,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 	Watcher watcher=new Watcher();
 	Base base=new Base();
 	//１、登录成功
-	public void testloginSuceess(){
+	public void testSuceess(){
 		watcher.watchPhone();
 		watcher.watchNetwork();
 		//判断是否弹升级框，如果弹则按稍后升级
@@ -92,6 +92,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		sleep(5000);
 		assertTrue(login.confirmTextExist());
 		assertEquals("手机号码不存在",login.confirmTextText());
+		login.okButtonClick();
 
 		
 	}
@@ -126,6 +127,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		sleep(5000);
 		assertTrue(login.confirmTextExist());
 		assertEquals("司机ID有误",login.confirmTextText());
+		login.okButtonClick();
 		
 	}
 	//4.密码错误
@@ -159,6 +161,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		sleep(5000);	
 		assertTrue(login.confirmTextExist());
 		assertEquals("密码不正确",login.confirmTextText());
+		login.okButtonClick();
 		
 	}
 	//5.驾照将到期
@@ -193,6 +196,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		sleep(5000);
 		assertTrue(login.confirmTextExist());
 		assertEquals("驾驶证已到期，换证更新信息后方可登录",login.confirmTextText());
+		login.okButtonClick();
 	}
 	//7。重设密码-获取验证码-手机号未注册
 	public void testReWrongPhone(){
@@ -222,6 +226,7 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 
 		assertTrue(resetPass.reConfirmTextExist());
 		assertEquals("该手机号尚未注册",resetPass.reConfirmTextText());
+		resetPass.btnConfirmClick();
 	}
 	//8.重设密码-获取验证码-司机ID有误
 	public void testReWrongDriverid(){
@@ -251,18 +256,6 @@ public class LoginCase extends UiAutomatorTestCase implements ParameterConfigCon
 		sleep(5000);
 		assertTrue(resetPass.reConfirmTextExist());
 		assertEquals("司机ID有误",resetPass.reConfirmTextText());
+		resetPass.btnConfirmClick();
 	}
-	@Override
-	protected void setUp() throws Exception {
-		// TODO Auto-generated method stub
-		super.setUp();
-		base.launchApp();	
-	}
-	@Override
-	protected void tearDown() throws Exception {
-		// TODO Auto-generated method stub
-		super.tearDown();	
-		base.exit();
-	}
-
 }

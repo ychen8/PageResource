@@ -174,18 +174,4 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 		sleep(3000);
 	}
 	
-	@Override
-	protected void setUp() throws Exception {
-		// TODO Auto-generated method stub
-		super.setUp();
-		base.launchApp();
-	}
-
-	@Override
-	protected void tearDown() throws Exception {
-		// TODO Auto-generated method stub
-		super.tearDown();
-		base.exit();
-
-	}
 }

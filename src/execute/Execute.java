@@ -11,7 +11,7 @@ public class Execute extends UiAutomatorTestCase {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String jarName = "a";
-		String testClass = "testcase.SwichWorkTypeCase";
+		String testClass = "testcase.LoginCase";
 		String testName = "";
 		String androidId = "5";
 		new UiAutomatorHelper(jarName, testClass, testName, androidId);
