@@ -1,6 +1,7 @@
 package testcase;
 
 import page.DrawerPage;
+import page.DriverDistriPage;
 import page.OrderListPage;
 import page.PerformancePage;
 import page.PersonManagePage;
@@ -23,6 +24,7 @@ public class DrawerCase extends UiAutomatorTestCase{
 	PerformancePage performancepage = new PerformancePage();
 	RankListPage ranklistpage = new RankListPage();
 	PersonSetPage personsetpage = new PersonSetPage();
+	DriverDistriPage driverdistripage = new DriverDistriPage();
 	public void testDrawerPage() throws UiObjectNotFoundException{
 				
 		assertTrue(drawerpage.driverNameExist());//判断司机姓名是否存在
@@ -222,6 +224,19 @@ public class DrawerCase extends UiAutomatorTestCase{
 		sleep(1000);
 		
 	}
+	//抽屉页-司机分布
+	public void testDriverDistriCase() throws UiObjectNotFoundException{
 			
-	
+		drawerpage.settingClick();
+		sleep(1000);
+		
+		assertTrue(driverdistripage.titleExist());//标题
+		assertTrue(driverdistripage.returnExist());//返回按钮
+		assertTrue(driverdistripage.enlargeExist());//扩大icon
+		assertTrue(driverdistripage.narrowExist());//缩小icon
+		assertTrue(driverdistripage.rePositionExist());//定位icon
+		
+		driverdistripage.returnClick();
+		sleep(1000);
+	}
 }
