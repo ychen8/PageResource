@@ -33,11 +33,11 @@ public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveAp
 	}
 	//判断请假类型-文本是否存在
 	public Boolean leaveTypeTextExist(){
-		return newleaveapplypage.isExistFromClass(FRAME_LAYOUT, LEAVE_TYPE_TEXT_ID);
+		return newleaveapplypage.isExistFromId(LL_LEAVE_TYPE, LEAVE_TYPE_TEXT_ID);
 	}
 	//获取请假类型-文本
 	public String leaveTypeTextText(){
-		return newleaveapplypage.getTextFromClass(FRAME_LAYOUT, LEAVE_TYPE_TEXT_ID);
+		return newleaveapplypage.getTextFromId(LL_LEAVE_TYPE, LEAVE_TYPE_TEXT_ID);
 	}
 	//判断请假类型是否存在
 	public Boolean leaveTypeExist(){
@@ -53,11 +53,11 @@ public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveAp
 	}
 	//判断请假班次-文本是否存在
 	public Boolean leaveClassTextExist(){
-		return newleaveapplypage.isExistFromClass(FRAME_LAYOUT, LEAVE_CLASS_TEXT_ID);
+		return newleaveapplypage.isExistFromId(LL_LEAVE_TIME, LEAVE_CLASS_TEXT_ID);
 	}
 	//获取请假班次-文本
 	public String leaveClassTextText(){
-		return newleaveapplypage.getTextFromClass(FRAME_LAYOUT, LEAVE_CLASS_TEXT_ID);
+		return newleaveapplypage.getTextFromId(LL_LEAVE_TIME, LEAVE_CLASS_TEXT_ID);
 	}
 	//判断请假班次是否存在
 	public Boolean leaveClassExist(){
@@ -72,12 +72,20 @@ public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveAp
 		newleaveapplypage.clickObj(LEAVE_CLASS);
 	}
 	//判断请假班次数量-文本是否存在
-	public Boolean leaveClassAmountTextExist(){
-		return newleaveapplypage.isExistFromClass(FRAME_LAYOUT, LEAVE_CLASS_AMOUNT_TEXT_ID);
+	public Boolean leaveClassAmountText0Exist(){
+		return newleaveapplypage.isExistFromId(LL_LEAVE_NUMBER, LEAVE_CLASS_AMOUNT_TEXT_ID0);
+	}
+	//判断请假班次数量-文本是否存在
+	public Boolean leaveClassAmountText1Exist(){
+		return newleaveapplypage.isExistFromId(LL_LEAVE_NUMBER, LEAVE_CLASS_AMOUNT_TEXT_ID1);
 	}
 	//获取请假班次数量-文本
-	public String leaveClassAmountTextText(){
-		return newleaveapplypage.getTextFromClass(FRAME_LAYOUT, LEAVE_CLASS_AMOUNT_TEXT_ID);
+	public String leaveClassAmountText0Text(){
+		return newleaveapplypage.getTextFromId(LL_LEAVE_NUMBER, LEAVE_CLASS_AMOUNT_TEXT_ID0);
+	}
+	//获取请假班次数量-文本
+	public String leaveClassAmountText1Text(){
+		return newleaveapplypage.getTextFromId(LL_LEAVE_NUMBER, LEAVE_CLASS_AMOUNT_TEXT_ID1);
 	}
 	//判断请假班次数量是否存在
 	public Boolean leaveClassAmountExist(){
@@ -89,7 +97,11 @@ public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveAp
 	}
 	//判断调休班次-文本是否存在
 	public Boolean offClassTextExist(){
-		return newleaveapplypage.isExistFromClass(FRAME_LAYOUT, OFF_CLASS_TEXT);
+		return newleaveapplypage.isExistFromId(LL_OFF_TIME, OFF_CLASS_TEXT);
+	}
+	//获取调休班次-文本
+	public String offClassTextText(){
+		return newleaveapplypage.getTextFromId(LL_OFF_TIME, OFF_CLASS_TEXT);
 	}
 	//判断调休班次是否存在
 	public Boolean offClassExist(){
@@ -176,8 +188,8 @@ public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveAp
 		return newleaveapplypage.isExist(SAVE_BTN);
 	}
 	//判断保存按钮是否可点击
-	public Boolean saveBtnClickable(){
-		return newleaveapplypage.objClickable(SAVE_BTN);
+	public Boolean saveBtnEnable(){
+		return newleaveapplypage.objEnabled(SAVE_BTN);
 	}
 	//点击保存按钮
 	public void saveBtnClick(){

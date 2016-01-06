@@ -213,6 +213,7 @@ public class PersonManageCase  extends UiAutomatorTestCase implements ParameterC
 		assertEquals("进行中", leavelistpage.validTabText());		
 		assertTrue(leavelistpage.invalidTabExist());//过期/无效tab存在
 		assertEquals("过期/无效", leavelistpage.invalidTabText());
+		assertTrue(leavelistpage.addApplyBtnExist());//添加新申请按钮存在
 		
 		leavelistpage.backBtnClick();
 		do{

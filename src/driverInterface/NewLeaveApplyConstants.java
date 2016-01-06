@@ -13,16 +13,23 @@ public interface NewLeaveApplyConstants {
 	static String TITLE="com.szzc.ucar.driver:id/titlebar_title";
 	//返回按钮
 	static String BACKBTN="com.szzc.ucar.driver:id/titlebar_lefticon";
-	//FrameLayout
-	static String FRAME_LAYOUT="android.widget.FrameLayout";
+	//请假类型ll
+	static String LL_LEAVE_TYPE="com.szzc.ucar.driver:id/ll_apply_leave_type";
 	//请假类型-文本-ID
-	static int LEAVE_TYPE_TEXT_ID=2;
+	static int LEAVE_TYPE_TEXT_ID=1;
+	//请假班次ll
+	static String LL_LEAVE_TIME="com.szzc.ucar.driver:id/ll_apply_leave_time";
 	//请假班次-文本-ID
-	static int LEAVE_CLASS_TEXT_ID=4;
+	static int LEAVE_CLASS_TEXT_ID=1;
+	//请假班次数量ll
+	static String LL_LEAVE_NUMBER="com.szzc.ucar.driver:id/ll_apply_leave_number";
 	//请假班次数量-文本-ID
-	static int LEAVE_CLASS_AMOUNT_TEXT_ID=5;
-	//调休班次-文本
-	static String OFF_CLASS_TEXT="调休班次";
+	static int LEAVE_CLASS_AMOUNT_TEXT_ID0=0;//无数时
+	static int LEAVE_CLASS_AMOUNT_TEXT_ID1=1;//有数时
+	//调休班次ll
+	static String LL_OFF_TIME="com.szzc.ucar.driver:id/ll_apply_off_time";
+	//调休班次-文本-ID
+	static int OFF_CLASS_TEXT=1;
 	
 	//请假类型
 	static String LEAVE_TYPE="com.szzc.ucar.driver:id/txt_apply_type";

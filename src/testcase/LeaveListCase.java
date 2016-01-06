@@ -2,6 +2,7 @@ package testcase;
 
 import page.LeaveListPage;
 import page.LoadingImg;
+import page.NewLeaveApplyPage;
 
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
@@ -12,7 +13,8 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
  * @author 李怡萱
  * */
 public class LeaveListCase   extends UiAutomatorTestCase{
-
+	
+	NewLeaveApplyPage newleaveapplypage = new NewLeaveApplyPage();
 	LeaveListPage leavelistpage = new LeaveListPage();
 	LoadingImg loadingimg = new LoadingImg();
 	int leaveAmount = 0;//初始化请假申请数量
@@ -130,8 +132,125 @@ public class LeaveListCase   extends UiAutomatorTestCase{
 		assertTrue(leavelistpage.closeBtnExist());//取消按钮存在
 		assertTrue(leavelistpage.okBtnExist());//确定按钮存在
 		leavelistpage.okBtnClick();
-		sleep(1000);
+		sleep(1000);			
+	}
+	
+	//添加新申请
+	public  void testNewApplyCase() throws UiObjectNotFoundException{
+		
+		leavelistpage.addApplyBtnClick();
+		do{
+			sleep(1000);
+		}while(loadingimg.loadingImgExist());
+		
+		assertTrue(newleaveapplypage.titleExist());//标题存在
+		assertEquals("新增请假申请", newleaveapplypage.titleText());
+		assertTrue(newleaveapplypage.backBtnExist());//返回按钮存在
+		
+		assertTrue(newleaveapplypage.leaveTypeTextExist());//请假类型-文本存在
+		assertEquals("请假类型", newleaveapplypage.leaveTypeTextText());
+		assertTrue(newleaveapplypage.leaveTypeExist());//请假类型存在
+		assertEquals("请选择", newleaveapplypage.leaveTypeText());
+		
+		assertTrue(newleaveapplypage.leaveClassTextExist());//请假班次-文本存在
+		assertEquals("请假班次", newleaveapplypage.leaveClassTextText());
+		assertTrue(newleaveapplypage.leaveClassExist());//请假班次存在
+		assertEquals("请选择", newleaveapplypage.leaveClassText());
+		
+		assertTrue(newleaveapplypage.leaveClassAmountText0Exist());//请假班次数量-文本存在
+		assertEquals("请假班次数量", newleaveapplypage.leaveClassAmountText0Text());
+		assertFalse(newleaveapplypage.leaveClassAmountExist());//请假班次数量不存在
+		
+		assertTrue(newleaveapplypage.leaveCauseBoxExist());//请假原因输入框存在
+		assertTrue(newleaveapplypage.leaveCauseExist());//请假原因存在
+		assertEquals("请如实填写您的请假原因", newleaveapplypage.leaveCauseText());
+		assertTrue(newleaveapplypage.remainWordNumberExist());//字数限制存在
+		assertEquals("500字", newleaveapplypage.remainWordNumberText());
+		
+		assertTrue(newleaveapplypage.saveBtnExist());//保存按钮存在
+		assertTrue(newleaveapplypage.saveBtnEnable());//保存按钮置灰
+		
+		//未选择请假类型，点击请假班次，弹窗
+		newleaveapplypage.leaveClassClick();
+		assertTrue(newleaveapplypage.confirmTextExist());//提示文字存在
+		assertEquals("请先选择请假类型",newleaveapplypage.confirmTextText());
+		assertTrue(newleaveapplypage.okBtnExist());//确定按钮存在
+		newleaveapplypage.okBtnClick();//点击确定
+				
+		
+		//病假
+		newleaveapplypage.leaveTypeClick();
+		do{
+			sleep(1000);
+		}while(loadingimg.loadingImgExist());
+		
+		assertTrue(newleaveapplypage.classTitleExist());//请假类型标题存在
+		assertEquals("请假类型",newleaveapplypage.classTitleText());
+		
+		assertTrue(newleaveapplypage.cancelBtnExist());//取消按钮存在
+		newleaveapplypage.cancelBtnClick();
+		assertEquals("请选择",newleaveapplypage.leaveTypeText());
+		
+		newleaveapplypage.leaveTypeClick();
+		do{
+			sleep(1000);
+		}while(loadingimg.loadingImgExist());
+		assertTrue(newleaveapplypage.completeBtnExist());//确定按钮存在
+		newleaveapplypage.completeBtnClick();
+		assertEquals("病假",newleaveapplypage.leaveTypeText());
+		
+		newleaveapplypage.leaveClassClick();
+		
+		if(newleaveapplypage.confirmTextExist()){//有弹窗-无可选班次
+			assertEquals("当前无可选的请假班次", newleaveapplypage.confirmTextText());
+			assertTrue(newleaveapplypage.okBtnExist());//确定按钮存在
+			System.out.println("新增请假申请：当前无可选的请假班次");
+			newleaveapplypage.okBtnClick();
+		}else{
+			assertTrue(newleaveapplypage.classTitleExist());//请假班次标题存在
+			assertEquals("请假班次",newleaveapplypage.classTitleText());
+
+			assertTrue(newleaveapplypage.cancelBtnExist());//取消按钮存在
+			newleaveapplypage.cancelBtnClick();
+			assertEquals("请选择",newleaveapplypage.leaveClassText());
+			
+			newleaveapplypage.leaveClassClick();
+			assertTrue(newleaveapplypage.completeBtnExist());//确定按钮存在
+			newleaveapplypage.completeBtnClick();
+			if(newleaveapplypage.leaveTypeText().equals("请选择")){
+				System.out.print("选了班次，结果错误。");
+			}
+			assertTrue(newleaveapplypage.leaveClassAmountExist());//请假班次数量存在
+			newleaveapplypage.leaveCauseSetText();//输入请假原因
+			assertTrue(newleaveapplypage.saveBtnEnable());//保存按钮可点击
+			
+			assertTrue(newleaveapplypage.hospitalCertificate1Exist());//医院证明1
+			newleaveapplypage.hospitalCertificate1Click();
+			assertTrue(newleaveapplypage.chooseFromAlbumExist());//从相册选择
+			newleaveapplypage.chooseAlbumClick();//相册
+			newleaveapplypage.choosePhotoClick();//照片
+			newleaveapplypage.rightBtnClick();//右上角对勾
+			
+			assertTrue(newleaveapplypage.hospitalCertificate2Exist());//医院证明2
+			newleaveapplypage.hospitalCertificate2Click();
+			assertTrue(newleaveapplypage.chooseFromAlbumExist());//从相册选择
+			newleaveapplypage.chooseAlbumClick();//相册
+			newleaveapplypage.choosePhotoClick();//照片
+			newleaveapplypage.rightBtnClick();//右上角对勾
+			
+			assertTrue(newleaveapplypage.hospitalCertificate3Exist());//医院证明3
+			newleaveapplypage.hospitalCertificate3Click();
+			assertTrue(newleaveapplypage.chooseFromAlbumExist());//从相册选择
+			newleaveapplypage.chooseAlbumClick();//相册
+			newleaveapplypage.choosePhotoClick();//照片
+			newleaveapplypage.rightBtnClick();//右上角对勾
+			
+			newleaveapplypage.saveBtnClick();//保存
 			
 			
+			
+		}
+		
+		
 	}
 }
