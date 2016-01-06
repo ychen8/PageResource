@@ -5,7 +5,7 @@ package driverInterface;
  */
 public interface DriverDistriConstants {
 	//返回icon
-	static String BACK="com.szzc.ucar.driver:id/titlebar_lefticon";
+	static String BACK="com.szzc.ucar.driver:id/back_btn";
 	//标题
 	static String TITLE="com.szzc.ucar.driver:id/titlebar_title";
 	//司机分布页面内容frame
