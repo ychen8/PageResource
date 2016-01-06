@@ -19,14 +19,15 @@ public class RechargeCase extends UiAutomatorTestCase{
 		assertTrue(reCharge.titleExist());
 		assertEquals("替用户充值",reCharge.titleText());
 		assertTrue(reCharge.backBtnExist());
-		assertTrue(reCharge.RechargeTextExist());
+		//assertTrue(reCharge.RechargeTextExist());
 		assertTrue(reCharge.RechargeInputExist());
 		assertTrue(reCharge.yuanExist());
 		assertEquals("元",reCharge.yuanText());
 		//输入超过2000的金额
 		do{
 			reCharge.RechargeInputClear();
-		}while(!reCharge.RechargeInputText().equals("请输入正敕数"));
+			System.out.println("输入框内的值："+reCharge.RechargeInputText());
+		}while(!reCharge.RechargeInputText().equals("请输入正整数"));
 		reCharge.RechargeValueSetMaxText();
 		UiDevice.getInstance().pressBack();
 		reCharge.commitBtnClick();
@@ -35,13 +36,14 @@ public class RechargeCase extends UiAutomatorTestCase{
 			do{
 				sleep(1000);
 			}while(base.loadingImgExist());
-			assertEquals("充值金额不能大于2000",reCharge.confirmTextText());
+			assertEquals("充值金额不能大于2000元",reCharge.confirmTextText());
+
 			reCharge.okBtnClick();
 		}
 		//输入小于2000金额
 		do{
 			reCharge.RechargeInputClear();
-		}while(!reCharge.RechargeInputText().equals("请输入正敕数"));
+		}while(!reCharge.RechargeInputText().equals("请输入正整数"));
 		reCharge.RechargeValueSetText();
 		UiDevice.getInstance().pressBack();
 		reCharge.commitBtnClick();
@@ -54,6 +56,21 @@ public class RechargeCase extends UiAutomatorTestCase{
 			reCharge.okBtnClick();
 		}
 		
+		//第二次充值时，提示只能充一次
+		do{
+			reCharge.RechargeInputClear();
+		}while(!reCharge.RechargeInputText().equals("请输入正敕数"));
+		reCharge.RechargeValueSetText();
+		UiDevice.getInstance().pressBack();
+		reCharge.commitBtnClick();
+		while(reCharge.confirmTextExist()){
+			reCharge.okBtnClick();
+			do{
+				sleep(1000);
+			}while(base.loadingImgExist());
+			assertEquals("",reCharge.confirmTextText());
+			reCharge.okBtnClick();
+		}
 		
 	}
 	
