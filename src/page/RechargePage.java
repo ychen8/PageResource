@@ -43,9 +43,16 @@ public class RechargePage extends UiAutomatorTestCase implements RechargeConstan
 	public String RechargeInputText(){
 		return rechargepage.getText(RECHARGE_INPUT);
 	}
+	public void RechargeInputClear(){
+		rechargepage.cleartxt(RECHARGE_INPUT);
+	}
 	//输入充值金额
 	public void RechargeValueSetText(){
 		rechargepage.setxt(RECHARGE_INPUT, RECHARGE_VALUE);
+	}
+	//输入超过2000的充值金额
+	public void RechargeValueSetMaxText(){
+		rechargepage.setxt(RECHARGE_INPUT, RECHARGE_MAX_VALUE);
 	}
 	//判断元-文本是否存在
 	public Boolean yuanExist(){

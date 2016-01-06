@@ -126,6 +126,7 @@ public interface ParameterConfigConstants {
 
 	//充值金额
 	static String RECHARGE_VALUE = "10";
+	static String RECHARGE_MAX_VALUE ="20001";
 	
 	//改派原因-其它原因描述
 	static String OTHER_REASON_DETAIL = "改派原因-其它原因描述";
