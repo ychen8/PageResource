@@ -283,8 +283,13 @@ public class MainPage extends UiAutomatorTestCase implements MainPageConstants,P
 		return mainpage.isExist(KILOTXT);
 	}
 	public void kiloSetText(){
-		mainpage.setxt(KILOTXT, Integer.toString(KILO));
-		
+		mainpage.setxt(KILOTXT, Integer.toString(KILO));	
+	}
+	public void kiloSetMAXText(){
+		mainpage.setxt(KILOTXT, Integer.toString(MAXKILO));	
+	}
+	public void kiloTextClear(){
+		mainpage.cleartxt(KILOTXT);
 	}
 	//获取错误信息
 	public String errInfoKiloText(){
