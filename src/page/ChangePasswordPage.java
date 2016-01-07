@@ -43,8 +43,11 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	}
 	//输入当前密码值
 	public void pwCurSet(){
-		changePassPage.setxt(PW_CUR, PW_CUR_VALUE);
-		
+		changePassPage.setxt(PW_CUR, PW_CUR_VALUE);	
+	}
+	//输入错误的当前密码值
+	public void pwCurWrongSet(){
+		changePassPage.setxt(PW_CUR, PW_CUR_WRONG_VALUE);	
 	}
 	//判断新密码是否存在
 	public Boolean pwNewExist(){
@@ -95,11 +98,11 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	public void pwModfiyClick(){
 		changePassPage.clickObj(PW_MODFIY_OK);
 	}
-	//判断退出登录弹框-文本标题是否存在
+	//判断密码修改成功弹框-文本标题是否存在
 	public Boolean confirmTextExist(){
 		return changePassPage.isExist(CONFIRM_TEXT);
 	}
-	//获取退出登录弹框-文本标题内容
+	//获取密码修改成功弹框-文本标题内容
 	public String confirmTextText(){
 		return changePassPage.getText(CONFIRM_TEXT);
 	}
