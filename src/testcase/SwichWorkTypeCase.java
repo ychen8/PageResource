@@ -25,7 +25,7 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 		watcher.watchPhone();
 		watcher.watchNetwork();
 		// 1.司机A登录
-		//base.login();
+		base.login();
 
 		// /////用例－上班中///////////
 		// 2.司机A点击“我要上班”
