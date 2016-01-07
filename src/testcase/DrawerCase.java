@@ -210,16 +210,10 @@ public class DrawerCase extends UiAutomatorTestCase{
 		assertTrue(personsetpage.checkUpdateExist());//判断检测新版本文本是否存在
 		assertEquals("检测新版本", personsetpage.checkUpdateText());
 		assertTrue(personsetpage.checkUpdateValueExist());//判断检测新版本值是否存在
-		if(personsetpage.checkUpdateValueText().equals("检测到新版本")){
-			assertTrue(personsetpage.llCheckUpdateClickable());
-		}
-		else if(personsetpage.checkUpdateValueText().equals("已是最新版本")){
-
-			assertFalse(personsetpage.llCheckUpdateClickable());
-		}
-		else{
-			System.out.print(personsetpage.checkUpdateValueText());
-		}
+		
+		assertTrue(personsetpage.logoutExist());
+		assertEquals("退出登录", personsetpage.logoutText());
+		
 		personsetpage.returnClick();
 		sleep(1000);
 		
@@ -239,4 +233,5 @@ public class DrawerCase extends UiAutomatorTestCase{
 		driverdistripage.returnClick();
 		sleep(1000);
 	}
+	
 }
