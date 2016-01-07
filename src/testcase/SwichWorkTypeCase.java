@@ -24,6 +24,7 @@ public class SwichWorkTypeCase extends UiAutomatorTestCase {
 	public void testSwichWork() {
 		watcher.watchPhone();
 		watcher.watchNetwork();
+		watcher.watchOrderPush();
 		// 1.司机A登录
 		base.login();
 

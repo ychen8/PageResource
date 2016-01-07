@@ -42,9 +42,7 @@ public class Watcher {
 			@Override
 			public boolean checkForCondition() {
 				if(push.orderTypeExist()){
-					if(push.orderTypeText().equals("取消用车")){
-						push.okBtnClick();
-					}
+					System.out.println(push.orderTypeText());
 					push.clsBtnClick();
 				}
 				return false;
