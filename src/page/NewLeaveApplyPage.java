@@ -173,7 +173,7 @@ public class NewLeaveApplyPage extends UiAutomatorTestCase implements NewLeaveAp
 	}
 	//点击相册
 	public void chooseAlbumClick(){
-		newleaveapplypage.clickObj(CHOOSE_ALBUM, MOBILE_ALBUM_ID);
+		newleaveapplypage.clickObjFromId(CHOOSE_ALBUM, MOBILE_ALBUM_ID);
 	}
 	//点击照片
 	public void choosePhotoClick(){

@@ -135,5 +135,5 @@ public interface ParameterConfigConstants {
 	static String DESTINATION = "天津站";
 	
 	//请假原因
-	static String LEAVE_CAUSE_INPUT="我是请假原因abcde12345！";
+	static String LEAVE_CAUSE_INPUT="12345";
 }
