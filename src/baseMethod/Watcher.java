@@ -42,24 +42,15 @@ public class Watcher {
 			@Override
 			public boolean checkForCondition() {
 				if(push.orderTypeExist()){
+					if(push.orderTypeText().equals("取消用车")){
+						push.okBtnClick();
+					}
 					push.clsBtnClick();
 				}
 				return false;
 			}
 			
 		});		
-	}
-	public void watchOrderCancel(){
-		UiDevice.getInstance().registerWatcher("orderCancel", new UiWatcher(){
-
-			@Override
-			public boolean checkForCondition() {
-				if(push.orderTypeExist()&push.orderTypeText().equals("取消用车")){
-					push.okBtnClick();
-				}
-				return false;
-			}		
-		});	
 	}
 
 }
