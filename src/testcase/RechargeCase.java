@@ -3,6 +3,7 @@ package testcase;
 import page.RechargePage;
 
 import baseMethod.Base;
+import baseMethod.Watcher;
 
 import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
@@ -14,7 +15,12 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 public class RechargeCase extends UiAutomatorTestCase{
 	RechargePage reCharge=new RechargePage();
 	Base base=new Base();
+	Watcher watcher=new Watcher();
 	public void testRechare(){
+		watcher.watchPhone();
+		watcher.watchNetwork();
+		watcher.watchOrderPush();
+		watcher.watchOrderCancel();
 		System.out.println("替用户充值页面");
 		assertTrue(reCharge.titleExist());
 		assertEquals("替用户充值",reCharge.titleText());
@@ -26,7 +32,6 @@ public class RechargeCase extends UiAutomatorTestCase{
 		//输入超过2000的金额
 		do{
 			reCharge.RechargeInputClear();
-			System.out.println("输入框内的值："+reCharge.RechargeInputText());
 		}while(!reCharge.RechargeInputText().equals("请输入正整数"));
 		reCharge.RechargeValueSetMaxText();
 		UiDevice.getInstance().pressBack();
@@ -41,22 +46,17 @@ public class RechargeCase extends UiAutomatorTestCase{
 			reCharge.okBtnClick();
 		}
 		//输入小于2000金额
-		do{
-			reCharge.RechargeInputClear();
-		}while(!reCharge.RechargeInputText().equals("请输入正整数"));
-		reCharge.RechargeValueSetText();
-		UiDevice.getInstance().pressBack();
-		reCharge.commitBtnClick();
-		while(reCharge.confirmTextExist()){
-			reCharge.okBtnClick();
-			do{
-				sleep(1000);
-			}while(base.loadingImgExist());
-			assertEquals("充值成功",reCharge.confirmTextText());
-			reCharge.okBtnClick();
-		}
+		RechargeNormalSet();
+		assertEquals("充值成功",reCharge.confirmTextText());
+		reCharge.okBtnClick();
 		
 		//第二次充值时，提示只能充一次
+		RechargeNormalSet();
+		assertEquals("只能为该订单客户充值1次",reCharge.confirmTextText());
+		reCharge.okBtnClick();
+		}
+		
+	public void RechargeNormalSet(){
 		do{
 			reCharge.RechargeInputClear();
 		}while(!reCharge.RechargeInputText().equals("请输入正敕数"));
@@ -68,10 +68,7 @@ public class RechargeCase extends UiAutomatorTestCase{
 			do{
 				sleep(1000);
 			}while(base.loadingImgExist());
-			assertEquals("",reCharge.confirmTextText());
-			reCharge.okBtnClick();
 		}
-		
 	}
 	
 	
