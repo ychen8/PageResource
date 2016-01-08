@@ -94,6 +94,10 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	public Boolean pwModfiyExist(){
 		return changePassPage.isExist(PW_MODFIY_OK);
 	}
+	//判断确定按钮是否被激活
+	public Boolean pwModifyEnable(){
+		return changePassPage.objEnabled(PW_MODFIY_OK);
+	}
 	//点击确定按钮
 	public void pwModfiyClick(){
 		changePassPage.clickObj(PW_MODFIY_OK);
