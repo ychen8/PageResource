@@ -55,7 +55,7 @@ public class NavigaDownloadPage extends UiAutomatorTestCase implements
 	}
 	//获取城市值文本
 	public String cityeValueText(int index){
-		return navigaDownloadPage.getText(LISTVIEW, index,CITY_VALUE);
+		return navigaDownloadPage.getListText(LISTVIEW, index,CITY_VALUE);
 	}
 	//判断城市下载进度是否存在
 	public Boolean downloadProcessExist(int index){
@@ -63,7 +63,7 @@ public class NavigaDownloadPage extends UiAutomatorTestCase implements
 	}
 	//获取城市下载进度文本
 	public String downloadProcessText(int index){
-		return navigaDownloadPage.getText(LISTVIEW, index,DOWNLOAD_PROCESS);
+		return navigaDownloadPage.getListText(LISTVIEW, index,DOWNLOAD_PROCESS);
 	}
 	//判断城市下载完成label是否存在
 	public Boolean downloadCompleExist(int index){
@@ -71,7 +71,7 @@ public class NavigaDownloadPage extends UiAutomatorTestCase implements
 	}
 	//获取城市下载完成label文本
 	public String downloadCompleText(int index){
-		return navigaDownloadPage.getText(LISTVIEW, index,LABEL_DOWNLOAD_COMPLETE);
+		return navigaDownloadPage.getListText(LISTVIEW, index,LABEL_DOWNLOAD_COMPLETE);
 	}
 	//判断下载按钮是否存在
 	public Boolean downloadBtnExist(int index){

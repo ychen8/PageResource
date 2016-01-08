@@ -6,6 +6,7 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 import driverInterface.NavigaDownloadConstants;
 
 import page.ChangePasswordPage;
+import page.FeedBackPage;
 import page.PersonSetPage;
 import page.UpgradPage;
 import page.NavigaDownloadPage;
@@ -20,6 +21,7 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 	UpgradPage upgradpage=new UpgradPage();
 	ChangePasswordPage changepasswordpage = new ChangePasswordPage();
 	NavigaDownloadPage navigadownloadpage = new NavigaDownloadPage();
+	FeedBackPage feedbackpage = new FeedBackPage();
 	//设置
 	public void testSetting() throws UiObjectNotFoundException{
 			
@@ -123,6 +125,18 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 		assertTrue(navigadownloadpage.CityValueExist(INDEX_PROVINCE));//省份存在
 		assertEquals("省份", navigadownloadpage.cityeValueText(INDEX_PROVINCE));
 		
+		navigadownloadpage.mapTypeClick();//切换至已下载
+		assertTrue(navigadownloadpage.searchExist());//输入框存在
+		assertEquals("拼音、名称、首字母", navigadownloadpage.searchText());
+		
+		if(navigadownloadpage.cityeValueText(INDEX_CURREN_CITY).equals("当前城市")){
+			System.out.println("切换到已下载-失败");
+		}else{
+			System.out.println("切换到已下载-成功");
+		}
+		
+		navigadownloadpage.returnClick();
+		sleep(1000);
 		
 		
 		
@@ -131,6 +145,11 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 	//设置-意见反馈
 	public void testFeedBackCase()throws UiObjectNotFoundException{
 		personsetpage.llFeedbackClick();
+		sleep(1000);
+		
+		
+		
+		feedbackpage.returnClick();
 		sleep(1000);
 	}
 	//设置-使用指南
