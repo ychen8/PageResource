@@ -30,6 +30,29 @@ public interface CheckBillConstants {
       static String CHARGECOMMIT="com.szzc.ucar.driver:id/charge_commit";
      //////////////////////////////////////////////////////////////////////////////////
       ///////////////////////////////index/////////////////////////////////////////////
+      /////重构///////
+      static String EXTRAFEELL ="com.szzc.ucar.driver:id/extraFeeLl";
+      //停车费栏-index
+      static int PANKING_INDEX=0;
+      //各费用文本-index
+      static int TEXT_IDNDEX=0;
+      //停车费输入框-index
+      static int TEXT_INPUT_IDNDEX=1;
+      //停车费对应的元-index
+      static int YUAN_INDEX=2;
+      
+      //路桥费栏-index
+      static int HIGHWAY_INDEX=1;
+      //清洁费栏-index
+      static int CLEAN_INDEX=2;
+      //机场服务费栏-index
+      static int AIRPORT_SERVICE=3;
+      //路桥费栏-index
+      static int OTHER_INDEX=4;
+      //其它费用描述栏-index
+      static int OTHER_AMOUNT_REMARK=5;
+      
+      
       //停车费-文本-index
       static int PARKING_TEXT_ID = 0;
       //路桥费-文本-index
