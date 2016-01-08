@@ -53,9 +53,25 @@ public class FeedBackPage extends UiAutomatorTestCase implements
 	public String etAdviceText(){
 		return feedBackPage.getText(ET_ADVICE);
 	}
+	//判断字数限制是否存在
+	public Boolean charNumExist(){
+		return feedBackPage.isExist(TXT_CHAR_NUM);
+	}
+	//获取字数限制
+	public String charNumText(){
+		return feedBackPage.getText(TXT_CHAR_NUM);
+	}
 	//判断提交按钮是否存在
 	public Boolean btnSubmitExist(){
 		return feedBackPage.isExist(BTN_SUBMIT);
+	}
+	//判断提交按钮是否被激活
+	public Boolean btnSubmitEnable(){
+		return feedBackPage.objEnabled(BTN_SUBMIT);
+	}
+	//获取按钮文字
+	public String btnSubmitText(){
+		return feedBackPage.getText(BTN_SUBMIT);
 	}
 	//点击提交按钮
 	public void btnSubmitClick(){

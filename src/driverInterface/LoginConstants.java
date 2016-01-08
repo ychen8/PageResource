@@ -8,6 +8,8 @@ public interface LoginConstants {
 
 	//登录页面控件ＩＤ
 	
+	//logo
+	static String LOGO="com.szzc.ucar.driver:id/icon";
 	//版本号与环境
 	static String VERSION_CUR="com.szzc.ucar.driver:id/version_cur";
 	//手机号

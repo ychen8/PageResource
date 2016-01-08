@@ -1,5 +1,6 @@
 package testcase;
 
+import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
@@ -7,6 +8,8 @@ import driverInterface.NavigaDownloadConstants;
 
 import page.ChangePasswordPage;
 import page.FeedBackPage;
+import page.LoadingImg;
+import page.LoginPage;
 import page.PersonSetPage;
 import page.UpgradPage;
 import page.NavigaDownloadPage;
@@ -22,9 +25,13 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 	ChangePasswordPage changepasswordpage = new ChangePasswordPage();
 	NavigaDownloadPage navigadownloadpage = new NavigaDownloadPage();
 	FeedBackPage feedbackpage = new FeedBackPage();
+	LoadingImg loadingimg = new LoadingImg();
+	LoginPage loginpage = new LoginPage();
+	
 	//设置
 	public void testSetting() throws UiObjectNotFoundException{
 			
+		System.out.println("开始测试设置页面");
 		assertTrue(personsetpage.titleExist());//标题存在
 		assertEquals("设置", personsetpage.titleText());
 		assertTrue(personsetpage.returnExist());//返回按钮存在
@@ -57,6 +64,9 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 	}
 	//设置-修改密码
 	public void testChangePasswordCase()throws UiObjectNotFoundException{
+		
+		System.out.println("开始测试修改密码");
+		
 		personsetpage.llModifyPassClick();
 		sleep(1000);
 		
@@ -85,8 +95,11 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 	}
 	//设置-导航下载
 	public void testOffLineCase()throws UiObjectNotFoundException{
+		
+		System.out.println("开始测试导航下载");
+
 		personsetpage.llOffLineClick();
-		sleep(1000);
+		sleep(3000);
 		
 		assertTrue(navigadownloadpage.returnExist());//返回按钮存在
 		assertTrue(navigadownloadpage.mapTypeExist());//全部/已下载tab存在
@@ -97,7 +110,11 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 		assertTrue(navigadownloadpage.CityValueExist(INDEX_CURREN_CITY));//当前城市存在
 		assertEquals("当前城市", navigadownloadpage.cityeValueText(INDEX_CURREN_CITY));
 		
-		assertTrue(navigadownloadpage.CityValueExist(INDEX_CURREN_CITY_VALUE));//当前城市存在
+		//assertTrue(navigadownloadpage.CityValueExist(INDEX_CURREN_CITY_VALUE));//当前城市存在
+
+		System.out.println(navigadownloadpage.cityeValueText(INDEX_CURREN_CITY_VALUE));
+		System.out.println(navigadownloadpage.downloadCompleExist(INDEX_CURREN_CITY_VALUE));
+		System.out.println(navigadownloadpage.downloadProcessText(INDEX_CURREN_CITY_VALUE));
 		assertTrue(navigadownloadpage.downloadProcessExist(INDEX_CURREN_CITY_VALUE));//下载进度存在
 		
 		if(navigadownloadpage.downloadCompleExist(INDEX_CURREN_CITY_VALUE)){//判断下载完成还是未下载
@@ -144,21 +161,50 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 	}
 	//设置-意见反馈
 	public void testFeedBackCase()throws UiObjectNotFoundException{
-		personsetpage.llFeedbackClick();
-		sleep(1000);
 		
+		System.out.println("开始测试意见反馈");
+		
+		personsetpage.llFeedbackClick();
+		do{sleep(1000);}while(loadingimg.loadingImgExist());
+		
+		assertTrue(feedbackpage.titleExist());//标题存在
+		assertEquals("意见反馈",feedbackpage.titleText());
+		assertTrue(feedbackpage.returnExist());//返回按钮存在
+		
+		assertTrue(feedbackpage.llAdviceTypeExist());//反馈类型存在
+		assertTrue(feedbackpage.txtAdviceTypeExist());//反馈类型文本存在
+		assertEquals("请选择意见反馈的类型",feedbackpage.txtAdviceTypeText());
+		
+		assertTrue(feedbackpage.etAdviceExist());//输入提示存在
+		assertEquals("畅所欲言，让我们一起做到更好",feedbackpage.etAdviceText());
+		
+		assertTrue(feedbackpage.charNumExist());//字数限制存在
+		assertEquals("还可输入500字",feedbackpage.charNumText());
+		
+		assertTrue(feedbackpage.btnSubmitExist());//提交按钮存在
+		assertFalse(feedbackpage.btnSubmitEnable());//提交按钮置灰
+		assertEquals("提   交", feedbackpage.btnSubmitText());
 		
 		
 		feedbackpage.returnClick();
-		sleep(1000);
+		sleep(3000);
 	}
 	//设置-使用指南
-	public void testUseGuidCase()throws UiObjectNotFoundException{
-		personsetpage.llUseGuidClick();
-		sleep(1000);
-	}
+//	public void testUseGuidCase()throws UiObjectNotFoundException{
+//		
+//		personsetpage.llUseGuidClick();
+//		do{sleep(1000);}while(loadingimg.loadingImgExist());
+//		
+//		assertTrue(loadingimg.webPageExist());//web页存在
+//		
+//		UiDevice.getInstance().pressBack();
+//		sleep(1000);		
+//		
+//	}
 	//设置-检测新版本
 	public void testCheckUpdateCase()throws UiObjectNotFoundException{
+		
+		System.out.println("开始测试检测新版本");
 		
 		if(personsetpage.checkUpdateValueText().equals("检测到新版本")){
 			assertTrue(personsetpage.llCheckUpdateClickable());//可点击
@@ -182,7 +228,27 @@ public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadCo
 		
 	}
 	//设置-退出登录
-	public void testLogout()throws UiObjectNotFoundException{
+	public void testZLogout()throws UiObjectNotFoundException{
+	
+		personsetpage.logoutClick();
+		assertTrue(personsetpage.confirmTextExist());//标题存在
+		assertEquals("退出登录即为下班",personsetpage.confirmTextText());
+		assertTrue(personsetpage.confirmDescExist());//内容存在
+		assertEquals("确定退出？", personsetpage.confirmDescText());
 		
+		assertTrue(personsetpage.closeBtnExist());//取消按钮存在
+		assertEquals("取消", personsetpage.closeBtnText());
+		assertTrue(personsetpage.okBtnExist());//确定按钮存在
+		assertEquals("确定", personsetpage.okBtnText());
+		
+		personsetpage.closeBtnClick();//点击取消
+		sleep(1000);
+		assertEquals("设置", personsetpage.titleText());
+		
+		personsetpage.logoutClick();//点击退出登录
+		personsetpage.okBtnClick();//确定
+		do{sleep(1000);}while(loadingimg.loadingImgExist());
+		
+		assertTrue(loginpage.logoExist());
 	}
 }

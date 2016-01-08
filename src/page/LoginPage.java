@@ -14,6 +14,10 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 		ParameterConfigConstants {
 	MainMethod loginPage = new MainMethod();
 
+	//判断logo是否存在
+	public Boolean logoExist(){
+		return loginPage.isExist(LOGO);
+	}
 	// 判断测试版本与环境控件是否存在
 	public Boolean testEnvExist() {
 		return loginPage.isExist(VERSION_CUR);
