@@ -45,6 +45,18 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	public void pwCurSet(){
 		changePassPage.setxt(PW_CUR, PW_CUR_VALUE);	
 	}
+	//输入错误的当前密码值
+	public void pwCurWrongSet(){
+		changePassPage.setxt(PW_CUR, PW_CUR_WRONG_VALUE);	
+	}
+	//输入19位密码
+	public void pwCur19Set(){
+		changePassPage.setxt(PW_CUR, PW_19_NUM);	
+	}
+	//输入5位密码
+	public void pwCur5Set(){
+		changePassPage.setxt(PW_CUR, PW_5_NUM);	
+	}
 	//判断新密码是否存在
 	public Boolean pwNewExist(){
 		return changePassPage.isExist(PW_NEW);
@@ -61,6 +73,29 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	public void pwNewSet(){
 		changePassPage.setxt(PW_NEW, PW_NEW_VALUE);
 		
+	}
+	//输入19位新密码
+	public void pwNew19Set(){
+		changePassPage.setxt(PW_NEW, PW_19_NUM);
+		
+	}
+	//输入5位密码
+	public void pwNew5Set(){
+		changePassPage.setxt(PW_NEW, PW_5_NUM);
+		
+	}
+	public void pwCurClear1(){
+		changePassPage.clearText(PW_CUR);
+	}
+	public void pwNewClear1(){
+		changePassPage.clearText(PW_NEW);
+	}
+	//把密码改回来
+	public void pwCur1Set(){
+		changePassPage.setxt(PW_CUR, PW_NEW_VALUE);	
+	}
+	public void pwNew1Set(){
+		changePassPage.setxt(PW_NEW, PW_CUR_VALUE);	
 	}
 	//判断密码限制提示是否存在
 	public Boolean tipExist(){
@@ -94,6 +129,10 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	public Boolean pwModifyEnable(){
 		return changePassPage.objEnabled(PW_MODFIY_OK);
 	}
+	//获取确定按钮文字
+	public String pwModifyText(){
+		return changePassPage.getText(PW_MODFIY_OK);
+	}
 	//点击确定按钮
 	public void pwModfiyClick(){
 		changePassPage.clickObj(PW_MODFIY_OK);
@@ -105,6 +144,10 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	//获取密码修改成功弹框-文本标题内容
 	public String confirmTextText(){
 		return changePassPage.getText(CONFIRM_TEXT);
+	}
+	//判断确定按钮是否存在
+	public Boolean okBtnExist(){
+		return changePassPage.isExist(OK_BTN);
 	}
 	//获取弹框－确定　
 	public String okBtnText(){

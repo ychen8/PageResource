@@ -457,6 +457,15 @@ public class MainMethod extends UiAutomatorTestCase{
 			e.printStackTrace();
 		}		
 	}
+	public void clearText(String resourceId){
+		UiObject obj = new UiObject(new UiSelector().resourceId(resourceId));
+		try {
+			obj.clearTextField();
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 ////////////////////////////////////////////////////////////////////////////////////
 //清空文本方法
 ////////////////////////////////////////////////////////////////////////////////////

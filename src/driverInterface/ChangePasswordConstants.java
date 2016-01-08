@@ -25,8 +25,13 @@ public interface ChangePasswordConstants {
 	
 	
 	//当前密码值
-	static String PW_CUR_VALUE="123456";
+	static String PW_CUR_VALUE="000000";
+	//错误的当前密码值
+	static String PW_CUR_WRONG_VALUE="111111";
 	//新密码值　
-	static String PW_NEW_VALUE="654321";
-
+	static String PW_NEW_VALUE="123456";
+	//19位
+	static String PW_19_NUM="1122334455667788990";
+	//5位
+	static String PW_5_NUM="12345";
 }
