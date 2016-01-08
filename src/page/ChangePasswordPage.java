@@ -45,10 +45,6 @@ public class ChangePasswordPage extends UiAutomatorTestCase implements
 	public void pwCurSet(){
 		changePassPage.setxt(PW_CUR, PW_CUR_VALUE);	
 	}
-	//输入错误的当前密码值
-	public void pwCurWrongSet(){
-		changePassPage.setxt(PW_CUR, PW_CUR_WRONG_VALUE);	
-	}
 	//判断新密码是否存在
 	public Boolean pwNewExist(){
 		return changePassPage.isExist(PW_NEW);

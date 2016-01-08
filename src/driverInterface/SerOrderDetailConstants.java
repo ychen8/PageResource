@@ -64,6 +64,7 @@ public interface SerOrderDetailConstants {
       //取消按钮
       static String CLOSE_BTN="com.szzc.ucar.driver:id/close_btn";
       //////////////////////////////////////////////////////////////////////////////////
-
       
+      //结束服务去小休按钮
+      static String BTN_GO_REST="com.szzc.ucar.driver:id/gotorest";    
 }

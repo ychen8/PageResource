@@ -208,5 +208,13 @@ public class SerOrderDetialPage extends UiAutomatorTestCase implements SerOrderD
 	//点击确定按钮
 	public void okBtnClick(){		
 		serorderdetialpage.clickObj(OK_BTN);
-	}	
+	}
+	//判断结束服务去小休按钮是否存在
+	public Boolean goRestExist(){
+		return serorderdetialpage.isExist(BTN_GO_REST);
+	}
+	//点击结束服务去小休
+	public void goRestClick(){
+		serorderdetialpage.clickObj(BTN_GO_REST);
+	}
 }

@@ -42,40 +42,40 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 
 	// 输入正确的手机号
 	public void setPhone(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(PHONE, PHONE_VALUE);
 		}
 
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(PHONE, PHONE_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(PHONE, PHONE_VALUE_PRE);
 		}
 	}
 
 	// 输入不存在的手机号
 	public void setWrongPhone(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(PHONE, WRONG_PHONE_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(PHONE, WRONG_PHONE_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(PHONE, WRONG_PHONE_VALUE_PRE);
 		}
 	}
 
 	// 输入驾驶证过期的手机号
 	public void setExpirePhone(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(PHONE, EXPIRE_PHONE_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(PHONE, EXPIRE_PHONE_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(PHONE, EXPIRE_PHONE_VALUE_PRE);
 		}
 
@@ -94,13 +94,13 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 	}
 	// 输入正确的司机ＩＤ
 	public void setDriverid(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(DRIVERID, DRIVERID_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(DRIVERID, DRIVERID_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(DRIVERID, DRIVERID_VALUE_PRE);
 		}
 
@@ -108,26 +108,26 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 
 	// 输入错误的司机ＩＤ
 	public void setWrongDriverid(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(DRIVERID, WRONG_DRIVERID_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(DRIVERID, WRONG_DRIVERID_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(DRIVERID, WRONG_DRIVERID_VALUE_PRE);
 		}
 	}
 
 	// 输入驾驶证过期的司机ＩＤ
 	public void setExpireDriverid(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(DRIVERID, EXPIRE_DRIVERID_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(DRIVERID, EXPIRE_DRIVERID_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(DRIVERID, EXPIRE_DRIVERID_VALUE_PRE);
 		}
 
@@ -146,13 +146,13 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 	}
 	// 输入正确的密码
 	public void setPassword(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(PASSWORD, PASSWORD_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(PASSWORD, PASSWORD_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(PASSWORD, PASSWORD_VALUE_PRE);
 		}
 	}
@@ -160,13 +160,13 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 	// 输入错误的密码
 	public void setWrongPassword(String test_env) {
 
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(PASSWORD, WRONG_PASSWORD_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(PASSWORD, WRONG_PASSWORD_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(PASSWORD, WRONG_PASSWORD_VALUE_PRE);
 		}
 
@@ -174,13 +174,13 @@ public class LoginPage extends UiAutomatorTestCase implements LoginConstants,
 
 	// 输入驾驶证过期的密码
 	public void setExpirePassword(String test_env) {
-		if (test_env == "test") {
+		if (test_env.equals("test")) {
 			loginPage.setxt(PASSWORD, EXPIRE_PASSWORD_VALUE);
 		}
-		if (test_env == "test02") {
+		if (test_env.equals("test02")) {
 			loginPage.setxt(PASSWORD, EXPIRE_PASSWORD_VALUE2);
 		}
-		if (test_env == "pre") {
+		if (test_env.equals("pre")) {
 			loginPage.setxt(PASSWORD, EXPIRE_PASSWORD_VALUE_PRE);
 		}
 	}
