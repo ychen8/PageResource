@@ -3,19 +3,23 @@ package testcase;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
+import driverInterface.NavigaDownloadConstants;
+
 import page.ChangePasswordPage;
 import page.PersonSetPage;
 import page.UpgradPage;
+import page.NavigaDownloadPage;
 /**
  * Description：
  * Date: 2016-1-7
  * @author 李怡萱
  * */
-public class SettingCase extends UiAutomatorTestCase {
+public class SettingCase extends UiAutomatorTestCase implements NavigaDownloadConstants{
 
 	PersonSetPage personsetpage = new PersonSetPage();
 	UpgradPage upgradpage=new UpgradPage();
 	ChangePasswordPage changepasswordpage = new ChangePasswordPage();
+	NavigaDownloadPage navigadownloadpage = new NavigaDownloadPage();
 	//设置
 	public void testSetting() throws UiObjectNotFoundException{
 			
@@ -50,7 +54,7 @@ public class SettingCase extends UiAutomatorTestCase {
 		
 	}
 	//设置-修改密码
-	public void testChangePasswordCase(){
+	public void testChangePasswordCase()throws UiObjectNotFoundException{
 		personsetpage.llModifyPassClick();
 		sleep(1000);
 		
@@ -78,22 +82,64 @@ public class SettingCase extends UiAutomatorTestCase {
 		
 	}
 	//设置-导航下载
-	public void testOffLineCase(){
+	public void testOffLineCase()throws UiObjectNotFoundException{
 		personsetpage.llOffLineClick();
 		sleep(1000);
+		
+		assertTrue(navigadownloadpage.returnExist());//返回按钮存在
+		assertTrue(navigadownloadpage.mapTypeExist());//全部/已下载tab存在
+		assertEquals("  全部          已下载", navigadownloadpage.mapTypeText());
+		assertTrue(navigadownloadpage.searchExist());//输入框存在
+		assertEquals("拼音、名称、首字母", navigadownloadpage.searchText());
+		
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_CURREN_CITY));//当前城市存在
+		assertEquals("当前城市", navigadownloadpage.cityeValueText(INDEX_CURREN_CITY));
+		
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_CURREN_CITY_VALUE));//当前城市存在
+		assertTrue(navigadownloadpage.downloadProcessExist(INDEX_CURREN_CITY_VALUE));//下载进度存在
+		
+		if(navigadownloadpage.downloadCompleExist(INDEX_CURREN_CITY_VALUE)){//判断下载完成还是未下载
+			System.out.println("当前城市是："+navigadownloadpage.cityeValueText(INDEX_CURREN_CITY_VALUE)+",下载完成");
+		}else if(navigadownloadpage.downloadBtnExist(INDEX_CURREN_CITY_VALUE)){
+			System.out.println("当前城市是："+navigadownloadpage.cityeValueText(INDEX_CURREN_CITY_VALUE)+",未下载");
+		}else if(navigadownloadpage.downloadProcessText(INDEX_CURREN_CITY_VALUE).contains("下载")){
+			System.out.println("当前城市是："+navigadownloadpage.cityeValueText(INDEX_CURREN_CITY_VALUE)+",下载中");		
+		}
+		
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_HOT_CITY));//热门城市存在
+		assertEquals("热门城市", navigadownloadpage.cityeValueText(INDEX_HOT_CITY));
+		
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_HOT_CITY1));//热门城市1存在
+		assertTrue(navigadownloadpage.downloadProcessExist(INDEX_HOT_CITY1));//热门城市1下载进度存在
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_HOT_CITY2));//热门城市2存在
+		assertTrue(navigadownloadpage.downloadProcessExist(INDEX_HOT_CITY2));//热门城市2下载进度存在
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_HOT_CITY3));//热门城市3存在
+		assertTrue(navigadownloadpage.downloadProcessExist(INDEX_HOT_CITY3));//热门城市3下载进度存在
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_HOT_CITY4));//热门城市4存在
+		assertTrue(navigadownloadpage.downloadProcessExist(INDEX_HOT_CITY4));//热门城市4下载进度存在
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_HOT_CITY5));//热门城市5存在
+		assertTrue(navigadownloadpage.downloadProcessExist(INDEX_HOT_CITY5));//热门城市5下载进度存在
+		
+		assertTrue(navigadownloadpage.CityValueExist(INDEX_PROVINCE));//省份存在
+		assertEquals("省份", navigadownloadpage.cityeValueText(INDEX_PROVINCE));
+		
+		
+		
+		
+		
 	}
 	//设置-意见反馈
-	public void testFeedBackCase(){
+	public void testFeedBackCase()throws UiObjectNotFoundException{
 		personsetpage.llFeedbackClick();
 		sleep(1000);
 	}
 	//设置-使用指南
-	public void testUseGuidCase(){
+	public void testUseGuidCase()throws UiObjectNotFoundException{
 		personsetpage.llUseGuidClick();
 		sleep(1000);
 	}
 	//设置-检测新版本
-	public void testCheckUpdateCase(){
+	public void testCheckUpdateCase()throws UiObjectNotFoundException{
 		
 		if(personsetpage.checkUpdateValueText().equals("检测到新版本")){
 			assertTrue(personsetpage.llCheckUpdateClickable());//可点击
@@ -117,7 +163,7 @@ public class SettingCase extends UiAutomatorTestCase {
 		
 	}
 	//设置-退出登录
-	public void testLogout(){
+	public void testLogout()throws UiObjectNotFoundException{
 		
 	}
 }

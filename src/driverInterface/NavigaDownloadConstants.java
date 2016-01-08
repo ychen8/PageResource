@@ -22,19 +22,22 @@ public interface NavigaDownloadConstants {
 	static String DOWNLOAD_PROCESS="com.szzc.ucar.driver:id/download_process";
 	//城市下载完成label
 	static String LABEL_DOWNLOAD_COMPLETE="com.szzc.ucar.driver:id/label_download_complete";
+	//下载按钮
+	static String DOWNLOAD_BTN="com.szzc.ucar.driver:id/download_btn";
 	//当前城市-index
 	static int INDEX_CURREN_CITY=0;
 	//当前城市值－index
 	static int INDEX_CURREN_CITY_VALUE=1;
 	//热门城市－index
 	static int INDEX_HOT_CITY=2;
+	//热门城市值-index
 	static int INDEX_HOT_CITY1=3;
 	static int INDEX_HOT_CITY2=4;
 	static int INDEX_HOT_CITY3=5;
 	static int INDEX_HOT_CITY4=6;
 	static int INDEX_HOT_CITY5=7;
-	static int INDEX_HOT_CITY6=8;
-	static int INDEX_HOT_CITY7=9;
+	//省份-index
+	static int INDEX_PROVINCE=8;
 	
 	
 

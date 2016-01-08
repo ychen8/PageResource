@@ -37,6 +37,10 @@ public class NavigaDownloadPage extends UiAutomatorTestCase implements
 	public Boolean searchExist(){
 		return navigaDownloadPage.isExist(SEARCH);
 	}
+	//获取输入框内容
+	public String searchText(){
+		return navigaDownloadPage.getText(SEARCH);
+	}
 	//清空城市输入框内容
 	public void searchClear(){
 		navigaDownloadPage.cleartxt(SEARCH);
@@ -68,6 +72,10 @@ public class NavigaDownloadPage extends UiAutomatorTestCase implements
 	//获取城市下载完成label文本
 	public String downloadCompleText(int index){
 		return navigaDownloadPage.getText(LISTVIEW, index,LABEL_DOWNLOAD_COMPLETE);
+	}
+	//判断下载按钮是否存在
+	public Boolean downloadBtnExist(int index){
+		return navigaDownloadPage.isExistFromList(LISTVIEW, index,DOWNLOAD_BTN);
 	}
 
 }
