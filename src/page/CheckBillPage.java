@@ -86,8 +86,8 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 		return checkbill.getText(COSTVALUE,index);
 	}
 		//获取附加费用-输入框2
-	public String costValue2Text(int childindex,int grandindex){
-		return checkbill.getListGrandChildText(EXTRAFEELL, childindex, grandindex);
+	public String costValue2Text(int childindex,int grandindex,String input){
+		return checkbill.getListGrandChildText(EXTRAFEELL, childindex, grandindex,input);
 	}
 	//输入附加费用
 	public void costValueSetText(int index, String amount){

@@ -224,9 +224,8 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		assertTrue(checkBill.killoValueExist());//判断里程输入框是否存在
 		assertTrue(checkBill.killoTextExist());//判断公里-文本是否存在
 		//附加费用
-		
+		/*
 		assertTrue(checkBill.costName2Exist(PANKING_INDEX,TEXT_IDNDEX));//判断附加费用-停车费-文本是否存在
-		
 		assertTrue(checkBill.costName2Exist(HIGHWAY_INDEX,TEXT_IDNDEX));//判断附加费用-路桥费-文本是否存在
 		assertTrue(checkBill.costName2Exist(CLEAN_INDEX,TEXT_IDNDEX));//判断附加费用-清洁费-文本是否存在
 		assertTrue(checkBill.costName2Exist(AIRPORT_SERVICE,TEXT_IDNDEX));//判断附加费用-机场服务费-文本是否存在
@@ -237,28 +236,28 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		assertTrue(checkBill.costValue2Exist(CLEAN_INDEX,TEXT_IDNDEX));//判断附加费用-清洁费-输入框是否存在
 		assertTrue(checkBill.costValue2Exist(AIRPORT_SERVICE,TEXT_IDNDEX));//判断附加费用-机场服务费-输入框是否存在
 		assertTrue(checkBill.costValue2Exist(OTHER_INDEX,TEXT_IDNDEX));//判断附加费用-其它费用-输入框是否存在
-		/*
+		
 		assertTrue(checkBill.yuanExist(PARKING_TEXT_ID));//判断附加费用-停车费-元是否存在
 		assertTrue(checkBill.yuanExist(HIGHWAY_TEXT_ID));//判断附加费用-路桥费-元是否存在
 		assertTrue(checkBill.yuanExist(CLEAN_TEXT_ID));//判断附加费用-清洁费-元是否存在
 		assertTrue(checkBill.yuanExist(AIRPORT_SERVICE_TEXT_ID));//判断附加费用-机场服务费-元是否存在
 		assertTrue(checkBill.yuanExist(OTHER_TEXT_ID ));//判断附加费用-其它费用-元是否存在
 		
-		assertEquals("停车费",checkBill.costNameText(PARKING_TEXT_ID));//判断附加费用-停车费-文本是否正确
-		assertEquals("路桥费",checkBill.costNameText(HIGHWAY_TEXT_ID));//判断附加费用-路桥费-文本是否正确
-		assertEquals("清洁费",checkBill.costNameText(CLEAN_TEXT_ID));//判断附加费用-清洁费-文本是否正确
-		assertEquals("机场服务费",checkBill.costNameText(AIRPORT_SERVICE_TEXT_ID));//判断附加费用-机场服务费-文本是否正确
-		assertEquals("其它费用",checkBill.costNameText(OTHER_TEXT_ID ));//判断附加费用-其它费用-文本是否正确
+		assertEquals("停车费",checkBill.costName2Text(PANKING_INDEX,TEXT_IDNDEX)));//判断附加费用-停车费-文本是否正确
+		assertEquals("路桥费",checkBill.costName2Text(CLEAN_INDEX,TEXT_IDNDEX));//判断附加费用-路桥费-文本是否正确
+		assertEquals("清洁费",checkBill.costName2Text(CLEAN_INDEX,TEXT_IDNDEX));//判断附加费用-清洁费-文本是否正确
+		assertEquals("机场服务费",checkBill.costName2Text(AIRPORT_SERVICE,TEXT_IDNDEX));//判断附加费用-机场服务费-文本是否正确
+		assertEquals("其它费用",checkBill.costName2Text(OTHER_INDEX,TEXT_IDNDEX));//判断附加费用-其它费用-文本是否正确
 		*/
 		assertTrue(checkBill.chargeCommitExist());//判断确认按钮是否存在
 		
 
-		
-		//checkBill.costValueSetText(OTHER_TEXT_ID, "1");
-		//assertTrue(checkBill.costNameExist(OTHER_AMOUNT_REMARK_TEXT_ID));//判断附加费用-其它费用描述--文本是否存在
-		//UiDevice.getInstance().pressBack();
-		//checkBill.costValueSetText(OTHER_AMOUNT_REMARK_TEXT_ID, "1");
-		
+		/*
+		checkBill.costValueSetText2(OTHER_INDEX,TEXT_IDNDEX, "1");
+		assertTrue(checkBill.costNameExist(costName2Text(OTHER_AMOUNT_REMARK_INPUT_ID,TEXT_IDNDEX));//判断附加费用-其它费用描述--文本是否存在
+		UiDevice.getInstance().pressBack();
+		checkBill.costValueSetText2(OTHER_AMOUNT_REMARK_INPUT_ID,TEXT_IDNDEX, "1");
+		*/
 		checkBill.chargeCommitClick();
 		do{
 			sleep(1000);

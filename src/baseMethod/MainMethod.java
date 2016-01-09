@@ -483,7 +483,7 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
-		public Boolean setxtFromGrand(String ResourceId,int childindex,int grandindex){
+		public Boolean setxtFromGrand(String ResourceId,int childindex,int grandindex,String input){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().index(childindex)).childSelector(new UiSelector().index(grandindex)));
 		try {
 			return obj.setText(input);
