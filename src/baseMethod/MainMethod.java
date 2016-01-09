@@ -483,6 +483,16 @@ public class MainMethod extends UiAutomatorTestCase{
 		}
 		return false;
 	}
+		public Boolean setxtFromGrand(String ResourceId,int childindex,int grandindex){
+		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).childSelector(new UiSelector().index(childindex)).childSelector(new UiSelector().index(grandindex)));
+		try {
+			return obj.setText(input);
+		} catch (UiObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 	public Boolean setxt(String ResourceId, String input,int index){
 		UiObject obj=new UiObject(new UiSelector().resourceId(ResourceId).index(index));
 		try {
