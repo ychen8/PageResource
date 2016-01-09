@@ -61,7 +61,7 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	public Boolean costNameExist(int index){
 		return checkbill.isExist(COSTNAME,index);
 	}
-	//判断附加费用-文本是否存在
+	//判断附加费用-文本是否存在2
 	public Boolean costName2Exist(int childindex,int grandindex){
 		return checkbill.isExistFromListGrand(EXTRAFEELL, childindex, grandindex);
 	}
@@ -69,11 +69,15 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	public String costNameText(int index){
 		return checkbill.getText(COSTNAME,index);
 	}
+		//获取附加费用-文本2
+	public String costName2Text(int childindex,int grandindex){
+		return checkbill.getListGrandChildText(EXTRAFEELL, childindex, grandindex);
+	}
 	//判断附加费用-输入框是否存在
 	public Boolean costValueExist(int index){
 		return checkbill.isExist(COSTVALUE,index);
 	}
-	//判断附加费用-输入框是否存在
+	//判断附加费用-输入框是否存在2
 	public Boolean costValue2Exist(int childindex,int grandindex){
 		return checkbill.isExistFromListGrand(EXTRAFEELL, childindex, grandindex);
 	}
@@ -81,9 +85,17 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	public String costValueText(int index){
 		return checkbill.getText(COSTVALUE,index);
 	}
+		//获取附加费用-输入框2
+	public String costValue2Text(int childindex,int grandindex){
+		return checkbill.getListGrandChildText(EXTRAFEELL, childindex, grandindex);
+	}
 	//输入附加费用
 	public void costValueSetText(int index, String amount){
 		checkbill.setxt(COSTVALUE, amount, index);
+	}	
+		//输入附加费用-2
+	public void costValueSetText2(int childindex,int grandindex){
+		checkbill.setxtFromGrand(EXTRAFEELL, childindex, grandindex);
 	}	
 	//判断元-文本是否存在
 	public Boolean yuanExist(int index){
