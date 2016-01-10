@@ -124,6 +124,10 @@ public class OrderListPage extends UiAutomatorTestCase implements OrderListConst
 	public String ordernoText(int index){
 		return orderlistpage.getListText(ORDER_LIST, index, ORDER_NO);
 	}
+	//点击订单
+	public void orderClick(int index){
+		orderlistpage.clickObjFromList(ORDER_LIST, index, ORDER_NO);
+	}
 	//判断订单日期是否存在
 	public Boolean orderDateExist(int index){
 		return orderlistpage.isExistFromList(ORDER_LIST, index, ORDER_DATE);
