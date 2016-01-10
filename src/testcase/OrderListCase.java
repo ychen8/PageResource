@@ -105,7 +105,7 @@ public class OrderListCase  extends UiAutomatorTestCase{
 	    checkOrderList();
 	    
 	    //返回查询
-	    orderquerypage.backBtnClick();
+	    orderlistpage.backBtnClick();
 	    do{sleep(1000);}while(loadingimg.loadingImgExist());
 	    //按月查询
 	    orderquerypage.invalidTabClick();
@@ -132,7 +132,13 @@ public class OrderListCase  extends UiAutomatorTestCase{
 	    assertEquals(year+"年"+month+"月", orderquerypage.titleText());
 	    
 	    checkOrderList();
-	    
+	    //返回查询
+	    orderlistpage.backBtnClick();
+	    do{sleep(1000);}while(loadingimg.loadingImgExist());
+	    //返回列表
+	    orderquerypage.backBtnClick();
+	    do{sleep(1000);}while(loadingimg.loadingImgExist());
+	        
 	}
 	
 	private void checkOrderList() {

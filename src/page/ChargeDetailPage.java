@@ -41,7 +41,7 @@ public class ChargeDetailPage extends UiAutomatorTestCase implements ChargeDetai
 	public Boolean payStatusExist(){
 		return chargedetailpage.isExistFromClass(VIEW_CLASS, PAY_STATUS_ID);
 	}
-	//获取支付状态-文本
+	//获取支付状态
 	public String payStatusText(){
 	    return chargedetailpage.getTextFromClass(VIEW_CLASS, PAY_STATUS_ID);
 	}

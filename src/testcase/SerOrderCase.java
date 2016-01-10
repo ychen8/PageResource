@@ -49,7 +49,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		}
 				
 	}
-	private void pickClientCase(){
+	protected void pickClientCase(){
 		System.out.println("测试待服务详情页面");
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
@@ -92,7 +92,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		}while(base.loadingImgExist());	
 	}
 	
-	private void arriveCase(){
+	protected void arriveCase(){
 		System.out.println("测试已出发详情页面");
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
@@ -136,7 +136,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		}while(base.loadingImgExist());	
 	}
 	
-	private void WaitSetOutCase(){
+	protected void WaitSetOutCase(){
 		System.out.println("测试已到达详情页面");
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
@@ -178,7 +178,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 			naviAfter.closeBtn1Click();
 		}
 	}
-	private void startServiceCase(){
+	protected void startServiceCase(){
 		System.out.println("测试已开始服务页面");
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
@@ -215,7 +215,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 			sleep(1000);
 		}while(base.loadingImgExist());
 	}
-	private void checkBillCase(){
+	protected void checkBillCase(){
 		System.out.println("核实账单");
 		sleep(1000);
 		assertEquals("核实账单",checkBill.titleText());//判断标题是否正确
@@ -263,7 +263,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 			sleep(1000);
 		}while(base.loadingImgExist());
 	}
-	private void orderBalanceCase(){	
+	protected void orderBalanceCase(){	
 		//订单结算页面
 		System.out.println("订单结算页面");
 		assertTrue(orderBalance.titleExist());////判断标题栏是否存在
