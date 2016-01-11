@@ -86,16 +86,16 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 		return checkbill.getText(COSTVALUE,index);
 	}
 		//获取附加费用-输入框2
-	public String costValue2Text(int childindex,int grandindex,String input){
-		return checkbill.getListGrandChildText(EXTRAFEELL, childindex, grandindex,input);
+	public String costValue2Text(int childindex,int grandindex){
+		return checkbill.getListGrandChildText(EXTRAFEELL, childindex, grandindex);
 	}
 	//输入附加费用
 	public void costValueSetText(int index, String amount){
 		checkbill.setxt(COSTVALUE, amount, index);
 	}	
 		//输入附加费用-2
-	public void costValueSetText2(int childindex,int grandindex){
-		checkbill.setxtFromGrand(EXTRAFEELL, childindex, grandindex);
+	public void costValueSetText2(int childindex,int grandindex,String input){
+		checkbill.setxtFromGrand(EXTRAFEELL, childindex, grandindex,input);
 	}	
 	//判断元-文本是否存在
 	public Boolean yuanExist(int index){
