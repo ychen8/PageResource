@@ -97,10 +97,6 @@ public class CheckBillPage extends UiAutomatorTestCase implements CheckBillConst
 	public void costValueSetText2(int childindex,int grandindex,String input){
 		checkbill.setxtFromGrand(EXTRAFEELL, childindex, grandindex,input);
 	}	
-	//清空附加费用-2
-public void costValueClearText2(int childindex,int grandindex){
-	checkbill.clearTextFromGrand(EXTRAFEELL, childindex, grandindex);
-}
 	//判断元-文本是否存在
 	public Boolean yuanExist(int index){
 		return checkbill.isExist(COSTNAME,index);

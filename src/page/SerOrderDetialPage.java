@@ -217,13 +217,4 @@ public class SerOrderDetialPage extends UiAutomatorTestCase implements SerOrderD
 	public void goRestClick(){
 		serorderdetialpage.clickObj(BTN_GO_REST);
 	}
-	
-	//判断开 启导航页面的开 启导航按钮是否存在
-	public Boolean naviExist(){
-		return serorderdetialpage.isExist(NAV_NAVI);
-	}
-	//点击开 启导航页面的开 启导航
-	public void naviClick(){
-		serorderdetialpage.clickObj(NAV_NAVI);
-	}
 }

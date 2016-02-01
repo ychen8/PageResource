@@ -457,19 +457,6 @@ public class MainMethod extends UiAutomatorTestCase{
 			e.printStackTrace();
 		}		
 	}
-	public void clearTextFromGrand(String resourceId,int childindex,int grandindex){
-		UiObject obj=new UiObject(new UiSelector().resourceId(resourceId).childSelector(new UiSelector().index(childindex)).childSelector(new UiSelector().index(grandindex)));
-		try {
-			obj.clearTextField();
-			for(int i=0;i<11;i++){
-				obj.longClickBottomRight();
-				UiDevice.getInstance().pressDelete();
-			}
-		} catch (UiObjectNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	public void clearText(String resourceId){
 		UiObject obj = new UiObject(new UiSelector().resourceId(resourceId));
 		try {

@@ -70,7 +70,7 @@ public class RechargeCase extends UiAutomatorTestCase{
 			reCharge.RechargeInputClear();
 		}while(!reCharge.RechargeInputText().equals("请输入正整数"));
 		reCharge.RechargeValueSetText();
-		UiDevice.getInstance().pressBack();
+		//UiDevice.getInstance().pressBack();
 		reCharge.commitBtnClick();
 		do{
 			sleep(1000);
