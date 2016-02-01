@@ -1,11 +1,16 @@
 package testcase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import page.CheckBillPage;
 import page.NaviAfterPage;
 import page.OrderBalancePage;
 import page.SerOrderDetialPage;
 
+import android.text.format.DateFormat;
 import baseMethod.Base;
+import baseMethod.Watcher;
 
 import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
@@ -23,8 +28,11 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 	NaviAfterPage naviAfter=new NaviAfterPage();
 	CheckBillPage checkBill=new CheckBillPage();
 	OrderBalancePage orderBalance=new OrderBalancePage();
+	Watcher watcher = new Watcher();
+	
 	public void testOrderDetail(){
 		System.out.println("测试未完成订单详情页面");
+		watcher.watchOrderPush();
 		sleep(1000);
 		//待服务状态-去接客户		
 		if(order.titleText().contains("接单成功")){
@@ -38,25 +46,29 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		if(order.titleText().contains("等待出发")){
 			WaitSetOutCase();
 		}
+		
 		//已开始服务状态		
 		if(order.titleText().contains("服务中")){
 			startServiceCase();
 		}
+		/*
 		//已结束服务状态－核实账单-订单结算
 		if(checkBill.titleExist()){
 			checkBillCase();
 			orderBalanceCase();		
 		}
+		*/
 				
 	}
 	protected void pickClientCase(){
 		System.out.println("测试待服务详情页面");
+		watcher.watchOrderPush();
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
 		assertTrue(order.titleExist());//判断标题栏是否存在
 		assertTrue(order.slideBarExist());//判断“点击查看所有/收起”是否存在
-		assertTrue(order.mapDistanceExist());//判断地图-剩余公里数是否存在
-		assertTrue(order.mapTimeExist());//判断地图-剩余时间是否存在
+		//assertTrue(order.mapDistanceExist());//判断地图-剩余公里数是否存在
+		//assertTrue(order.mapTimeExist());//判断地图-剩余时间是否存在
 		assertTrue(order.locBtnExist());//判断地图-定位按钮是否存在
 		assertTrue(order.orderCommitExist());//判断【订单状态切换】按钮是否存在
 		
@@ -82,6 +94,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		}*/
 			
 		order.orderCommitClick();//点击去接客户
+		System.out.println("点击去接客户");
 		if(order.confirmTextExist()){
 			assertEquals("您确定现在去接客户吗？",order.confirmTextText());
 			order.okBtnClick();
@@ -94,6 +107,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 	
 	protected void arriveCase(){
 		System.out.println("测试已出发详情页面");
+		watcher.watchOrderPush();
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
 		assertTrue(order.titleExist());//判断标题栏是否存在
@@ -121,11 +135,11 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		
 		order.slideBarClick();//点击收起
 		assertTrue(!order.balanceExist());
-		/////////////此处调用开始导航用例－/////////////////////
-		//点击开始导航//////////////
-		//order.startNaviClick();
-		//////////////////////////
-		
+			/////////////此处调用开始导航用例－/////////////////////
+			//点击开始导航//////////////
+		navi();
+			//////////////////////////
+		System.out.println("到达上车地点");
 		order.orderCommitClick();//点击到达上车地点
 		if(order.confirmTextExist()){
 			assertEquals("确认已到达上车地点？",order.confirmTextText());
@@ -138,6 +152,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 	
 	protected void WaitSetOutCase(){
 		System.out.println("测试已到达详情页面");
+		watcher.watchOrderPush();
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
 		assertTrue(order.titleExist());//判断标题栏是否存在
@@ -166,6 +181,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		assertTrue(!order.balanceExist());
 		
 		order.orderCommitClick();//点击开始服务
+		System.out.println("点击开始服务");
 		if(order.confirmTextExist()){
 			assertEquals("确认开始服务？",order.confirmTextText());
 			order.okBtnClick();
@@ -177,9 +193,11 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		if(naviAfter.titleExist()){
 			naviAfter.closeBtn1Click();
 		}
+		navi();
 	}
 	protected void startServiceCase(){
 		System.out.println("测试已开始服务页面");
+		watcher.watchOrderPush();
 		sleep(1000);
 		//先判断不同未完成订单状态详情页面，共有的控件是否存在
 		assertTrue(order.titleExist());//判断标题栏是否存在
@@ -198,11 +216,11 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		order.slideBarClick();//点击查看所有
 		assertTrue(order.balanceExist());//判断账户信息是否存在
 		assertTrue(order.rechargeBtnExist());//判断充值按钮是否存在
-		
+		/*
 		//点击充值按钮－调用替用户充值用例
-	//	order.rechargeBtnClick();
-	//	new RechargeCase().testRechare();
-		
+		order.rechargeBtnClick();
+		new RechargeCase().testRechare();
+		*/
 		order.slideBarClick();//点击收起
 		assertTrue(!order.balanceExist());
 		
@@ -217,6 +235,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 	}
 	protected void checkBillCase(){
 		System.out.println("核实账单");
+		watcher.watchOrderPush();
 		sleep(1000);
 		assertEquals("核实账单",checkBill.titleText());//判断标题是否正确
 		assertTrue(checkBill.backBtnExist());//判断返回按钮是否存在
@@ -250,15 +269,13 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		assertEquals("其它费用",checkBill.costName2Text(OTHER_INDEX,TEXT_IDNDEX));//判断附加费用-其它费用-文本是否正确
 		
 		assertTrue(checkBill.chargeCommitExist());//判断确认按钮是否存在
-		
-
 		System.out.println("输入其它费用....");
 		checkBill.costValueSetText2(OTHER_INDEX,TEXT_INPUT_IDNDEX, "1");
-		System.out.println("其它费用输入框内的值为："+checkBill.costValue2Text(OTHER_INDEX,TEXT_IDNDEX));
+		UiDevice.getInstance().pressBack();
 		assertTrue(checkBill.costName2Exist(OTHER_AMOUNT_REMARK,TEXT_IDNDEX));//判断附加费用-其它费用描述--文本是否存在
-		//UiDevice.getInstance().pressBack();
-		checkBill.costValueSetText2(OTHER_AMOUNT_REMARK,TEXT_INPUT_IDNDEX, "1");
-		
+		UiDevice.getInstance().pressBack();
+		checkBill.costValueSetText2(OTHER_AMOUNT_REMARK,TEXT_INPUT_IDNDEX, "a");
+	
 		checkBill.chargeCommitClick();
 		do{
 			sleep(1000);
@@ -267,6 +284,7 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 	protected void orderBalanceCase(){	
 		//订单结算页面
 		System.out.println("订单结算页面");
+		watcher.watchOrderPush();
 		assertTrue(orderBalance.titleExist());////判断标题栏是否存在
 		assertEquals("订单结算",orderBalance.titleText());//判断标题是否为订单结算
 		assertTrue(orderBalance.orderNoTextExist());//判断订单号-文本是否存在
@@ -278,7 +296,17 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		assertTrue(orderBalance.rechargeBtnExist());//判断替用户充值按钮是否存在
 		assertTrue(orderBalance.editFeeBtnExist());//判断修改附加费用按钮是否存在
 		assertTrue(orderBalance.orderCommitBtnExist());//判断提交并结束按钮是否存在
-		
+		//点击替用户充值
+		orderBalance.rechargeBtnClick();
+		new RechargeCase().testRechare();
+		//点击修改附加费用按钮
+		orderBalance.editFeeBtnClick();
+		new RechargeCase().testRechare();
+		do{
+			sleep(1000);
+		}while(base.loadingImgExist());
+		//回到核实订单页面
+		checkBillCase();
 		
 		orderBalance.orderCommitBtnClick();//点击提交并结束按钮
 		if(orderBalance.confirmTextExist()){
@@ -291,5 +319,32 @@ public class SerOrderCase extends UiAutomatorTestCase implements CheckBillConsta
 		
 		
 	}
+	
+	public void navi(){
+		for(int i=0;i<500;i++){
+			System.out.println("现在当前时间是:"+time());
+			order.startNaviClick();
+			do{
+				sleep(1000);
+			}while(base.loadingImgExist());
+			order.naviClick();
+			System.out.println("占击开启导航 多少次:"+i);
+			sleep(8000);
+			System.out.println("点击关闭导航");
+			order.changeBtnClick();//点击导航中页面的关闭按钮
+			
+			do{
+				sleep(1000);
+			}while(base.loadingImgExist());	
+		}
+
+	}
+	public String time()
+	 {
+	  Date date=new Date();
+	  SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	  String time=format.format(date);
+	  return time;
+	 }
 
 }

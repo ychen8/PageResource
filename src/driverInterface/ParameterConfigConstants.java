@@ -12,7 +12,7 @@ public interface ParameterConfigConstants {
 		
 	//登录页面输入内容
 	//测试环境
-	static String TEST_ENV="test";
+	static String TEST_ENV="pre";
 	
 	//测试１数据
 	//正确的手机号

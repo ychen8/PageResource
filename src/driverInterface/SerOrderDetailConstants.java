@@ -66,5 +66,9 @@ public interface SerOrderDetailConstants {
       //////////////////////////////////////////////////////////////////////////////////
       
       //结束服务去小休按钮
-      static String BTN_GO_REST="com.szzc.ucar.driver:id/gotorest";    
+      static String BTN_GO_REST="com.szzc.ucar.driver:id/gotorest";   
+      
+  	  static String ORDER_DETIAL_CLASS = "android.widget.ScrollView";
+  	  //开启导航页面的开启导航按钮
+  	  static String NAV_NAVI="com.szzc.ucar.driver:id/nav_navi";
 }
